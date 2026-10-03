@@ -1,0 +1,23 @@
+{
+  "algorithms": [
+    "bfs",
+    "dijkstra",
+    "astar"
+  ],
+  "crashes": 0,
+  "determinismComparisons": 300,
+  "determinismMismatches": 0,
+  "durationMs": 3864.8786,
+  "engineVersion": "arena-engine/1",
+  "executions": 600,
+  "generatorFamilies": 8,
+  "invalidPaths": 0,
+  "mapDeterminismCases": 100,
+  "optimalityCases": 600,
+  "repetitions": 2,
+  "replayCases": 600,
+  "replayDivergences": 0,
+  "seedsTested": 100,
+  "seekCases": 16950,
+  "status": "PHASE 0 PASS"
+}
