@@ -38,5 +38,6 @@ describe('analysis and metric presentation',()=>{
   it('formats unreachable cost as undefined rather than zero',()=>{expect(metric(null)).toBe('—');expect(metric(0)).toBe('0');expect(metric(1234)).toBe('1,234');});
   it('run configs never enable a heuristic for BFS/DFS/Dijkstra',()=>{expect(runConfig('bfs','manhattan').heuristic).toBe('zero');expect(runConfig('dfs','manhattan').heuristic).toBe('zero');expect(runConfig('greedy','manhattan').heuristic).toBe('manhattan');});
   it('structured summary separates facts, derived features and hypotheses',()=>{const summary=summarize([log],[]);expect(summary.measured).toHaveLength(1);expect(summary.derived).toHaveLength(1);expect(Array.isArray(summary.hypotheses)).toBe(true);});
+  it('unreachable Dijkstra never establishes an optimal numeric cost',()=>{const unreachable={...log,metrics:{...log.metrics,path_cost:null,path_length:null}};const summary=summarize([unreachable],[]);expect(summary.measured[0]).toMatchObject({optimalCostMatchesDijkstra:null});});
   it('absent AI provider is independent of execution',async()=>{await expect(new UnavailableProvider().explain()).rejects.toThrow('unavailable');const replay=new Replay(log);replay.seek(log.events.length);expect(replay.state.completed).toBe(true);});
 });

@@ -14,7 +14,7 @@ No synthetic execution/metrics or algorithm reexecution in replay. UI algorithms
 | --- | --- |
 | Rust tests | 29 passed: 4 CLI, 23 foundation, 2 Phase 1/service |
 | Rust formatting / Clippy | Root workspace passed; Tauri formatting passed |
-| Frontend unit cases | 29 passed, including reduction of a real Rust log |
+| Frontend unit cases | 30 passed, including reduction of a real Rust log and undefined optimal-cost handling |
 | Frontend lint / typecheck / production build | Passed |
 | Browser E2E | Final run: 18 passed in 1.3 minutes |
 | Browser identity | Correct URL/title, nonblank, no framework overlay |

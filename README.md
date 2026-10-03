@@ -90,7 +90,7 @@ npm run test:e2e
 
 If installed Rust is absent from PATH, prepend `$env:USERPROFILE\.cargo\bin`. Browser mode needs the Rust dev adapter; `vite preview` serves assets only. Use Tauri for standalone offline execution.
 
-Rust: **29 tests**; frontend: **29 unit cases**, including replay reduction against a real Rust-produced fixture. **18 Playwright flows** cover three pairings × five map families, editor validity, four contenders, saved-log import and 390px responsiveness. Gates use an independent O(V²) optimality oracle, with separate step/cost objectives.
+Rust: **29 tests**; frontend: **30 unit cases**, including replay reduction against a real Rust-produced fixture and unreachable-cost analysis. **18 Playwright flows** cover three pairings × five map families, editor validity, four contenders, saved-log import and 390px responsiveness. Gates use an independent O(V²) optimality oracle, with separate step/cost objectives.
 
 ```powershell
 cargo run --release -p arena-cli -- gate --output phase0-gate.json
