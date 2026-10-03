@@ -1,0 +1,32 @@
+import {createRequire} from 'node:module';
+import {resolve} from 'node:path';
+import {writeFile} from 'node:fs/promises';
+const require=createRequire(resolve('package.json'));
+const {chromium}=require('@playwright/test');
+const browser=await chromium.connectOverCDP('http://127.0.0.1:9223',{timeout:60000});
+const page=browser.contexts()[0].pages()[0];
+const errors=[];page.on('pageerror',e=>errors.push(e.message));
+const remoteRequests=[];page.on('request',req=>{if(req.url().startsWith('https:'))remoteRequests.push(req.url());});
+await page.route('https://**',route=>route.abort());
+await page.getByRole('button',{name:'Run experiment'}).waitFor({timeout:60000});
+const cases=[];
+for(const [a,b,family] of [['bfs','dfs','open'],['dijkstra','astar','weighted'],['astar','greedy','backtracker']]) {
+  await page.getByLabel('Width',{exact:true}).fill('16');await page.getByLabel('Height',{exact:true}).fill('16');
+  await page.getByLabel('Map family').selectOption(family);await page.getByLabel('Algorithm A',{exact:true}).selectOption(a);await page.getByLabel('Algorithm B',{exact:true}).selectOption(b);
+  await page.getByRole('button',{name:'Regenerate',exact:false}).click();
+  await page.getByRole('button',{name:'Run experiment'}).click();await page.getByLabel('Event timeline').waitFor({timeout:60000});
+  await page.getByLabel('End',{exact:true}).click();const final=await page.locator('.race-metrics').allTextContents();
+  await page.getByLabel('Beginning',{exact:true}).click();await page.getByLabel('Step expansion',{exact:true}).click();await page.getByLabel('Step backward',{exact:true}).click();await page.getByLabel('End',{exact:true}).click();
+  const replayMatches=JSON.stringify(final)===JSON.stringify(await page.locator('.race-metrics').allTextContents());
+  await page.getByRole('button',{name:'INSPECT',exact:true}).click();await page.getByLabel('Algorithm execution grid').first().click({position:{x:20,y:20}});
+  const inspector=await page.locator('.node-details').isVisible();
+  await page.getByRole('button',{name:'ANALYZE',exact:true}).click();const analysis=await page.getByRole('heading',{name:'Measured execution'}).isVisible();
+  cases.push({a,b,family,final,replayMatches,inspector,analysis});
+  await page.getByRole('button',{name:'RACE',exact:true}).click();
+}
+await page.screenshot({path:'docs/screenshots/windows-packaged.png',fullPage:true});
+const report={buildType:'Tauri 2 Windows x64 release executable; NSIS installer also built',url:page.url(),title:await page.title(),tauri:await page.evaluate(()=> '__TAURI_INTERNALS__' in window),httpsRequestsBlocked:true,remoteRequests,consoleErrors:errors,cases};
+await writeFile('windows-launch-verification.json',JSON.stringify(report,null,2));
+console.log(JSON.stringify(report,null,2));
+await browser.close();
+if(errors.length||!report.tauri||cases.some(c=>!c.replayMatches||!c.inspector||!c.analysis))process.exit(1);
