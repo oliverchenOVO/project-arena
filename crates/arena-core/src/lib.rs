@@ -1,0 +1,13 @@
+//! UI-independent deterministic execution, generation and replay.
+pub mod analysis;
+pub mod engine;
+pub mod event;
+pub mod grid;
+pub mod replay;
+
+pub use engine::{execute, Algorithm, Heuristic, RunConfig, RunLog};
+pub use grid::{generate, Generator, Grid, MapConfig, Terrain};
+
+pub const ENGINE_VERSION: &str = "arena-engine/1";
+pub const SCHEMA_VERSION: u32 = 1;
+
