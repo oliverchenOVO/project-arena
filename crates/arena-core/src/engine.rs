@@ -14,6 +14,8 @@ pub enum Algorithm {
     Bfs,
     Dijkstra,
     Astar,
+    Dfs,
+    Greedy,
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
@@ -75,8 +77,10 @@ impl RunConfig {
         {
             return Err("unsupported algorithm version or ordering policy".into());
         }
-        if self.algorithm != Algorithm::Astar && self.heuristic != Heuristic::Zero {
-            return Err("BFS and Dijkstra require zero heuristic".into());
+        if !matches!(self.algorithm, Algorithm::Astar | Algorithm::Greedy)
+            && self.heuristic != Heuristic::Zero
+        {
+            return Err("BFS, DFS and Dijkstra require zero heuristic".into());
         }
         Ok(())
     }
@@ -294,15 +298,20 @@ pub fn execute(
     );
     frontier_entries[grid.start] += 1;
     emit(EventKind::FrontierAdded { node: grid.start }, tick);
-    if config.algorithm == Algorithm::Bfs {
+    if matches!(config.algorithm, Algorithm::Bfs | Algorithm::Dfs) {
         fifo.push_back(grid.start);
     } else {
         heap.push(Reverse((initial_h, initial_h, insertion, grid.start, 0)));
     }
     let mut path = Vec::new();
     loop {
-        let entry = if config.algorithm == Algorithm::Bfs {
-            fifo.pop_front().map(|node| (node, costs[node].unwrap()))
+        let entry = if matches!(config.algorithm, Algorithm::Bfs | Algorithm::Dfs) {
+            (if config.algorithm == Algorithm::Dfs {
+                fifo.pop_back()
+            } else {
+                fifo.pop_front()
+            })
+            .map(|node| (node, costs[node].unwrap()))
         } else {
             heap.pop().map(|Reverse((_, _, _, node, g))| (node, g))
         };
@@ -355,7 +364,10 @@ pub fn execute(
                 },
                 tick,
             );
-            let improve = if config.algorithm == Algorithm::Bfs {
+            let improve = if matches!(
+                config.algorithm,
+                Algorithm::Bfs | Algorithm::Dfs | Algorithm::Greedy
+            ) {
                 !discovered[next]
             } else {
                 !closed[next] && costs[next].is_none_or(|old| candidate < old)
@@ -389,10 +401,15 @@ pub fn execute(
             insertion += 1;
             frontier_entries[next] += 1;
             emit(EventKind::FrontierAdded { node: next }, tick);
-            if config.algorithm == Algorithm::Bfs {
+            if matches!(config.algorithm, Algorithm::Bfs | Algorithm::Dfs) {
                 fifo.push_back(next);
             } else {
-                heap.push(Reverse((candidate + h, h, insertion, next, candidate)));
+                let priority = if config.algorithm == Algorithm::Greedy {
+                    h
+                } else {
+                    candidate + h
+                };
+                heap.push(Reverse((priority, h, insertion, next, candidate)));
             }
         }
     }

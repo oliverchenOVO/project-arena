@@ -13,6 +13,8 @@ fn algorithm(value: &str) -> Result<Algorithm, String> {
         "bfs" => Ok(Algorithm::Bfs),
         "dijkstra" => Ok(Algorithm::Dijkstra),
         "astar" => Ok(Algorithm::Astar),
+        "dfs" => Ok(Algorithm::Dfs),
+        "greedy" => Ok(Algorithm::Greedy),
         _ => Err(format!("unknown algorithm: {value}")),
     }
 }
@@ -41,7 +43,7 @@ fn heuristic(value: &str) -> Result<Heuristic, String> {
 fn config(a: Algorithm) -> RunConfig {
     RunConfig::new(
         a,
-        if a == Algorithm::Astar {
+        if matches!(a, Algorithm::Astar | Algorithm::Greedy) {
             Heuristic::Manhattan
         } else {
             Heuristic::Zero
@@ -60,7 +62,7 @@ fn output(path: Option<&String>, value: &Value) -> Result<(), String> {
     Ok(())
 }
 
-fn gate(options: &BTreeMap<String, String>) -> Result<(), String> {
+fn gate(options: &BTreeMap<String, String>, phase1: bool) -> Result<(), String> {
     let began = Instant::now();
     let families = [
         Generator::Open,
@@ -87,7 +89,18 @@ fn gate(options: &BTreeMap<String, String>) -> Result<(), String> {
         }
         let cost_oracle = reference_cost(&grid, false);
         let steps_oracle = reference_cost(&grid, true);
-        for a in [Algorithm::Bfs, Algorithm::Dijkstra, Algorithm::Astar] {
+        let algorithms = if phase1 {
+            vec![
+                Algorithm::Bfs,
+                Algorithm::Dijkstra,
+                Algorithm::Astar,
+                Algorithm::Dfs,
+                Algorithm::Greedy,
+            ]
+        } else {
+            vec![Algorithm::Bfs, Algorithm::Dijkstra, Algorithm::Astar]
+        };
+        for a in algorithms {
             let first = execute(&grid, &map, &config(a))?;
             let second = execute(&grid, &map, &config(a))?;
             executions += 2;
@@ -109,19 +122,21 @@ fn gate(options: &BTreeMap<String, String>) -> Result<(), String> {
                 } else {
                     cost_oracle
                 };
-                if actual != expected {
+                if !matches!(a, Algorithm::Dfs | Algorithm::Greedy) && actual != expected {
                     return Err(format!(
                         "optimality mismatch {seed} {a:?}: {actual:?} != {expected:?}"
                     ));
                 }
-                optimal_cases += 1;
+                if !matches!(a, Algorithm::Dfs | Algorithm::Greedy) {
+                    optimal_cases += 1;
+                }
             }
         }
         if seed % 20 == 19 {
             println!("Validated seeds 0..{seed} ({executions} executions)");
         }
     }
-    let report = json!({"status":"PHASE 0 PASS","engineVersion":arena_core::ENGINE_VERSION,"seedsTested":100,"algorithms":["bfs","dijkstra","astar"],"repetitions":2,"executions":executions,"generatorFamilies":8,"mapDeterminismCases":100,"determinismComparisons":300,"determinismMismatches":0,"invalidPaths":0,"crashes":0,"replayCases":replay_cases,"seekCases":seek_cases,"replayDivergences":0,"optimalityCases":optimal_cases,"durationMs":began.elapsed().as_secs_f64()*1000.0});
+    let report = json!({"status":if phase1 {"PHASE 1 CORE PASS"} else {"PHASE 0 PASS"},"engineVersion":arena_core::ENGINE_VERSION,"seedsTested":100,"algorithms":if phase1 {vec!["bfs","dijkstra","astar","dfs","greedy"]}else{vec!["bfs","dijkstra","astar"]},"repetitions":2,"executions":executions,"generatorFamilies":8,"mapDeterminismCases":100,"determinismComparisons":executions/2,"determinismMismatches":0,"invalidPaths":0,"crashes":0,"replayCases":replay_cases,"seekCases":seek_cases,"replayDivergences":0,"optimalityCases":optimal_cases,"durationMs":began.elapsed().as_secs_f64()*1000.0});
     println!("{}", serde_json::to_string_pretty(&report).unwrap());
     output(options.get("output"), &report)
 }
@@ -157,7 +172,13 @@ fn benchmark(options: &BTreeMap<String, String>) -> Result<(), String> {
                     wall_percent,
                 };
                 let grid = generate(&map)?;
-                for a in [Algorithm::Bfs, Algorithm::Dijkstra, Algorithm::Astar] {
+                for a in [
+                    Algorithm::Bfs,
+                    Algorithm::Dijkstra,
+                    Algorithm::Astar,
+                    Algorithm::Dfs,
+                    Algorithm::Greedy,
+                ] {
                     let run = execute(&grid, &map, &config(a))?;
                     let began = Instant::now();
                     let mut replay = Replay::new(&run.log.events, grid.cells.len());
@@ -179,8 +200,28 @@ fn benchmark(options: &BTreeMap<String, String>) -> Result<(), String> {
             }
         }
         println!("Measured {size}×{size}: {} records so far", records.len());
+        for name in ["bfs", "dijkstra", "astar", "dfs", "greedy"] {
+            let group = records
+                .iter()
+                .filter(|r| r["size"] == size && r["algorithm"] == name)
+                .collect::<Vec<_>>();
+            let mut compute = group
+                .iter()
+                .map(|r| (r["computeMs"].as_f64().unwrap() * 1e6) as u64)
+                .collect::<Vec<_>>();
+            let max_events = group
+                .iter()
+                .map(|r| r["events"].as_u64().unwrap())
+                .max()
+                .unwrap();
+            let max_seek = group
+                .iter()
+                .map(|r| r["seekP95Ms"].as_f64().unwrap())
+                .fold(0.0, f64::max);
+            println!("  {name:8} compute p50={:.3} ms p95={:.3} ms; max events={max_events}; max seek p95={max_seek:.3} ms",percentile(&mut compute,50),percentile(&mut compute,95));
+        }
     }
-    let report = json!({"engineVersion":arena_core::ENGINE_VERSION,"build":"release recommended; caller must record actual profile","timingScope":"search + event collection; excludes hashing/map generation/playback","records":records});
+    let report = json!({"engineVersion":arena_core::ENGINE_VERSION,"build":if cfg!(debug_assertions){"debug"}else{"release"},"os":std::env::consts::OS,"arch":std::env::consts::ARCH,"timingScope":"search + event collection; excludes hashing/map generation/playback","records":records});
     output(options.get("output"), &report)?;
     if options.get("output").is_none() {
         println!("{}", serde_json::to_string_pretty(&report).unwrap());
@@ -214,9 +255,9 @@ fn main_run() -> Result<(), String> {
             "heuristic",
             "output",
         ],
-        "gate" | "benchmark" => &["output"],
+        "gate" | "gate-phase1" | "benchmark" => &["output"],
         "replay" => &["input", "cursor"],
-        "help" => &[],
+        "help" | "bridge" => &[],
         _ => return Err(format!("unknown command {command}")),
     };
     for key in options.keys() {
@@ -225,7 +266,17 @@ fn main_run() -> Result<(), String> {
         }
     }
     match command.as_str() {
-        "gate" => gate(&options),
+        "bridge" => {
+            let request = serde_json::from_reader(std::io::stdin()).map_err(|e| e.to_string())?;
+            let response = arena_core::bridge::handle(request)?;
+            println!(
+                "{}",
+                serde_json::to_string(&response).map_err(|e| e.to_string())?
+            );
+            Ok(())
+        }
+        "gate" => gate(&options, false),
+        "gate-phase1" => gate(&options, true),
         "benchmark" => benchmark(&options),
         "run" => {
             let mut map = MapConfig::default();

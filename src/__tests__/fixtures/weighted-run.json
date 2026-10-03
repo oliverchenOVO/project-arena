@@ -1,0 +1,5916 @@
+{
+  "canonical_hash": "c2c5caeb0d4cb55c2ef0d84f589ff6c425f14d2999c377bbe95a3560839d119b",
+  "config": {
+    "algorithm": "dijkstra",
+    "algorithm_version": "1",
+    "heuristic": "zero",
+    "neighbor_order": "N,E,S,W",
+    "tie_break": "priority,h,insertion"
+  },
+  "engine_version": "arena-engine/1",
+  "events": [
+    {
+      "sequence": 0,
+      "tick": 0,
+      "type": "run_started"
+    },
+    {
+      "node": 0,
+      "sequence": 1,
+      "tick": 0,
+      "type": "node_discovered"
+    },
+    {
+      "f": 0,
+      "g": 0,
+      "h": 0,
+      "node": 0,
+      "sequence": 2,
+      "tick": 0,
+      "type": "cost_updated"
+    },
+    {
+      "node": 0,
+      "sequence": 3,
+      "tick": 0,
+      "type": "frontier_added"
+    },
+    {
+      "node": 0,
+      "sequence": 4,
+      "tick": 0,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 0,
+      "sequence": 5,
+      "tick": 1,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 0,
+      "sequence": 6,
+      "tick": 1,
+      "to": 1,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 1,
+      "node": 1,
+      "sequence": 7,
+      "tick": 1,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 1,
+      "sequence": 8,
+      "tick": 1,
+      "type": "node_discovered"
+    },
+    {
+      "f": 1,
+      "g": 1,
+      "h": 0,
+      "node": 1,
+      "sequence": 9,
+      "tick": 1,
+      "type": "cost_updated"
+    },
+    {
+      "node": 1,
+      "parent": 0,
+      "sequence": 10,
+      "tick": 1,
+      "type": "parent_updated"
+    },
+    {
+      "node": 1,
+      "sequence": 11,
+      "tick": 1,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 0,
+      "sequence": 12,
+      "tick": 1,
+      "to": 8,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 1,
+      "node": 8,
+      "sequence": 13,
+      "tick": 1,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 8,
+      "sequence": 14,
+      "tick": 1,
+      "type": "node_discovered"
+    },
+    {
+      "f": 1,
+      "g": 1,
+      "h": 0,
+      "node": 8,
+      "sequence": 15,
+      "tick": 1,
+      "type": "cost_updated"
+    },
+    {
+      "node": 8,
+      "parent": 0,
+      "sequence": 16,
+      "tick": 1,
+      "type": "parent_updated"
+    },
+    {
+      "node": 8,
+      "sequence": 17,
+      "tick": 1,
+      "type": "frontier_added"
+    },
+    {
+      "node": 1,
+      "sequence": 18,
+      "tick": 1,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 1,
+      "sequence": 19,
+      "tick": 2,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 3,
+      "from": 1,
+      "sequence": 20,
+      "tick": 2,
+      "to": 2,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 4,
+      "node": 2,
+      "sequence": 21,
+      "tick": 2,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 2,
+      "sequence": 22,
+      "tick": 2,
+      "type": "node_discovered"
+    },
+    {
+      "f": 4,
+      "g": 4,
+      "h": 0,
+      "node": 2,
+      "sequence": 23,
+      "tick": 2,
+      "type": "cost_updated"
+    },
+    {
+      "node": 2,
+      "parent": 1,
+      "sequence": 24,
+      "tick": 2,
+      "type": "parent_updated"
+    },
+    {
+      "node": 2,
+      "sequence": 25,
+      "tick": 2,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 3,
+      "from": 1,
+      "sequence": 26,
+      "tick": 2,
+      "to": 9,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 4,
+      "node": 9,
+      "sequence": 27,
+      "tick": 2,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 9,
+      "sequence": 28,
+      "tick": 2,
+      "type": "node_discovered"
+    },
+    {
+      "f": 4,
+      "g": 4,
+      "h": 0,
+      "node": 9,
+      "sequence": 29,
+      "tick": 2,
+      "type": "cost_updated"
+    },
+    {
+      "node": 9,
+      "parent": 1,
+      "sequence": 30,
+      "tick": 2,
+      "type": "parent_updated"
+    },
+    {
+      "node": 9,
+      "sequence": 31,
+      "tick": 2,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 1,
+      "sequence": 32,
+      "tick": 2,
+      "to": 0,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 2,
+      "node": 0,
+      "sequence": 33,
+      "tick": 2,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 8,
+      "sequence": 34,
+      "tick": 2,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 8,
+      "sequence": 35,
+      "tick": 3,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 8,
+      "sequence": 36,
+      "tick": 3,
+      "to": 0,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 2,
+      "node": 0,
+      "sequence": 37,
+      "tick": 3,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 8,
+      "sequence": 38,
+      "tick": 3,
+      "to": 9,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 4,
+      "node": 9,
+      "sequence": 39,
+      "tick": 3,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 8,
+      "sequence": 40,
+      "tick": 3,
+      "to": 16,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 2,
+      "node": 16,
+      "sequence": 41,
+      "tick": 3,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 16,
+      "sequence": 42,
+      "tick": 3,
+      "type": "node_discovered"
+    },
+    {
+      "f": 2,
+      "g": 2,
+      "h": 0,
+      "node": 16,
+      "sequence": 43,
+      "tick": 3,
+      "type": "cost_updated"
+    },
+    {
+      "node": 16,
+      "parent": 8,
+      "sequence": 44,
+      "tick": 3,
+      "type": "parent_updated"
+    },
+    {
+      "node": 16,
+      "sequence": 45,
+      "tick": 3,
+      "type": "frontier_added"
+    },
+    {
+      "node": 16,
+      "sequence": 46,
+      "tick": 3,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 16,
+      "sequence": 47,
+      "tick": 4,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 16,
+      "sequence": 48,
+      "tick": 4,
+      "to": 8,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 3,
+      "node": 8,
+      "sequence": 49,
+      "tick": 4,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 5,
+      "from": 16,
+      "sequence": 50,
+      "tick": 4,
+      "to": 17,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 7,
+      "node": 17,
+      "sequence": 51,
+      "tick": 4,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 17,
+      "sequence": 52,
+      "tick": 4,
+      "type": "node_discovered"
+    },
+    {
+      "f": 7,
+      "g": 7,
+      "h": 0,
+      "node": 17,
+      "sequence": 53,
+      "tick": 4,
+      "type": "cost_updated"
+    },
+    {
+      "node": 17,
+      "parent": 16,
+      "sequence": 54,
+      "tick": 4,
+      "type": "parent_updated"
+    },
+    {
+      "node": 17,
+      "sequence": 55,
+      "tick": 4,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 16,
+      "sequence": 56,
+      "tick": 4,
+      "to": 24,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 3,
+      "node": 24,
+      "sequence": 57,
+      "tick": 4,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 24,
+      "sequence": 58,
+      "tick": 4,
+      "type": "node_discovered"
+    },
+    {
+      "f": 3,
+      "g": 3,
+      "h": 0,
+      "node": 24,
+      "sequence": 59,
+      "tick": 4,
+      "type": "cost_updated"
+    },
+    {
+      "node": 24,
+      "parent": 16,
+      "sequence": 60,
+      "tick": 4,
+      "type": "parent_updated"
+    },
+    {
+      "node": 24,
+      "sequence": 61,
+      "tick": 4,
+      "type": "frontier_added"
+    },
+    {
+      "node": 24,
+      "sequence": 62,
+      "tick": 4,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 24,
+      "sequence": 63,
+      "tick": 5,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 24,
+      "sequence": 64,
+      "tick": 5,
+      "to": 16,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 4,
+      "node": 16,
+      "sequence": 65,
+      "tick": 5,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 24,
+      "sequence": 66,
+      "tick": 5,
+      "to": 25,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 4,
+      "node": 25,
+      "sequence": 67,
+      "tick": 5,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 25,
+      "sequence": 68,
+      "tick": 5,
+      "type": "node_discovered"
+    },
+    {
+      "f": 4,
+      "g": 4,
+      "h": 0,
+      "node": 25,
+      "sequence": 69,
+      "tick": 5,
+      "type": "cost_updated"
+    },
+    {
+      "node": 25,
+      "parent": 24,
+      "sequence": 70,
+      "tick": 5,
+      "type": "parent_updated"
+    },
+    {
+      "node": 25,
+      "sequence": 71,
+      "tick": 5,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 5,
+      "from": 24,
+      "sequence": 72,
+      "tick": 5,
+      "to": 32,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 8,
+      "node": 32,
+      "sequence": 73,
+      "tick": 5,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 32,
+      "sequence": 74,
+      "tick": 5,
+      "type": "node_discovered"
+    },
+    {
+      "f": 8,
+      "g": 8,
+      "h": 0,
+      "node": 32,
+      "sequence": 75,
+      "tick": 5,
+      "type": "cost_updated"
+    },
+    {
+      "node": 32,
+      "parent": 24,
+      "sequence": 76,
+      "tick": 5,
+      "type": "parent_updated"
+    },
+    {
+      "node": 32,
+      "sequence": 77,
+      "tick": 5,
+      "type": "frontier_added"
+    },
+    {
+      "node": 2,
+      "sequence": 78,
+      "tick": 5,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 2,
+      "sequence": 79,
+      "tick": 6,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 5,
+      "from": 2,
+      "sequence": 80,
+      "tick": 6,
+      "to": 3,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 9,
+      "node": 3,
+      "sequence": 81,
+      "tick": 6,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 3,
+      "sequence": 82,
+      "tick": 6,
+      "type": "node_discovered"
+    },
+    {
+      "f": 9,
+      "g": 9,
+      "h": 0,
+      "node": 3,
+      "sequence": 83,
+      "tick": 6,
+      "type": "cost_updated"
+    },
+    {
+      "node": 3,
+      "parent": 2,
+      "sequence": 84,
+      "tick": 6,
+      "type": "parent_updated"
+    },
+    {
+      "node": 3,
+      "sequence": 85,
+      "tick": 6,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 2,
+      "sequence": 86,
+      "tick": 6,
+      "to": 10,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 5,
+      "node": 10,
+      "sequence": 87,
+      "tick": 6,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 10,
+      "sequence": 88,
+      "tick": 6,
+      "type": "node_discovered"
+    },
+    {
+      "f": 5,
+      "g": 5,
+      "h": 0,
+      "node": 10,
+      "sequence": 89,
+      "tick": 6,
+      "type": "cost_updated"
+    },
+    {
+      "node": 10,
+      "parent": 2,
+      "sequence": 90,
+      "tick": 6,
+      "type": "parent_updated"
+    },
+    {
+      "node": 10,
+      "sequence": 91,
+      "tick": 6,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 2,
+      "sequence": 92,
+      "tick": 6,
+      "to": 1,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 5,
+      "node": 1,
+      "sequence": 93,
+      "tick": 6,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 9,
+      "sequence": 94,
+      "tick": 6,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 9,
+      "sequence": 95,
+      "tick": 7,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 9,
+      "sequence": 96,
+      "tick": 7,
+      "to": 1,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 5,
+      "node": 1,
+      "sequence": 97,
+      "tick": 7,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 9,
+      "sequence": 98,
+      "tick": 7,
+      "to": 10,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 5,
+      "node": 10,
+      "sequence": 99,
+      "tick": 7,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 5,
+      "from": 9,
+      "sequence": 100,
+      "tick": 7,
+      "to": 17,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 9,
+      "node": 17,
+      "sequence": 101,
+      "tick": 7,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 9,
+      "sequence": 102,
+      "tick": 7,
+      "to": 8,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 5,
+      "node": 8,
+      "sequence": 103,
+      "tick": 7,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 25,
+      "sequence": 104,
+      "tick": 7,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 25,
+      "sequence": 105,
+      "tick": 8,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 5,
+      "from": 25,
+      "sequence": 106,
+      "tick": 8,
+      "to": 17,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 9,
+      "node": 17,
+      "sequence": 107,
+      "tick": 8,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 25,
+      "sequence": 108,
+      "tick": 8,
+      "to": 26,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 5,
+      "node": 26,
+      "sequence": 109,
+      "tick": 8,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 26,
+      "sequence": 110,
+      "tick": 8,
+      "type": "node_discovered"
+    },
+    {
+      "f": 5,
+      "g": 5,
+      "h": 0,
+      "node": 26,
+      "sequence": 111,
+      "tick": 8,
+      "type": "cost_updated"
+    },
+    {
+      "node": 26,
+      "parent": 25,
+      "sequence": 112,
+      "tick": 8,
+      "type": "parent_updated"
+    },
+    {
+      "node": 26,
+      "sequence": 113,
+      "tick": 8,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 25,
+      "sequence": 114,
+      "tick": 8,
+      "to": 33,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 5,
+      "node": 33,
+      "sequence": 115,
+      "tick": 8,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 33,
+      "sequence": 116,
+      "tick": 8,
+      "type": "node_discovered"
+    },
+    {
+      "f": 5,
+      "g": 5,
+      "h": 0,
+      "node": 33,
+      "sequence": 117,
+      "tick": 8,
+      "type": "cost_updated"
+    },
+    {
+      "node": 33,
+      "parent": 25,
+      "sequence": 118,
+      "tick": 8,
+      "type": "parent_updated"
+    },
+    {
+      "node": 33,
+      "sequence": 119,
+      "tick": 8,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 25,
+      "sequence": 120,
+      "tick": 8,
+      "to": 24,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 5,
+      "node": 24,
+      "sequence": 121,
+      "tick": 8,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 10,
+      "sequence": 122,
+      "tick": 8,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 10,
+      "sequence": 123,
+      "tick": 9,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 3,
+      "from": 10,
+      "sequence": 124,
+      "tick": 9,
+      "to": 2,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 8,
+      "node": 2,
+      "sequence": 125,
+      "tick": 9,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 10,
+      "sequence": 126,
+      "tick": 9,
+      "to": 11,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 6,
+      "node": 11,
+      "sequence": 127,
+      "tick": 9,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 11,
+      "sequence": 128,
+      "tick": 9,
+      "type": "node_discovered"
+    },
+    {
+      "f": 6,
+      "g": 6,
+      "h": 0,
+      "node": 11,
+      "sequence": 129,
+      "tick": 9,
+      "type": "cost_updated"
+    },
+    {
+      "node": 11,
+      "parent": 10,
+      "sequence": 130,
+      "tick": 9,
+      "type": "parent_updated"
+    },
+    {
+      "node": 11,
+      "sequence": 131,
+      "tick": 9,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 10,
+      "sequence": 132,
+      "tick": 9,
+      "to": 18,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 6,
+      "node": 18,
+      "sequence": 133,
+      "tick": 9,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 18,
+      "sequence": 134,
+      "tick": 9,
+      "type": "node_discovered"
+    },
+    {
+      "f": 6,
+      "g": 6,
+      "h": 0,
+      "node": 18,
+      "sequence": 135,
+      "tick": 9,
+      "type": "cost_updated"
+    },
+    {
+      "node": 18,
+      "parent": 10,
+      "sequence": 136,
+      "tick": 9,
+      "type": "parent_updated"
+    },
+    {
+      "node": 18,
+      "sequence": 137,
+      "tick": 9,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 3,
+      "from": 10,
+      "sequence": 138,
+      "tick": 9,
+      "to": 9,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 8,
+      "node": 9,
+      "sequence": 139,
+      "tick": 9,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 26,
+      "sequence": 140,
+      "tick": 9,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 26,
+      "sequence": 141,
+      "tick": 10,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 26,
+      "sequence": 142,
+      "tick": 10,
+      "to": 18,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 6,
+      "node": 18,
+      "sequence": 143,
+      "tick": 10,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 10,
+      "from": 26,
+      "sequence": 144,
+      "tick": 10,
+      "to": 27,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 15,
+      "node": 27,
+      "sequence": 145,
+      "tick": 10,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 27,
+      "sequence": 146,
+      "tick": 10,
+      "type": "node_discovered"
+    },
+    {
+      "f": 15,
+      "g": 15,
+      "h": 0,
+      "node": 27,
+      "sequence": 147,
+      "tick": 10,
+      "type": "cost_updated"
+    },
+    {
+      "node": 27,
+      "parent": 26,
+      "sequence": 148,
+      "tick": 10,
+      "type": "parent_updated"
+    },
+    {
+      "node": 27,
+      "sequence": 149,
+      "tick": 10,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 26,
+      "sequence": 150,
+      "tick": 10,
+      "to": 34,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 6,
+      "node": 34,
+      "sequence": 151,
+      "tick": 10,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 34,
+      "sequence": 152,
+      "tick": 10,
+      "type": "node_discovered"
+    },
+    {
+      "f": 6,
+      "g": 6,
+      "h": 0,
+      "node": 34,
+      "sequence": 153,
+      "tick": 10,
+      "type": "cost_updated"
+    },
+    {
+      "node": 34,
+      "parent": 26,
+      "sequence": 154,
+      "tick": 10,
+      "type": "parent_updated"
+    },
+    {
+      "node": 34,
+      "sequence": 155,
+      "tick": 10,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 26,
+      "sequence": 156,
+      "tick": 10,
+      "to": 25,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 6,
+      "node": 25,
+      "sequence": 157,
+      "tick": 10,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 33,
+      "sequence": 158,
+      "tick": 10,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 33,
+      "sequence": 159,
+      "tick": 11,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 33,
+      "sequence": 160,
+      "tick": 11,
+      "to": 25,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 6,
+      "node": 25,
+      "sequence": 161,
+      "tick": 11,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 33,
+      "sequence": 162,
+      "tick": 11,
+      "to": 34,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 6,
+      "node": 34,
+      "sequence": 163,
+      "tick": 11,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 33,
+      "sequence": 164,
+      "tick": 11,
+      "to": 41,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 6,
+      "node": 41,
+      "sequence": 165,
+      "tick": 11,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 41,
+      "sequence": 166,
+      "tick": 11,
+      "type": "node_discovered"
+    },
+    {
+      "f": 6,
+      "g": 6,
+      "h": 0,
+      "node": 41,
+      "sequence": 167,
+      "tick": 11,
+      "type": "cost_updated"
+    },
+    {
+      "node": 41,
+      "parent": 33,
+      "sequence": 168,
+      "tick": 11,
+      "type": "parent_updated"
+    },
+    {
+      "node": 41,
+      "sequence": 169,
+      "tick": 11,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 5,
+      "from": 33,
+      "sequence": 170,
+      "tick": 11,
+      "to": 32,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 10,
+      "node": 32,
+      "sequence": 171,
+      "tick": 11,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 11,
+      "sequence": 172,
+      "tick": 11,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 11,
+      "sequence": 173,
+      "tick": 12,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 5,
+      "from": 11,
+      "sequence": 174,
+      "tick": 12,
+      "to": 3,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 11,
+      "node": 3,
+      "sequence": 175,
+      "tick": 12,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 11,
+      "sequence": 176,
+      "tick": 12,
+      "to": 12,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 9,
+      "node": 12,
+      "sequence": 177,
+      "tick": 12,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 12,
+      "sequence": 178,
+      "tick": 12,
+      "type": "node_discovered"
+    },
+    {
+      "f": 9,
+      "g": 9,
+      "h": 0,
+      "node": 12,
+      "sequence": 179,
+      "tick": 12,
+      "type": "cost_updated"
+    },
+    {
+      "node": 12,
+      "parent": 11,
+      "sequence": 180,
+      "tick": 12,
+      "type": "parent_updated"
+    },
+    {
+      "node": 12,
+      "sequence": 181,
+      "tick": 12,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 11,
+      "sequence": 182,
+      "tick": 12,
+      "to": 19,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 7,
+      "node": 19,
+      "sequence": 183,
+      "tick": 12,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 19,
+      "sequence": 184,
+      "tick": 12,
+      "type": "node_discovered"
+    },
+    {
+      "f": 7,
+      "g": 7,
+      "h": 0,
+      "node": 19,
+      "sequence": 185,
+      "tick": 12,
+      "type": "cost_updated"
+    },
+    {
+      "node": 19,
+      "parent": 11,
+      "sequence": 186,
+      "tick": 12,
+      "type": "parent_updated"
+    },
+    {
+      "node": 19,
+      "sequence": 187,
+      "tick": 12,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 11,
+      "sequence": 188,
+      "tick": 12,
+      "to": 10,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 7,
+      "node": 10,
+      "sequence": 189,
+      "tick": 12,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 18,
+      "sequence": 190,
+      "tick": 12,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 18,
+      "sequence": 191,
+      "tick": 13,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 18,
+      "sequence": 192,
+      "tick": 13,
+      "to": 10,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 7,
+      "node": 10,
+      "sequence": 193,
+      "tick": 13,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 18,
+      "sequence": 194,
+      "tick": 13,
+      "to": 19,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 7,
+      "node": 19,
+      "sequence": 195,
+      "tick": 13,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 18,
+      "sequence": 196,
+      "tick": 13,
+      "to": 26,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 7,
+      "node": 26,
+      "sequence": 197,
+      "tick": 13,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 5,
+      "from": 18,
+      "sequence": 198,
+      "tick": 13,
+      "to": 17,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 11,
+      "node": 17,
+      "sequence": 199,
+      "tick": 13,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 34,
+      "sequence": 200,
+      "tick": 13,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 34,
+      "sequence": 201,
+      "tick": 14,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 34,
+      "sequence": 202,
+      "tick": 14,
+      "to": 26,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 7,
+      "node": 26,
+      "sequence": 203,
+      "tick": 14,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 34,
+      "sequence": 204,
+      "tick": 14,
+      "to": 35,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 9,
+      "node": 35,
+      "sequence": 205,
+      "tick": 14,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 35,
+      "sequence": 206,
+      "tick": 14,
+      "type": "node_discovered"
+    },
+    {
+      "f": 9,
+      "g": 9,
+      "h": 0,
+      "node": 35,
+      "sequence": 207,
+      "tick": 14,
+      "type": "cost_updated"
+    },
+    {
+      "node": 35,
+      "parent": 34,
+      "sequence": 208,
+      "tick": 14,
+      "type": "parent_updated"
+    },
+    {
+      "node": 35,
+      "sequence": 209,
+      "tick": 14,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 34,
+      "sequence": 210,
+      "tick": 14,
+      "to": 42,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 7,
+      "node": 42,
+      "sequence": 211,
+      "tick": 14,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 42,
+      "sequence": 212,
+      "tick": 14,
+      "type": "node_discovered"
+    },
+    {
+      "f": 7,
+      "g": 7,
+      "h": 0,
+      "node": 42,
+      "sequence": 213,
+      "tick": 14,
+      "type": "cost_updated"
+    },
+    {
+      "node": 42,
+      "parent": 34,
+      "sequence": 214,
+      "tick": 14,
+      "type": "parent_updated"
+    },
+    {
+      "node": 42,
+      "sequence": 215,
+      "tick": 14,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 34,
+      "sequence": 216,
+      "tick": 14,
+      "to": 33,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 7,
+      "node": 33,
+      "sequence": 217,
+      "tick": 14,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 41,
+      "sequence": 218,
+      "tick": 14,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 41,
+      "sequence": 219,
+      "tick": 15,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 41,
+      "sequence": 220,
+      "tick": 15,
+      "to": 33,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 7,
+      "node": 33,
+      "sequence": 221,
+      "tick": 15,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 41,
+      "sequence": 222,
+      "tick": 15,
+      "to": 42,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 7,
+      "node": 42,
+      "sequence": 223,
+      "tick": 15,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 41,
+      "sequence": 224,
+      "tick": 15,
+      "to": 49,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 7,
+      "node": 49,
+      "sequence": 225,
+      "tick": 15,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 49,
+      "sequence": 226,
+      "tick": 15,
+      "type": "node_discovered"
+    },
+    {
+      "f": 7,
+      "g": 7,
+      "h": 0,
+      "node": 49,
+      "sequence": 227,
+      "tick": 15,
+      "type": "cost_updated"
+    },
+    {
+      "node": 49,
+      "parent": 41,
+      "sequence": 228,
+      "tick": 15,
+      "type": "parent_updated"
+    },
+    {
+      "node": 49,
+      "sequence": 229,
+      "tick": 15,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 41,
+      "sequence": 230,
+      "tick": 15,
+      "to": 40,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 7,
+      "node": 40,
+      "sequence": 231,
+      "tick": 15,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 40,
+      "sequence": 232,
+      "tick": 15,
+      "type": "node_discovered"
+    },
+    {
+      "f": 7,
+      "g": 7,
+      "h": 0,
+      "node": 40,
+      "sequence": 233,
+      "tick": 15,
+      "type": "cost_updated"
+    },
+    {
+      "node": 40,
+      "parent": 41,
+      "sequence": 234,
+      "tick": 15,
+      "type": "parent_updated"
+    },
+    {
+      "node": 40,
+      "sequence": 235,
+      "tick": 15,
+      "type": "frontier_added"
+    },
+    {
+      "node": 17,
+      "sequence": 236,
+      "tick": 15,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 17,
+      "sequence": 237,
+      "tick": 16,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 3,
+      "from": 17,
+      "sequence": 238,
+      "tick": 16,
+      "to": 9,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 10,
+      "node": 9,
+      "sequence": 239,
+      "tick": 16,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 17,
+      "sequence": 240,
+      "tick": 16,
+      "to": 18,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 8,
+      "node": 18,
+      "sequence": 241,
+      "tick": 16,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 17,
+      "sequence": 242,
+      "tick": 16,
+      "to": 25,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 8,
+      "node": 25,
+      "sequence": 243,
+      "tick": 16,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 17,
+      "sequence": 244,
+      "tick": 16,
+      "to": 16,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 8,
+      "node": 16,
+      "sequence": 245,
+      "tick": 16,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 19,
+      "sequence": 246,
+      "tick": 16,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 19,
+      "sequence": 247,
+      "tick": 17,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 19,
+      "sequence": 248,
+      "tick": 17,
+      "to": 11,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 8,
+      "node": 11,
+      "sequence": 249,
+      "tick": 17,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 19,
+      "sequence": 250,
+      "tick": 17,
+      "to": 20,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 10,
+      "node": 20,
+      "sequence": 251,
+      "tick": 17,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 20,
+      "sequence": 252,
+      "tick": 17,
+      "type": "node_discovered"
+    },
+    {
+      "f": 10,
+      "g": 10,
+      "h": 0,
+      "node": 20,
+      "sequence": 253,
+      "tick": 17,
+      "type": "cost_updated"
+    },
+    {
+      "node": 20,
+      "parent": 19,
+      "sequence": 254,
+      "tick": 17,
+      "type": "parent_updated"
+    },
+    {
+      "node": 20,
+      "sequence": 255,
+      "tick": 17,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 10,
+      "from": 19,
+      "sequence": 256,
+      "tick": 17,
+      "to": 27,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 17,
+      "node": 27,
+      "sequence": 257,
+      "tick": 17,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 19,
+      "sequence": 258,
+      "tick": 17,
+      "to": 18,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 8,
+      "node": 18,
+      "sequence": 259,
+      "tick": 17,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 42,
+      "sequence": 260,
+      "tick": 17,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 42,
+      "sequence": 261,
+      "tick": 18,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 42,
+      "sequence": 262,
+      "tick": 18,
+      "to": 34,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 8,
+      "node": 34,
+      "sequence": 263,
+      "tick": 18,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 42,
+      "sequence": 264,
+      "tick": 18,
+      "to": 43,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 8,
+      "node": 43,
+      "sequence": 265,
+      "tick": 18,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 43,
+      "sequence": 266,
+      "tick": 18,
+      "type": "node_discovered"
+    },
+    {
+      "f": 8,
+      "g": 8,
+      "h": 0,
+      "node": 43,
+      "sequence": 267,
+      "tick": 18,
+      "type": "cost_updated"
+    },
+    {
+      "node": 43,
+      "parent": 42,
+      "sequence": 268,
+      "tick": 18,
+      "type": "parent_updated"
+    },
+    {
+      "node": 43,
+      "sequence": 269,
+      "tick": 18,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 42,
+      "sequence": 270,
+      "tick": 18,
+      "to": 50,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 8,
+      "node": 50,
+      "sequence": 271,
+      "tick": 18,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 50,
+      "sequence": 272,
+      "tick": 18,
+      "type": "node_discovered"
+    },
+    {
+      "f": 8,
+      "g": 8,
+      "h": 0,
+      "node": 50,
+      "sequence": 273,
+      "tick": 18,
+      "type": "cost_updated"
+    },
+    {
+      "node": 50,
+      "parent": 42,
+      "sequence": 274,
+      "tick": 18,
+      "type": "parent_updated"
+    },
+    {
+      "node": 50,
+      "sequence": 275,
+      "tick": 18,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 42,
+      "sequence": 276,
+      "tick": 18,
+      "to": 41,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 8,
+      "node": 41,
+      "sequence": 277,
+      "tick": 18,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 49,
+      "sequence": 278,
+      "tick": 18,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 49,
+      "sequence": 279,
+      "tick": 19,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 49,
+      "sequence": 280,
+      "tick": 19,
+      "to": 41,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 8,
+      "node": 41,
+      "sequence": 281,
+      "tick": 19,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 49,
+      "sequence": 282,
+      "tick": 19,
+      "to": 50,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 8,
+      "node": 50,
+      "sequence": 283,
+      "tick": 19,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 49,
+      "sequence": 284,
+      "tick": 19,
+      "to": 57,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 8,
+      "node": 57,
+      "sequence": 285,
+      "tick": 19,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 57,
+      "sequence": 286,
+      "tick": 19,
+      "type": "node_discovered"
+    },
+    {
+      "f": 8,
+      "g": 8,
+      "h": 0,
+      "node": 57,
+      "sequence": 287,
+      "tick": 19,
+      "type": "cost_updated"
+    },
+    {
+      "node": 57,
+      "parent": 49,
+      "sequence": 288,
+      "tick": 19,
+      "type": "parent_updated"
+    },
+    {
+      "node": 57,
+      "sequence": 289,
+      "tick": 19,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 49,
+      "sequence": 290,
+      "tick": 19,
+      "to": 48,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 8,
+      "node": 48,
+      "sequence": 291,
+      "tick": 19,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 48,
+      "sequence": 292,
+      "tick": 19,
+      "type": "node_discovered"
+    },
+    {
+      "f": 8,
+      "g": 8,
+      "h": 0,
+      "node": 48,
+      "sequence": 293,
+      "tick": 19,
+      "type": "cost_updated"
+    },
+    {
+      "node": 48,
+      "parent": 49,
+      "sequence": 294,
+      "tick": 19,
+      "type": "parent_updated"
+    },
+    {
+      "node": 48,
+      "sequence": 295,
+      "tick": 19,
+      "type": "frontier_added"
+    },
+    {
+      "node": 40,
+      "sequence": 296,
+      "tick": 19,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 40,
+      "sequence": 297,
+      "tick": 20,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 5,
+      "from": 40,
+      "sequence": 298,
+      "tick": 20,
+      "to": 32,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 12,
+      "node": 32,
+      "sequence": 299,
+      "tick": 20,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 40,
+      "sequence": 300,
+      "tick": 20,
+      "to": 41,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 8,
+      "node": 41,
+      "sequence": 301,
+      "tick": 20,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 40,
+      "sequence": 302,
+      "tick": 20,
+      "to": 48,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 8,
+      "node": 48,
+      "sequence": 303,
+      "tick": 20,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 32,
+      "sequence": 304,
+      "tick": 20,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 32,
+      "sequence": 305,
+      "tick": 21,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 32,
+      "sequence": 306,
+      "tick": 21,
+      "to": 24,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 9,
+      "node": 24,
+      "sequence": 307,
+      "tick": 21,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 32,
+      "sequence": 308,
+      "tick": 21,
+      "to": 33,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 9,
+      "node": 33,
+      "sequence": 309,
+      "tick": 21,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 32,
+      "sequence": 310,
+      "tick": 21,
+      "to": 40,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 9,
+      "node": 40,
+      "sequence": 311,
+      "tick": 21,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 43,
+      "sequence": 312,
+      "tick": 21,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 43,
+      "sequence": 313,
+      "tick": 22,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 3,
+      "from": 43,
+      "sequence": 314,
+      "tick": 22,
+      "to": 35,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 11,
+      "node": 35,
+      "sequence": 315,
+      "tick": 22,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 5,
+      "from": 43,
+      "sequence": 316,
+      "tick": 22,
+      "to": 44,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 13,
+      "node": 44,
+      "sequence": 317,
+      "tick": 22,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 44,
+      "sequence": 318,
+      "tick": 22,
+      "type": "node_discovered"
+    },
+    {
+      "f": 13,
+      "g": 13,
+      "h": 0,
+      "node": 44,
+      "sequence": 319,
+      "tick": 22,
+      "type": "cost_updated"
+    },
+    {
+      "node": 44,
+      "parent": 43,
+      "sequence": 320,
+      "tick": 22,
+      "type": "parent_updated"
+    },
+    {
+      "node": 44,
+      "sequence": 321,
+      "tick": 22,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 5,
+      "from": 43,
+      "sequence": 322,
+      "tick": 22,
+      "to": 51,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 13,
+      "node": 51,
+      "sequence": 323,
+      "tick": 22,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 51,
+      "sequence": 324,
+      "tick": 22,
+      "type": "node_discovered"
+    },
+    {
+      "f": 13,
+      "g": 13,
+      "h": 0,
+      "node": 51,
+      "sequence": 325,
+      "tick": 22,
+      "type": "cost_updated"
+    },
+    {
+      "node": 51,
+      "parent": 43,
+      "sequence": 326,
+      "tick": 22,
+      "type": "parent_updated"
+    },
+    {
+      "node": 51,
+      "sequence": 327,
+      "tick": 22,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 43,
+      "sequence": 328,
+      "tick": 22,
+      "to": 42,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 9,
+      "node": 42,
+      "sequence": 329,
+      "tick": 22,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 50,
+      "sequence": 330,
+      "tick": 22,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 50,
+      "sequence": 331,
+      "tick": 23,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 50,
+      "sequence": 332,
+      "tick": 23,
+      "to": 42,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 9,
+      "node": 42,
+      "sequence": 333,
+      "tick": 23,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 5,
+      "from": 50,
+      "sequence": 334,
+      "tick": 23,
+      "to": 51,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 13,
+      "node": 51,
+      "sequence": 335,
+      "tick": 23,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 50,
+      "sequence": 336,
+      "tick": 23,
+      "to": 58,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 9,
+      "node": 58,
+      "sequence": 337,
+      "tick": 23,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 58,
+      "sequence": 338,
+      "tick": 23,
+      "type": "node_discovered"
+    },
+    {
+      "f": 9,
+      "g": 9,
+      "h": 0,
+      "node": 58,
+      "sequence": 339,
+      "tick": 23,
+      "type": "cost_updated"
+    },
+    {
+      "node": 58,
+      "parent": 50,
+      "sequence": 340,
+      "tick": 23,
+      "type": "parent_updated"
+    },
+    {
+      "node": 58,
+      "sequence": 341,
+      "tick": 23,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 50,
+      "sequence": 342,
+      "tick": 23,
+      "to": 49,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 9,
+      "node": 49,
+      "sequence": 343,
+      "tick": 23,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 57,
+      "sequence": 344,
+      "tick": 23,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 57,
+      "sequence": 345,
+      "tick": 24,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 57,
+      "sequence": 346,
+      "tick": 24,
+      "to": 49,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 9,
+      "node": 49,
+      "sequence": 347,
+      "tick": 24,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 57,
+      "sequence": 348,
+      "tick": 24,
+      "to": 58,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 9,
+      "node": 58,
+      "sequence": 349,
+      "tick": 24,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 5,
+      "from": 57,
+      "sequence": 350,
+      "tick": 24,
+      "to": 56,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 13,
+      "node": 56,
+      "sequence": 351,
+      "tick": 24,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 56,
+      "sequence": 352,
+      "tick": 24,
+      "type": "node_discovered"
+    },
+    {
+      "f": 13,
+      "g": 13,
+      "h": 0,
+      "node": 56,
+      "sequence": 353,
+      "tick": 24,
+      "type": "cost_updated"
+    },
+    {
+      "node": 56,
+      "parent": 57,
+      "sequence": 354,
+      "tick": 24,
+      "type": "parent_updated"
+    },
+    {
+      "node": 56,
+      "sequence": 355,
+      "tick": 24,
+      "type": "frontier_added"
+    },
+    {
+      "node": 48,
+      "sequence": 356,
+      "tick": 24,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 48,
+      "sequence": 357,
+      "tick": 25,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 48,
+      "sequence": 358,
+      "tick": 25,
+      "to": 40,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 9,
+      "node": 40,
+      "sequence": 359,
+      "tick": 25,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 48,
+      "sequence": 360,
+      "tick": 25,
+      "to": 49,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 9,
+      "node": 49,
+      "sequence": 361,
+      "tick": 25,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 5,
+      "from": 48,
+      "sequence": 362,
+      "tick": 25,
+      "to": 56,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 13,
+      "node": 56,
+      "sequence": 363,
+      "tick": 25,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 3,
+      "sequence": 364,
+      "tick": 25,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 3,
+      "sequence": 365,
+      "tick": 26,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 10,
+      "from": 3,
+      "sequence": 366,
+      "tick": 26,
+      "to": 4,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 19,
+      "node": 4,
+      "sequence": 367,
+      "tick": 26,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 4,
+      "sequence": 368,
+      "tick": 26,
+      "type": "node_discovered"
+    },
+    {
+      "f": 19,
+      "g": 19,
+      "h": 0,
+      "node": 4,
+      "sequence": 369,
+      "tick": 26,
+      "type": "cost_updated"
+    },
+    {
+      "node": 4,
+      "parent": 3,
+      "sequence": 370,
+      "tick": 26,
+      "type": "parent_updated"
+    },
+    {
+      "node": 4,
+      "sequence": 371,
+      "tick": 26,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 3,
+      "sequence": 372,
+      "tick": 26,
+      "to": 11,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 10,
+      "node": 11,
+      "sequence": 373,
+      "tick": 26,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 3,
+      "sequence": 374,
+      "tick": 26,
+      "to": 2,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 12,
+      "node": 2,
+      "sequence": 375,
+      "tick": 26,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 12,
+      "sequence": 376,
+      "tick": 26,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 12,
+      "sequence": 377,
+      "tick": 27,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 10,
+      "from": 12,
+      "sequence": 378,
+      "tick": 27,
+      "to": 4,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 19,
+      "node": 4,
+      "sequence": 379,
+      "tick": 27,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 12,
+      "sequence": 380,
+      "tick": 27,
+      "to": 13,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 10,
+      "node": 13,
+      "sequence": 381,
+      "tick": 27,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 13,
+      "sequence": 382,
+      "tick": 27,
+      "type": "node_discovered"
+    },
+    {
+      "f": 10,
+      "g": 10,
+      "h": 0,
+      "node": 13,
+      "sequence": 383,
+      "tick": 27,
+      "type": "cost_updated"
+    },
+    {
+      "node": 13,
+      "parent": 12,
+      "sequence": 384,
+      "tick": 27,
+      "type": "parent_updated"
+    },
+    {
+      "node": 13,
+      "sequence": 385,
+      "tick": 27,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 3,
+      "from": 12,
+      "sequence": 386,
+      "tick": 27,
+      "to": 20,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 12,
+      "node": 20,
+      "sequence": 387,
+      "tick": 27,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 12,
+      "sequence": 388,
+      "tick": 27,
+      "to": 11,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 10,
+      "node": 11,
+      "sequence": 389,
+      "tick": 27,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 35,
+      "sequence": 390,
+      "tick": 27,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 35,
+      "sequence": 391,
+      "tick": 28,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 10,
+      "from": 35,
+      "sequence": 392,
+      "tick": 28,
+      "to": 27,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 19,
+      "node": 27,
+      "sequence": 393,
+      "tick": 28,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 35,
+      "sequence": 394,
+      "tick": 28,
+      "to": 36,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 10,
+      "node": 36,
+      "sequence": 395,
+      "tick": 28,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 36,
+      "sequence": 396,
+      "tick": 28,
+      "type": "node_discovered"
+    },
+    {
+      "f": 10,
+      "g": 10,
+      "h": 0,
+      "node": 36,
+      "sequence": 397,
+      "tick": 28,
+      "type": "cost_updated"
+    },
+    {
+      "node": 36,
+      "parent": 35,
+      "sequence": 398,
+      "tick": 28,
+      "type": "parent_updated"
+    },
+    {
+      "node": 36,
+      "sequence": 399,
+      "tick": 28,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 35,
+      "sequence": 400,
+      "tick": 28,
+      "to": 43,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 10,
+      "node": 43,
+      "sequence": 401,
+      "tick": 28,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 35,
+      "sequence": 402,
+      "tick": 28,
+      "to": 34,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 10,
+      "node": 34,
+      "sequence": 403,
+      "tick": 28,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 58,
+      "sequence": 404,
+      "tick": 28,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 58,
+      "sequence": 405,
+      "tick": 29,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 58,
+      "sequence": 406,
+      "tick": 29,
+      "to": 50,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 10,
+      "node": 50,
+      "sequence": 407,
+      "tick": 29,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 58,
+      "sequence": 408,
+      "tick": 29,
+      "to": 59,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 12,
+      "node": 59,
+      "sequence": 409,
+      "tick": 29,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 59,
+      "sequence": 410,
+      "tick": 29,
+      "type": "node_discovered"
+    },
+    {
+      "f": 12,
+      "g": 12,
+      "h": 0,
+      "node": 59,
+      "sequence": 411,
+      "tick": 29,
+      "type": "cost_updated"
+    },
+    {
+      "node": 59,
+      "parent": 58,
+      "sequence": 412,
+      "tick": 29,
+      "type": "parent_updated"
+    },
+    {
+      "node": 59,
+      "sequence": 413,
+      "tick": 29,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 58,
+      "sequence": 414,
+      "tick": 29,
+      "to": 57,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 10,
+      "node": 57,
+      "sequence": 415,
+      "tick": 29,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 20,
+      "sequence": 416,
+      "tick": 29,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 20,
+      "sequence": 417,
+      "tick": 30,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 3,
+      "from": 20,
+      "sequence": 418,
+      "tick": 30,
+      "to": 12,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 13,
+      "node": 12,
+      "sequence": 419,
+      "tick": 30,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 20,
+      "sequence": 420,
+      "tick": 30,
+      "to": 21,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 11,
+      "node": 21,
+      "sequence": 421,
+      "tick": 30,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 21,
+      "sequence": 422,
+      "tick": 30,
+      "type": "node_discovered"
+    },
+    {
+      "f": 11,
+      "g": 11,
+      "h": 0,
+      "node": 21,
+      "sequence": 423,
+      "tick": 30,
+      "type": "cost_updated"
+    },
+    {
+      "node": 21,
+      "parent": 20,
+      "sequence": 424,
+      "tick": 30,
+      "type": "parent_updated"
+    },
+    {
+      "node": 21,
+      "sequence": 425,
+      "tick": 30,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 20,
+      "sequence": 426,
+      "tick": 30,
+      "to": 28,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 11,
+      "node": 28,
+      "sequence": 427,
+      "tick": 30,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 28,
+      "sequence": 428,
+      "tick": 30,
+      "type": "node_discovered"
+    },
+    {
+      "f": 11,
+      "g": 11,
+      "h": 0,
+      "node": 28,
+      "sequence": 429,
+      "tick": 30,
+      "type": "cost_updated"
+    },
+    {
+      "node": 28,
+      "parent": 20,
+      "sequence": 430,
+      "tick": 30,
+      "type": "parent_updated"
+    },
+    {
+      "node": 28,
+      "sequence": 431,
+      "tick": 30,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 20,
+      "sequence": 432,
+      "tick": 30,
+      "to": 19,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 11,
+      "node": 19,
+      "sequence": 433,
+      "tick": 30,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 13,
+      "sequence": 434,
+      "tick": 30,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 13,
+      "sequence": 435,
+      "tick": 31,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 13,
+      "sequence": 436,
+      "tick": 31,
+      "to": 5,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 11,
+      "node": 5,
+      "sequence": 437,
+      "tick": 31,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 5,
+      "sequence": 438,
+      "tick": 31,
+      "type": "node_discovered"
+    },
+    {
+      "f": 11,
+      "g": 11,
+      "h": 0,
+      "node": 5,
+      "sequence": 439,
+      "tick": 31,
+      "type": "cost_updated"
+    },
+    {
+      "node": 5,
+      "parent": 13,
+      "sequence": 440,
+      "tick": 31,
+      "type": "parent_updated"
+    },
+    {
+      "node": 5,
+      "sequence": 441,
+      "tick": 31,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 13,
+      "sequence": 442,
+      "tick": 31,
+      "to": 14,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 11,
+      "node": 14,
+      "sequence": 443,
+      "tick": 31,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 14,
+      "sequence": 444,
+      "tick": 31,
+      "type": "node_discovered"
+    },
+    {
+      "f": 11,
+      "g": 11,
+      "h": 0,
+      "node": 14,
+      "sequence": 445,
+      "tick": 31,
+      "type": "cost_updated"
+    },
+    {
+      "node": 14,
+      "parent": 13,
+      "sequence": 446,
+      "tick": 31,
+      "type": "parent_updated"
+    },
+    {
+      "node": 14,
+      "sequence": 447,
+      "tick": 31,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 13,
+      "sequence": 448,
+      "tick": 31,
+      "to": 21,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 11,
+      "node": 21,
+      "sequence": 449,
+      "tick": 31,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 13,
+      "sequence": 450,
+      "tick": 31,
+      "to": 12,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 13,
+      "node": 12,
+      "sequence": 451,
+      "tick": 31,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 36,
+      "sequence": 452,
+      "tick": 31,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 36,
+      "sequence": 453,
+      "tick": 32,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 36,
+      "sequence": 454,
+      "tick": 32,
+      "to": 28,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 11,
+      "node": 28,
+      "sequence": 455,
+      "tick": 32,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 5,
+      "from": 36,
+      "sequence": 456,
+      "tick": 32,
+      "to": 37,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 15,
+      "node": 37,
+      "sequence": 457,
+      "tick": 32,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 37,
+      "sequence": 458,
+      "tick": 32,
+      "type": "node_discovered"
+    },
+    {
+      "f": 15,
+      "g": 15,
+      "h": 0,
+      "node": 37,
+      "sequence": 459,
+      "tick": 32,
+      "type": "cost_updated"
+    },
+    {
+      "node": 37,
+      "parent": 36,
+      "sequence": 460,
+      "tick": 32,
+      "type": "parent_updated"
+    },
+    {
+      "node": 37,
+      "sequence": 461,
+      "tick": 32,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 5,
+      "from": 36,
+      "sequence": 462,
+      "tick": 32,
+      "to": 44,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 15,
+      "node": 44,
+      "sequence": 463,
+      "tick": 32,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 36,
+      "sequence": 464,
+      "tick": 32,
+      "to": 35,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 13,
+      "node": 35,
+      "sequence": 465,
+      "tick": 32,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 21,
+      "sequence": 466,
+      "tick": 32,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 21,
+      "sequence": 467,
+      "tick": 33,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 21,
+      "sequence": 468,
+      "tick": 33,
+      "to": 13,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 12,
+      "node": 13,
+      "sequence": 469,
+      "tick": 33,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 21,
+      "sequence": 470,
+      "tick": 33,
+      "to": 22,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 14,
+      "node": 22,
+      "sequence": 471,
+      "tick": 33,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 22,
+      "sequence": 472,
+      "tick": 33,
+      "type": "node_discovered"
+    },
+    {
+      "f": 14,
+      "g": 14,
+      "h": 0,
+      "node": 22,
+      "sequence": 473,
+      "tick": 33,
+      "type": "cost_updated"
+    },
+    {
+      "node": 22,
+      "parent": 21,
+      "sequence": 474,
+      "tick": 33,
+      "type": "parent_updated"
+    },
+    {
+      "node": 22,
+      "sequence": 475,
+      "tick": 33,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 3,
+      "from": 21,
+      "sequence": 476,
+      "tick": 33,
+      "to": 29,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 14,
+      "node": 29,
+      "sequence": 477,
+      "tick": 33,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 29,
+      "sequence": 478,
+      "tick": 33,
+      "type": "node_discovered"
+    },
+    {
+      "f": 14,
+      "g": 14,
+      "h": 0,
+      "node": 29,
+      "sequence": 479,
+      "tick": 33,
+      "type": "cost_updated"
+    },
+    {
+      "node": 29,
+      "parent": 21,
+      "sequence": 480,
+      "tick": 33,
+      "type": "parent_updated"
+    },
+    {
+      "node": 29,
+      "sequence": 481,
+      "tick": 33,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 3,
+      "from": 21,
+      "sequence": 482,
+      "tick": 33,
+      "to": 20,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 14,
+      "node": 20,
+      "sequence": 483,
+      "tick": 33,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 28,
+      "sequence": 484,
+      "tick": 33,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 28,
+      "sequence": 485,
+      "tick": 34,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 3,
+      "from": 28,
+      "sequence": 486,
+      "tick": 34,
+      "to": 20,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 14,
+      "node": 20,
+      "sequence": 487,
+      "tick": 34,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 28,
+      "sequence": 488,
+      "tick": 34,
+      "to": 29,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 14,
+      "node": 29,
+      "sequence": 489,
+      "tick": 34,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 28,
+      "sequence": 490,
+      "tick": 34,
+      "to": 36,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 12,
+      "node": 36,
+      "sequence": 491,
+      "tick": 34,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 10,
+      "from": 28,
+      "sequence": 492,
+      "tick": 34,
+      "to": 27,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 21,
+      "node": 27,
+      "sequence": 493,
+      "tick": 34,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 5,
+      "sequence": 494,
+      "tick": 34,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 5,
+      "sequence": 495,
+      "tick": 35,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 5,
+      "sequence": 496,
+      "tick": 35,
+      "to": 6,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 12,
+      "node": 6,
+      "sequence": 497,
+      "tick": 35,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 6,
+      "sequence": 498,
+      "tick": 35,
+      "type": "node_discovered"
+    },
+    {
+      "f": 12,
+      "g": 12,
+      "h": 0,
+      "node": 6,
+      "sequence": 499,
+      "tick": 35,
+      "type": "cost_updated"
+    },
+    {
+      "node": 6,
+      "parent": 5,
+      "sequence": 500,
+      "tick": 35,
+      "type": "parent_updated"
+    },
+    {
+      "node": 6,
+      "sequence": 501,
+      "tick": 35,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 5,
+      "sequence": 502,
+      "tick": 35,
+      "to": 13,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 12,
+      "node": 13,
+      "sequence": 503,
+      "tick": 35,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 10,
+      "from": 5,
+      "sequence": 504,
+      "tick": 35,
+      "to": 4,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 21,
+      "node": 4,
+      "sequence": 505,
+      "tick": 35,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 14,
+      "sequence": 506,
+      "tick": 35,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 14,
+      "sequence": 507,
+      "tick": 36,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 14,
+      "sequence": 508,
+      "tick": 36,
+      "to": 6,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 12,
+      "node": 6,
+      "sequence": 509,
+      "tick": 36,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 14,
+      "sequence": 510,
+      "tick": 36,
+      "to": 15,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 14,
+      "node": 15,
+      "sequence": 511,
+      "tick": 36,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 15,
+      "sequence": 512,
+      "tick": 36,
+      "type": "node_discovered"
+    },
+    {
+      "f": 14,
+      "g": 14,
+      "h": 0,
+      "node": 15,
+      "sequence": 513,
+      "tick": 36,
+      "type": "cost_updated"
+    },
+    {
+      "node": 15,
+      "parent": 14,
+      "sequence": 514,
+      "tick": 36,
+      "type": "parent_updated"
+    },
+    {
+      "node": 15,
+      "sequence": 515,
+      "tick": 36,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 3,
+      "from": 14,
+      "sequence": 516,
+      "tick": 36,
+      "to": 22,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 14,
+      "node": 22,
+      "sequence": 517,
+      "tick": 36,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 14,
+      "sequence": 518,
+      "tick": 36,
+      "to": 13,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 12,
+      "node": 13,
+      "sequence": 519,
+      "tick": 36,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 59,
+      "sequence": 520,
+      "tick": 36,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 59,
+      "sequence": 521,
+      "tick": 37,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 5,
+      "from": 59,
+      "sequence": 522,
+      "tick": 37,
+      "to": 51,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 17,
+      "node": 51,
+      "sequence": 523,
+      "tick": 37,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 5,
+      "from": 59,
+      "sequence": 524,
+      "tick": 37,
+      "to": 60,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 17,
+      "node": 60,
+      "sequence": 525,
+      "tick": 37,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 60,
+      "sequence": 526,
+      "tick": 37,
+      "type": "node_discovered"
+    },
+    {
+      "f": 17,
+      "g": 17,
+      "h": 0,
+      "node": 60,
+      "sequence": 527,
+      "tick": 37,
+      "type": "cost_updated"
+    },
+    {
+      "node": 60,
+      "parent": 59,
+      "sequence": 528,
+      "tick": 37,
+      "type": "parent_updated"
+    },
+    {
+      "node": 60,
+      "sequence": 529,
+      "tick": 37,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 59,
+      "sequence": 530,
+      "tick": 37,
+      "to": 58,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 13,
+      "node": 58,
+      "sequence": 531,
+      "tick": 37,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 6,
+      "sequence": 532,
+      "tick": 37,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 6,
+      "sequence": 533,
+      "tick": 38,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 5,
+      "from": 6,
+      "sequence": 534,
+      "tick": 38,
+      "to": 7,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 17,
+      "node": 7,
+      "sequence": 535,
+      "tick": 38,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 7,
+      "sequence": 536,
+      "tick": 38,
+      "type": "node_discovered"
+    },
+    {
+      "f": 17,
+      "g": 17,
+      "h": 0,
+      "node": 7,
+      "sequence": 537,
+      "tick": 38,
+      "type": "cost_updated"
+    },
+    {
+      "node": 7,
+      "parent": 6,
+      "sequence": 538,
+      "tick": 38,
+      "type": "parent_updated"
+    },
+    {
+      "node": 7,
+      "sequence": 539,
+      "tick": 38,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 6,
+      "sequence": 540,
+      "tick": 38,
+      "to": 14,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 13,
+      "node": 14,
+      "sequence": 541,
+      "tick": 38,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 6,
+      "sequence": 542,
+      "tick": 38,
+      "to": 5,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 13,
+      "node": 5,
+      "sequence": 543,
+      "tick": 38,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 44,
+      "sequence": 544,
+      "tick": 38,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 44,
+      "sequence": 545,
+      "tick": 39,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 44,
+      "sequence": 546,
+      "tick": 39,
+      "to": 36,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 14,
+      "node": 36,
+      "sequence": 547,
+      "tick": 39,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 10,
+      "from": 44,
+      "sequence": 548,
+      "tick": 39,
+      "to": 45,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 23,
+      "node": 45,
+      "sequence": 549,
+      "tick": 39,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 45,
+      "sequence": 550,
+      "tick": 39,
+      "type": "node_discovered"
+    },
+    {
+      "f": 23,
+      "g": 23,
+      "h": 0,
+      "node": 45,
+      "sequence": 551,
+      "tick": 39,
+      "type": "cost_updated"
+    },
+    {
+      "node": 45,
+      "parent": 44,
+      "sequence": 552,
+      "tick": 39,
+      "type": "parent_updated"
+    },
+    {
+      "node": 45,
+      "sequence": 553,
+      "tick": 39,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 44,
+      "sequence": 554,
+      "tick": 39,
+      "to": 52,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 14,
+      "node": 52,
+      "sequence": 555,
+      "tick": 39,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 52,
+      "sequence": 556,
+      "tick": 39,
+      "type": "node_discovered"
+    },
+    {
+      "f": 14,
+      "g": 14,
+      "h": 0,
+      "node": 52,
+      "sequence": 557,
+      "tick": 39,
+      "type": "cost_updated"
+    },
+    {
+      "node": 52,
+      "parent": 44,
+      "sequence": 558,
+      "tick": 39,
+      "type": "parent_updated"
+    },
+    {
+      "node": 52,
+      "sequence": 559,
+      "tick": 39,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 44,
+      "sequence": 560,
+      "tick": 39,
+      "to": 43,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 14,
+      "node": 43,
+      "sequence": 561,
+      "tick": 39,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 51,
+      "sequence": 562,
+      "tick": 39,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 51,
+      "sequence": 563,
+      "tick": 40,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 51,
+      "sequence": 564,
+      "tick": 40,
+      "to": 43,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 14,
+      "node": 43,
+      "sequence": 565,
+      "tick": 40,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 51,
+      "sequence": 566,
+      "tick": 40,
+      "to": 52,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 14,
+      "node": 52,
+      "sequence": 567,
+      "tick": 40,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 51,
+      "sequence": 568,
+      "tick": 40,
+      "to": 59,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 16,
+      "node": 59,
+      "sequence": 569,
+      "tick": 40,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 51,
+      "sequence": 570,
+      "tick": 40,
+      "to": 50,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 14,
+      "node": 50,
+      "sequence": 571,
+      "tick": 40,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 56,
+      "sequence": 572,
+      "tick": 40,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 56,
+      "sequence": 573,
+      "tick": 41,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 56,
+      "sequence": 574,
+      "tick": 41,
+      "to": 48,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 14,
+      "node": 48,
+      "sequence": 575,
+      "tick": 41,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 56,
+      "sequence": 576,
+      "tick": 41,
+      "to": 57,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 14,
+      "node": 57,
+      "sequence": 577,
+      "tick": 41,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 22,
+      "sequence": 578,
+      "tick": 41,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 22,
+      "sequence": 579,
+      "tick": 42,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 22,
+      "sequence": 580,
+      "tick": 42,
+      "to": 14,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 15,
+      "node": 14,
+      "sequence": 581,
+      "tick": 42,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 22,
+      "sequence": 582,
+      "tick": 42,
+      "to": 23,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 17,
+      "node": 23,
+      "sequence": 583,
+      "tick": 42,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 23,
+      "sequence": 584,
+      "tick": 42,
+      "type": "node_discovered"
+    },
+    {
+      "f": 17,
+      "g": 17,
+      "h": 0,
+      "node": 23,
+      "sequence": 585,
+      "tick": 42,
+      "type": "cost_updated"
+    },
+    {
+      "node": 23,
+      "parent": 22,
+      "sequence": 586,
+      "tick": 42,
+      "type": "parent_updated"
+    },
+    {
+      "node": 23,
+      "sequence": 587,
+      "tick": 42,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 22,
+      "sequence": 588,
+      "tick": 42,
+      "to": 30,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 15,
+      "node": 30,
+      "sequence": 589,
+      "tick": 42,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 30,
+      "sequence": 590,
+      "tick": 42,
+      "type": "node_discovered"
+    },
+    {
+      "f": 15,
+      "g": 15,
+      "h": 0,
+      "node": 30,
+      "sequence": 591,
+      "tick": 42,
+      "type": "cost_updated"
+    },
+    {
+      "node": 30,
+      "parent": 22,
+      "sequence": 592,
+      "tick": 42,
+      "type": "parent_updated"
+    },
+    {
+      "node": 30,
+      "sequence": 593,
+      "tick": 42,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 22,
+      "sequence": 594,
+      "tick": 42,
+      "to": 21,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 15,
+      "node": 21,
+      "sequence": 595,
+      "tick": 42,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 29,
+      "sequence": 596,
+      "tick": 42,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 29,
+      "sequence": 597,
+      "tick": 43,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 29,
+      "sequence": 598,
+      "tick": 43,
+      "to": 21,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 15,
+      "node": 21,
+      "sequence": 599,
+      "tick": 43,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 29,
+      "sequence": 600,
+      "tick": 43,
+      "to": 30,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 15,
+      "node": 30,
+      "sequence": 601,
+      "tick": 43,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 5,
+      "from": 29,
+      "sequence": 602,
+      "tick": 43,
+      "to": 37,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 19,
+      "node": 37,
+      "sequence": 603,
+      "tick": 43,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 29,
+      "sequence": 604,
+      "tick": 43,
+      "to": 28,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 15,
+      "node": 28,
+      "sequence": 605,
+      "tick": 43,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 15,
+      "sequence": 606,
+      "tick": 43,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 15,
+      "sequence": 607,
+      "tick": 44,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 5,
+      "from": 15,
+      "sequence": 608,
+      "tick": 44,
+      "to": 7,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 19,
+      "node": 7,
+      "sequence": 609,
+      "tick": 44,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 15,
+      "sequence": 610,
+      "tick": 44,
+      "to": 23,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 17,
+      "node": 23,
+      "sequence": 611,
+      "tick": 44,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 15,
+      "sequence": 612,
+      "tick": 44,
+      "to": 14,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 15,
+      "node": 14,
+      "sequence": 613,
+      "tick": 44,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 52,
+      "sequence": 614,
+      "tick": 44,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 52,
+      "sequence": 615,
+      "tick": 45,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 5,
+      "from": 52,
+      "sequence": 616,
+      "tick": 45,
+      "to": 44,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 19,
+      "node": 44,
+      "sequence": 617,
+      "tick": 45,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 52,
+      "sequence": 618,
+      "tick": 45,
+      "to": 53,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 15,
+      "node": 53,
+      "sequence": 619,
+      "tick": 45,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 53,
+      "sequence": 620,
+      "tick": 45,
+      "type": "node_discovered"
+    },
+    {
+      "f": 15,
+      "g": 15,
+      "h": 0,
+      "node": 53,
+      "sequence": 621,
+      "tick": 45,
+      "type": "cost_updated"
+    },
+    {
+      "node": 53,
+      "parent": 52,
+      "sequence": 622,
+      "tick": 45,
+      "type": "parent_updated"
+    },
+    {
+      "node": 53,
+      "sequence": 623,
+      "tick": 45,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 5,
+      "from": 52,
+      "sequence": 624,
+      "tick": 45,
+      "to": 60,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 19,
+      "node": 60,
+      "sequence": 625,
+      "tick": 45,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 5,
+      "from": 52,
+      "sequence": 626,
+      "tick": 45,
+      "to": 51,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 19,
+      "node": 51,
+      "sequence": 627,
+      "tick": 45,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 27,
+      "sequence": 628,
+      "tick": 45,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 27,
+      "sequence": 629,
+      "tick": 46,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 27,
+      "sequence": 630,
+      "tick": 46,
+      "to": 19,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 16,
+      "node": 19,
+      "sequence": 631,
+      "tick": 46,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 27,
+      "sequence": 632,
+      "tick": 46,
+      "to": 28,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 16,
+      "node": 28,
+      "sequence": 633,
+      "tick": 46,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 27,
+      "sequence": 634,
+      "tick": 46,
+      "to": 35,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 18,
+      "node": 35,
+      "sequence": 635,
+      "tick": 46,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 27,
+      "sequence": 636,
+      "tick": 46,
+      "to": 26,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 16,
+      "node": 26,
+      "sequence": 637,
+      "tick": 46,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 37,
+      "sequence": 638,
+      "tick": 46,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 37,
+      "sequence": 639,
+      "tick": 47,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 3,
+      "from": 37,
+      "sequence": 640,
+      "tick": 47,
+      "to": 29,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 18,
+      "node": 29,
+      "sequence": 641,
+      "tick": 47,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 37,
+      "sequence": 642,
+      "tick": 47,
+      "to": 38,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 16,
+      "node": 38,
+      "sequence": 643,
+      "tick": 47,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 38,
+      "sequence": 644,
+      "tick": 47,
+      "type": "node_discovered"
+    },
+    {
+      "f": 16,
+      "g": 16,
+      "h": 0,
+      "node": 38,
+      "sequence": 645,
+      "tick": 47,
+      "type": "cost_updated"
+    },
+    {
+      "node": 38,
+      "parent": 37,
+      "sequence": 646,
+      "tick": 47,
+      "type": "parent_updated"
+    },
+    {
+      "node": 38,
+      "sequence": 647,
+      "tick": 47,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 10,
+      "from": 37,
+      "sequence": 648,
+      "tick": 47,
+      "to": 45,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 25,
+      "node": 45,
+      "sequence": 649,
+      "tick": 47,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 37,
+      "sequence": 650,
+      "tick": 47,
+      "to": 36,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 16,
+      "node": 36,
+      "sequence": 651,
+      "tick": 47,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 30,
+      "sequence": 652,
+      "tick": 47,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 30,
+      "sequence": 653,
+      "tick": 48,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 3,
+      "from": 30,
+      "sequence": 654,
+      "tick": 48,
+      "to": 22,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 18,
+      "node": 22,
+      "sequence": 655,
+      "tick": 48,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 30,
+      "sequence": 656,
+      "tick": 48,
+      "to": 31,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 16,
+      "node": 31,
+      "sequence": 657,
+      "tick": 48,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 31,
+      "sequence": 658,
+      "tick": 48,
+      "type": "node_discovered"
+    },
+    {
+      "f": 16,
+      "g": 16,
+      "h": 0,
+      "node": 31,
+      "sequence": 659,
+      "tick": 48,
+      "type": "cost_updated"
+    },
+    {
+      "node": 31,
+      "parent": 30,
+      "sequence": 660,
+      "tick": 48,
+      "type": "parent_updated"
+    },
+    {
+      "node": 31,
+      "sequence": 661,
+      "tick": 48,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 30,
+      "sequence": 662,
+      "tick": 48,
+      "to": 38,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 16,
+      "node": 38,
+      "sequence": 663,
+      "tick": 48,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 30,
+      "sequence": 664,
+      "tick": 48,
+      "to": 29,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 18,
+      "node": 29,
+      "sequence": 665,
+      "tick": 48,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 53,
+      "sequence": 666,
+      "tick": 48,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 53,
+      "sequence": 667,
+      "tick": 49,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 10,
+      "from": 53,
+      "sequence": 668,
+      "tick": 49,
+      "to": 45,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 25,
+      "node": 45,
+      "sequence": 669,
+      "tick": 49,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 53,
+      "sequence": 670,
+      "tick": 49,
+      "to": 54,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 18,
+      "node": 54,
+      "sequence": 671,
+      "tick": 49,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 54,
+      "sequence": 672,
+      "tick": 49,
+      "type": "node_discovered"
+    },
+    {
+      "f": 18,
+      "g": 18,
+      "h": 0,
+      "node": 54,
+      "sequence": 673,
+      "tick": 49,
+      "type": "cost_updated"
+    },
+    {
+      "node": 54,
+      "parent": 53,
+      "sequence": 674,
+      "tick": 49,
+      "type": "parent_updated"
+    },
+    {
+      "node": 54,
+      "sequence": 675,
+      "tick": 49,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 3,
+      "from": 53,
+      "sequence": 676,
+      "tick": 49,
+      "to": 61,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 18,
+      "node": 61,
+      "sequence": 677,
+      "tick": 49,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 61,
+      "sequence": 678,
+      "tick": 49,
+      "type": "node_discovered"
+    },
+    {
+      "f": 18,
+      "g": 18,
+      "h": 0,
+      "node": 61,
+      "sequence": 679,
+      "tick": 49,
+      "type": "cost_updated"
+    },
+    {
+      "node": 61,
+      "parent": 53,
+      "sequence": 680,
+      "tick": 49,
+      "type": "parent_updated"
+    },
+    {
+      "node": 61,
+      "sequence": 681,
+      "tick": 49,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 53,
+      "sequence": 682,
+      "tick": 49,
+      "to": 52,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 16,
+      "node": 52,
+      "sequence": 683,
+      "tick": 49,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 38,
+      "sequence": 684,
+      "tick": 49,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 38,
+      "sequence": 685,
+      "tick": 50,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 38,
+      "sequence": 686,
+      "tick": 50,
+      "to": 30,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 17,
+      "node": 30,
+      "sequence": 687,
+      "tick": 50,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 38,
+      "sequence": 688,
+      "tick": 50,
+      "to": 39,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 17,
+      "node": 39,
+      "sequence": 689,
+      "tick": 50,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 39,
+      "sequence": 690,
+      "tick": 50,
+      "type": "node_discovered"
+    },
+    {
+      "f": 17,
+      "g": 17,
+      "h": 0,
+      "node": 39,
+      "sequence": 691,
+      "tick": 50,
+      "type": "cost_updated"
+    },
+    {
+      "node": 39,
+      "parent": 38,
+      "sequence": 692,
+      "tick": 50,
+      "type": "parent_updated"
+    },
+    {
+      "node": 39,
+      "sequence": 693,
+      "tick": 50,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 38,
+      "sequence": 694,
+      "tick": 50,
+      "to": 46,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 17,
+      "node": 46,
+      "sequence": 695,
+      "tick": 50,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 46,
+      "sequence": 696,
+      "tick": 50,
+      "type": "node_discovered"
+    },
+    {
+      "f": 17,
+      "g": 17,
+      "h": 0,
+      "node": 46,
+      "sequence": 697,
+      "tick": 50,
+      "type": "cost_updated"
+    },
+    {
+      "node": 46,
+      "parent": 38,
+      "sequence": 698,
+      "tick": 50,
+      "type": "parent_updated"
+    },
+    {
+      "node": 46,
+      "sequence": 699,
+      "tick": 50,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 5,
+      "from": 38,
+      "sequence": 700,
+      "tick": 50,
+      "to": 37,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 21,
+      "node": 37,
+      "sequence": 701,
+      "tick": 50,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 31,
+      "sequence": 702,
+      "tick": 50,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 31,
+      "sequence": 703,
+      "tick": 51,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 3,
+      "from": 31,
+      "sequence": 704,
+      "tick": 51,
+      "to": 23,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 19,
+      "node": 23,
+      "sequence": 705,
+      "tick": 51,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 31,
+      "sequence": 706,
+      "tick": 51,
+      "to": 39,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 17,
+      "node": 39,
+      "sequence": 707,
+      "tick": 51,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 31,
+      "sequence": 708,
+      "tick": 51,
+      "to": 30,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 17,
+      "node": 30,
+      "sequence": 709,
+      "tick": 51,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 60,
+      "sequence": 710,
+      "tick": 51,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 60,
+      "sequence": 711,
+      "tick": 52,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 60,
+      "sequence": 712,
+      "tick": 52,
+      "to": 52,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 18,
+      "node": 52,
+      "sequence": 713,
+      "tick": 52,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 60,
+      "sequence": 714,
+      "tick": 52,
+      "to": 61,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 20,
+      "node": 61,
+      "sequence": 715,
+      "tick": 52,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 60,
+      "sequence": 716,
+      "tick": 52,
+      "to": 59,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 20,
+      "node": 59,
+      "sequence": 717,
+      "tick": 52,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 7,
+      "sequence": 718,
+      "tick": 52,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 7,
+      "sequence": 719,
+      "tick": 53,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 3,
+      "from": 7,
+      "sequence": 720,
+      "tick": 53,
+      "to": 15,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 20,
+      "node": 15,
+      "sequence": 721,
+      "tick": 53,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 7,
+      "sequence": 722,
+      "tick": 53,
+      "to": 6,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 18,
+      "node": 6,
+      "sequence": 723,
+      "tick": 53,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 23,
+      "sequence": 724,
+      "tick": 53,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 23,
+      "sequence": 725,
+      "tick": 54,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 3,
+      "from": 23,
+      "sequence": 726,
+      "tick": 54,
+      "to": 15,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 20,
+      "node": 15,
+      "sequence": 727,
+      "tick": 54,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 23,
+      "sequence": 728,
+      "tick": 54,
+      "to": 31,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 18,
+      "node": 31,
+      "sequence": 729,
+      "tick": 54,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 23,
+      "sequence": 730,
+      "tick": 54,
+      "to": 22,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 20,
+      "node": 22,
+      "sequence": 731,
+      "tick": 54,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 39,
+      "sequence": 732,
+      "tick": 54,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 39,
+      "sequence": 733,
+      "tick": 55,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 39,
+      "sequence": 734,
+      "tick": 55,
+      "to": 31,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 18,
+      "node": 31,
+      "sequence": 735,
+      "tick": 55,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 39,
+      "sequence": 736,
+      "tick": 55,
+      "to": 47,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 18,
+      "node": 47,
+      "sequence": 737,
+      "tick": 55,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 47,
+      "sequence": 738,
+      "tick": 55,
+      "type": "node_discovered"
+    },
+    {
+      "f": 18,
+      "g": 18,
+      "h": 0,
+      "node": 47,
+      "sequence": 739,
+      "tick": 55,
+      "type": "cost_updated"
+    },
+    {
+      "node": 47,
+      "parent": 39,
+      "sequence": 740,
+      "tick": 55,
+      "type": "parent_updated"
+    },
+    {
+      "node": 47,
+      "sequence": 741,
+      "tick": 55,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 39,
+      "sequence": 742,
+      "tick": 55,
+      "to": 38,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 18,
+      "node": 38,
+      "sequence": 743,
+      "tick": 55,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 46,
+      "sequence": 744,
+      "tick": 55,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 46,
+      "sequence": 745,
+      "tick": 56,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 46,
+      "sequence": 746,
+      "tick": 56,
+      "to": 38,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 18,
+      "node": 38,
+      "sequence": 747,
+      "tick": 56,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 46,
+      "sequence": 748,
+      "tick": 56,
+      "to": 47,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 18,
+      "node": 47,
+      "sequence": 749,
+      "tick": 56,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 46,
+      "sequence": 750,
+      "tick": 56,
+      "to": 54,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 20,
+      "node": 54,
+      "sequence": 751,
+      "tick": 56,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 10,
+      "from": 46,
+      "sequence": 752,
+      "tick": 56,
+      "to": 45,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 27,
+      "node": 45,
+      "sequence": 753,
+      "tick": 56,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 54,
+      "sequence": 754,
+      "tick": 56,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 54,
+      "sequence": 755,
+      "tick": 57,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 54,
+      "sequence": 756,
+      "tick": 57,
+      "to": 46,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 19,
+      "node": 46,
+      "sequence": 757,
+      "tick": 57,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 5,
+      "from": 54,
+      "sequence": 758,
+      "tick": 57,
+      "to": 55,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 23,
+      "node": 55,
+      "sequence": 759,
+      "tick": 57,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 55,
+      "sequence": 760,
+      "tick": 57,
+      "type": "node_discovered"
+    },
+    {
+      "f": 23,
+      "g": 23,
+      "h": 0,
+      "node": 55,
+      "sequence": 761,
+      "tick": 57,
+      "type": "cost_updated"
+    },
+    {
+      "node": 55,
+      "parent": 54,
+      "sequence": 762,
+      "tick": 57,
+      "type": "parent_updated"
+    },
+    {
+      "node": 55,
+      "sequence": 763,
+      "tick": 57,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 54,
+      "sequence": 764,
+      "tick": 57,
+      "to": 62,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 19,
+      "node": 62,
+      "sequence": 765,
+      "tick": 57,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 62,
+      "sequence": 766,
+      "tick": 57,
+      "type": "node_discovered"
+    },
+    {
+      "f": 19,
+      "g": 19,
+      "h": 0,
+      "node": 62,
+      "sequence": 767,
+      "tick": 57,
+      "type": "cost_updated"
+    },
+    {
+      "node": 62,
+      "parent": 54,
+      "sequence": 768,
+      "tick": 57,
+      "type": "parent_updated"
+    },
+    {
+      "node": 62,
+      "sequence": 769,
+      "tick": 57,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 1,
+      "from": 54,
+      "sequence": 770,
+      "tick": 57,
+      "to": 53,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 19,
+      "node": 53,
+      "sequence": 771,
+      "tick": 57,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 61,
+      "sequence": 772,
+      "tick": 57,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 61,
+      "sequence": 773,
+      "tick": 58,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 61,
+      "sequence": 774,
+      "tick": 58,
+      "to": 53,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 19,
+      "node": 53,
+      "sequence": 775,
+      "tick": 58,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 61,
+      "sequence": 776,
+      "tick": 58,
+      "to": 62,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 19,
+      "node": 62,
+      "sequence": 777,
+      "tick": 58,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 5,
+      "from": 61,
+      "sequence": 778,
+      "tick": 58,
+      "to": 60,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 23,
+      "node": 60,
+      "sequence": 779,
+      "tick": 58,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 47,
+      "sequence": 780,
+      "tick": 58,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 47,
+      "sequence": 781,
+      "tick": 59,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 47,
+      "sequence": 782,
+      "tick": 59,
+      "to": 39,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 19,
+      "node": 39,
+      "sequence": 783,
+      "tick": 59,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 5,
+      "from": 47,
+      "sequence": 784,
+      "tick": 59,
+      "to": 55,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 23,
+      "node": 55,
+      "sequence": 785,
+      "tick": 59,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 47,
+      "sequence": 786,
+      "tick": 59,
+      "to": 46,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 19,
+      "node": 46,
+      "sequence": 787,
+      "tick": 59,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 4,
+      "sequence": 788,
+      "tick": 59,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 4,
+      "sequence": 789,
+      "tick": 60,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 1,
+      "from": 4,
+      "sequence": 790,
+      "tick": 60,
+      "to": 5,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 20,
+      "node": 5,
+      "sequence": 791,
+      "tick": 60,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 3,
+      "from": 4,
+      "sequence": 792,
+      "tick": 60,
+      "to": 12,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 22,
+      "node": 12,
+      "sequence": 793,
+      "tick": 60,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 5,
+      "from": 4,
+      "sequence": 794,
+      "tick": 60,
+      "to": 3,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 24,
+      "node": 3,
+      "sequence": 795,
+      "tick": 60,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 62,
+      "sequence": 796,
+      "tick": 60,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 62,
+      "sequence": 797,
+      "tick": 61,
+      "type": "node_expanded"
+    },
+    {
+      "cost": 3,
+      "from": 62,
+      "sequence": 798,
+      "tick": 61,
+      "to": 54,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 22,
+      "node": 54,
+      "sequence": 799,
+      "tick": 61,
+      "type": "relaxation_compared"
+    },
+    {
+      "cost": 1,
+      "from": 62,
+      "sequence": 800,
+      "tick": 61,
+      "to": 63,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 20,
+      "node": 63,
+      "sequence": 801,
+      "tick": 61,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 63,
+      "sequence": 802,
+      "tick": 61,
+      "type": "node_discovered"
+    },
+    {
+      "f": 20,
+      "g": 20,
+      "h": 0,
+      "node": 63,
+      "sequence": 803,
+      "tick": 61,
+      "type": "cost_updated"
+    },
+    {
+      "node": 63,
+      "parent": 62,
+      "sequence": 804,
+      "tick": 61,
+      "type": "parent_updated"
+    },
+    {
+      "node": 63,
+      "sequence": 805,
+      "tick": 61,
+      "type": "frontier_added"
+    },
+    {
+      "cost": 3,
+      "from": 62,
+      "sequence": 806,
+      "tick": 61,
+      "to": 61,
+      "type": "edge_evaluated"
+    },
+    {
+      "candidate": 22,
+      "node": 61,
+      "sequence": 807,
+      "tick": 61,
+      "type": "relaxation_compared"
+    },
+    {
+      "node": 63,
+      "sequence": 808,
+      "tick": 61,
+      "type": "frontier_removed"
+    },
+    {
+      "node": 63,
+      "sequence": 809,
+      "tick": 62,
+      "type": "node_expanded"
+    },
+    {
+      "node": 63,
+      "sequence": 810,
+      "tick": 62,
+      "type": "goal_reached"
+    },
+    {
+      "cost": 20,
+      "path": [
+        0,
+        8,
+        16,
+        24,
+        25,
+        26,
+        34,
+        42,
+        43,
+        44,
+        52,
+        53,
+        54,
+        62,
+        63
+      ],
+      "sequence": 811,
+      "tick": 62,
+      "type": "path_reconstructed"
+    },
+    {
+      "found": true,
+      "sequence": 812,
+      "tick": 62,
+      "type": "run_completed"
+    }
+  ],
+  "generator_version": "grid/1",
+  "grid": {
+    "cells": [
+      "normal",
+      "normal",
+      "mud",
+      "water",
+      "heavy",
+      "normal",
+      "normal",
+      "water",
+      "normal",
+      "mud",
+      "normal",
+      "normal",
+      "mud",
+      "normal",
+      "normal",
+      "mud",
+      "normal",
+      "water",
+      "normal",
+      "normal",
+      "mud",
+      "normal",
+      "mud",
+      "mud",
+      "normal",
+      "normal",
+      "normal",
+      "heavy",
+      "normal",
+      "mud",
+      "normal",
+      "normal",
+      "water",
+      "normal",
+      "normal",
+      "mud",
+      "normal",
+      "water",
+      "normal",
+      "normal",
+      "normal",
+      "normal",
+      "normal",
+      "normal",
+      "water",
+      "heavy",
+      "normal",
+      "normal",
+      "normal",
+      "normal",
+      "normal",
+      "water",
+      "normal",
+      "normal",
+      "mud",
+      "water",
+      "water",
+      "normal",
+      "normal",
+      "mud",
+      "water",
+      "mud",
+      "normal",
+      "normal"
+    ],
+    "goal": 63,
+    "height": 8,
+    "start": 0,
+    "width": 8
+  },
+  "map_config": {
+    "generator": "weighted",
+    "height": 8,
+    "seed": 123,
+    "wall_percent": 0,
+    "width": 8
+  },
+  "metrics": {
+    "cost_updates": 64,
+    "edges_evaluated": 215,
+    "expanded": 62,
+    "frontier_pops": 62,
+    "frontier_pushes": 64,
+    "generated": 64,
+    "logical_ops": 618,
+    "path_cost": 20,
+    "path_length": 14,
+    "peak_discovered": 64,
+    "peak_frontier": 12,
+    "peak_state_entries": 194,
+    "relaxation_comparisons": 215
+  },
+  "rng_version": "splitmix64/1",
+  "run_id": "311bbd3177e1c6554c9599921b28a5be95e94b0628b02c11b9042a0c04afd0c7",
+  "runtime": {
+    "compute_ns": 141700,
+    "events_generated": 813,
+    "events_per_second": 5737473.535638673
+  },
+  "schema_version": 1,
+  "terrain_costs": [
+    1,
+    3,
+    5,
+    10
+  ]
+}

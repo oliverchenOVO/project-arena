@@ -1,5 +1,6 @@
 //! UI-independent deterministic execution, generation and replay.
 pub mod analysis;
+pub mod bridge;
 pub mod engine;
 pub mod event;
 pub mod grid;
