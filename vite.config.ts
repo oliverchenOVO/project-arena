@@ -24,6 +24,6 @@ export default defineConfig({
       });
     }
   }],
-  server:{port:1431,strictPort:true},
+  server:{port:1431,strictPort:true,watch:{ignored:['**/target/**','**/docs/**','**/test-results/**','**/benchmark.json','**/phase*-gate.json']}},
   clearScreen:false
 });

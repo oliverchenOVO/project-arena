@@ -12,6 +12,6 @@ export default function ConfigRail({map,setMap,algorithms,setAlgorithms,heuristi
     <label>Race format<select aria-label="Race format" value={algorithms.length} onChange={e=>setAlgorithms(e.target.value==='4'?['bfs','dijkstra','astar','greedy']:['dijkstra','astar'])}><option value="2">1 vs 1</option><option value="4">4-way race</option></select></label>
     {algorithms.map((a,index)=><label key={index} style={{borderLeft:`2px solid ${accents[a]}`,paddingLeft:8}}>Algorithm {String.fromCharCode(65+index)}<select aria-label={`Algorithm ${String.fromCharCode(65+index)}`} value={a} onChange={e=>setAlgorithms(algorithms.map((old,i)=>i===index?e.target.value as Algorithm:old))}>{Object.entries(names).map(([id,name])=><option key={id} value={id}>{name}</option>)}</select></label>)}
     <label>Heuristic (A* / Greedy)<select aria-label="Heuristic" value={heuristic} onChange={e=>setHeuristic(e.target.value as Heuristic)}><option value="manhattan">Manhattan</option><option value="euclidean">Euclidean (integer floor)</option><option value="chebyshev">Chebyshev</option><option value="zero">Zero heuristic</option></select></label>
-    <p className="hint">4-direction movement<br/>N → E → S → W<br/>All available A* heuristics are admissible.</p>
+    <p className="hint">4-neighbor: N → E → S → W<br/>Admissible A* heuristics.</p>
   </fieldset></section></aside>;
 }

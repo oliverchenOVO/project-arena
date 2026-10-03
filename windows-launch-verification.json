@@ -1,0 +1,47 @@
+{
+  "buildType": "Tauri 2 Windows x64 release executable; NSIS installer also built",
+  "url": "http://tauri.localhost/",
+  "title": "Project ARENA — Algorithm Arena",
+  "tauri": true,
+  "httpsRequestsBlocked": true,
+  "remoteRequests": [],
+  "consoleErrors": [],
+  "cases": [
+    {
+      "a": "bfs",
+      "b": "dfs",
+      "family": "open",
+      "final": [
+        "Expanded 256Frontier 0Path cost 30",
+        "Expanded 31Frontier 28Path cost 30"
+      ],
+      "replayMatches": true,
+      "inspector": true,
+      "analysis": true
+    },
+    {
+      "a": "dijkstra",
+      "b": "astar",
+      "family": "weighted",
+      "final": [
+        "Expanded 212Frontier 7Path cost 50",
+        "Expanded 114Frontier 35Path cost 50"
+      ],
+      "replayMatches": true,
+      "inspector": true,
+      "analysis": true
+    },
+    {
+      "a": "astar",
+      "b": "greedy",
+      "family": "backtracker",
+      "final": [
+        "Expanded 47Frontier 3Path cost 46",
+        "Expanded 47Frontier 3Path cost 46"
+      ],
+      "replayMatches": true,
+      "inspector": true,
+      "analysis": true
+    }
+  ]
+}

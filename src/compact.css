@@ -1,0 +1,14 @@
+.config-rail h2{padding:12px 14px}
+.config-rail fieldset{padding:12px 14px}
+.config-rail label{font-size:12px;line-height:1.3}
+.config-rail label+label{margin-top:8px}
+.config-rail label>input,.config-rail label>select{margin-top:4px;padding:7px 8px;font-size:12px}
+.config-rail .inline-field{margin-top:10px}
+.config-rail .inline-field>input{margin-top:0}
+.config-rail .dimension-fields{margin-top:10px}
+.config-rail .dimension-fields label{margin-top:0}
+.config-rail .wide{margin-top:12px;padding:7px}
+.config-rail .subtle{margin-top:6px;padding:5px}
+.config-rail .hint{font-size:11px;line-height:1.6;margin-top:12px}
+.playback{row-gap:10px;padding-top:12px;padding-bottom:12px}
+.legend{padding-top:13px;padding-bottom:13px}
