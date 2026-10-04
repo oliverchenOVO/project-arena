@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
+  <title id="title">ARENA 確定性執行與重播架構</title>
+  <desc id="description">固定問題經 Tauri 或開發 adapter 呼叫 Rust 核心，先產生 RunLog，再供前端重播、CLI 驗證與分析。可選 AI 解讀僅接收分析資料，不能修改執行結果。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9" fill="none" stroke="#74cfc4" stroke-width="1.5"/></marker>
+    <style>
+      text{font-family:"Segoe UI","Microsoft JhengHei","PingFang TC",sans-serif;fill:#e3eaf2}
+      .heading{font-size:29px;font-weight:700}.label{font-size:21px;font-weight:600}.body{font-size:18px;fill:#aebed0}.small{font-size:16px;fill:#aebed0}.tag{font-size:16px;fill:#74cfc4;letter-spacing:1px}
+      .card{fill:#17212f;stroke:#34475b;stroke-width:1.5}.link{fill:none;stroke:#74cfc4;stroke-width:2;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="720" rx="18" fill="#0c131e"/>
+  <text x="40" y="55" class="heading">ARENA：讓每一張畫面都能回到原始紀錄</text>
+  <text x="40" y="89" class="body">先完成搜尋，再重播事件；執行結果與語言、動畫速度及視覺呈現分離。</text>
+
+  <rect x="40" y="139" width="240" height="212" rx="12" class="card"/>
+  <text x="60" y="174" class="tag">01 / 問題輸入</text>
+  <text x="60" y="212" class="label">固定 Seed 與網格</text>
+  <text x="60" y="246" class="body">生成器、地形、起終點</text>
+  <text x="60" y="277" class="body">演算法與啟發函數</text>
+  <text x="60" y="316" class="small">Tauri / 開發 adapter</text>
+
+  <path d="M280 244 H325" class="link"/>
+  <rect x="325" y="139" width="250" height="212" rx="12" class="card"/>
+  <text x="345" y="174" class="tag">02 / RUST 核心</text>
+  <text x="345" y="212" class="label">arena-core</text>
+  <text x="345" y="246" class="body">唯一搜尋實作</text>
+  <text x="345" y="277" class="body">固定鄰居與同分規則</text>
+  <text x="345" y="316" class="small">真實事件與指標計數</text>
+
+  <path d="M575 244 H620" class="link"/>
+  <rect x="620" y="139" width="250" height="212" rx="12" fill="#132b30" stroke="#74cfc4" stroke-width="1.5"/>
+  <text x="640" y="174" class="tag">03 / 事件契約</text>
+  <text x="640" y="212" class="label">RunLog + SHA-256</text>
+  <text x="640" y="246" class="body">輸入、版本與搜尋規則</text>
+  <text x="640" y="277" class="body">事件與演算法指標</text>
+  <text x="640" y="316" class="small">執行時間不納入 hash</text>
+
+  <path d="M870 244 H915" class="link"/>
+  <rect x="915" y="139" width="245" height="212" rx="12" class="card"/>
+  <text x="935" y="174" class="tag">04 / 重播呈現</text>
+  <text x="935" y="212" class="label">React + Canvas</text>
+  <text x="935" y="246" class="body">檢查點恢復與 seek</text>
+  <text x="935" y="277" class="body">競賽、節點檢視與雙語</text>
+  <text x="935" y="316" class="small">只讀紀錄，不重新搜尋</text>
+
+  <path d="M745 351 V394 H435 V435" class="link"/>
+  <path d="M745 394 H835 V435" class="link"/>
+  <text x="555" y="418" class="small">同一份紀錄，可驗證也可解讀</text>
+
+  <rect x="40" y="435" width="525" height="172" rx="12" class="card"/>
+  <text x="62" y="474" class="label">CLI / 自動化驗證</text>
+  <text x="62" y="510" class="body">獨立最優路徑參考、事件與路徑驗證</text>
+  <text x="62" y="544" class="body">hash regression、replay / seek、benchmark</text>
+  <text x="62" y="581" class="small">無介面執行；產生可保存的 JSON 證據</text>
+
+  <rect x="605" y="435" width="555" height="172" rx="12" class="card"/>
+  <text x="627" y="474" class="label">實測分析 → 可選 AI 解讀介面</text>
+  <text x="627" y="510" class="body">實測數據 / 推導指標 / 確定性規則解讀</text>
+  <text x="627" y="544" class="body">AI 僅接收分析資料，不能修改搜尋或紀錄</text>
+  <text x="627" y="581" class="small">目前未設定 live provider；核心不需 API key</text>
+
+  <path d="M40 641 H1160" stroke="#34475b"/>
+  <text x="40" y="677" class="body">可重現輸入 → 真實搜尋 → 可驗證紀錄 → 可回溯畫面</text>
+  <text x="1035" y="677" class="tag">v0.1.2</text>
+</svg>

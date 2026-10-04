@@ -1,6 +1,6 @@
 # ARENA — AI Algorithm Arena
 
-[English](README.md) · 版本 **0.1.2**
+[作品介紹](README.md) · [English](README.en.md) · 版本 **0.1.2**
 
 在相同問題、規則與 Seed 下，讓演算法公平競賽。ARENA 使用 Rust 執行真實搜尋，保存可重現的事件紀錄，再以 React、TypeScript、Canvas 與 Tauri 2 呈現搜尋、重播與分析。
 
