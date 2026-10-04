@@ -1,6 +1,7 @@
 import type {Features,RunLog} from './model';
 export interface StructuredSummary {measured:unknown[];derived:unknown[];hypotheses:string[]}
-export interface ExplanationProvider {id:string;explain(summary:StructuredSummary):Promise<string>}
+export interface ObservationPayload {problem_metadata:unknown;measured:unknown[];derived:unknown[];interpretation:unknown[]}
+export interface ExplanationProvider {id:string;explain(summary:ObservationPayload):Promise<string>}
 /** Optional adapter; never called by execution, replay or benchmarking. */
 export class UnavailableProvider implements ExplanationProvider {
   id='unavailable';

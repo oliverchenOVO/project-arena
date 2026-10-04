@@ -19,7 +19,7 @@ for(const [a,b] of [['bfs','dfs'],['dijkstra','astar'],['astar','greedy']])for(c
     await expect(page.getByLabel('Event timeline')).toBeVisible();await page.getByLabel('End',{exact:true}).click();const finalText=await page.locator('.race-metrics').allTextContents();
     await page.getByLabel('Beginning',{exact:true}).click();await page.getByLabel('Step expansion',{exact:true}).click();await page.getByLabel('Step backward',{exact:true}).click();await page.getByLabel('Step event',{exact:true}).click();await page.getByLabel('Playback speed').selectOption('8');await page.getByLabel('End',{exact:true}).click();expect(await page.locator('.race-metrics').allTextContents()).toEqual(finalText);
     await page.getByRole('button',{name:'INSPECT',exact:true}).click();await page.getByLabel('Algorithm execution grid').first().click({position:{x:5,y:5}});await expect(page.getByRole('heading',{name:/Node \(/})).toBeVisible();await expect(page.locator('.node-details')).toContainText('Parent');
-    await page.getByRole('button',{name:'ANALYZE',exact:true}).click();await expect(page.getByRole('heading',{name:'Measured execution'})).toBeVisible();await expect(page.locator('table')).toContainText('ARENA logical operations');expect(errors).toEqual([]);
+    await page.getByRole('button',{name:'ANALYZE',exact:true}).click();await expect(page.getByRole('heading',{name:'Measured execution'})).toBeVisible();await expect(page.locator('table').first()).toContainText('ARENA logical operations');expect(errors).toEqual([]);
   });
 }
 test('4-way race, AI unavailability and export/import use saved logs',async({page})=>{

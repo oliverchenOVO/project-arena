@@ -1,0 +1,24 @@
+import {describe,it,expect} from 'vitest';
+import {readFileSync} from 'node:fs';
+import {renderToStaticMarkup} from 'react-dom/server';
+import {createElement} from 'react';
+import type {RunLog} from '../model';
+import {presets,stressMap,stressPair,ghostDiff,nodeHistory,eventMarkers,allowedLayers} from '../laboratory';
+import {initialState,Replay,RacePlayback} from '../playback';
+import {parseBenchmark,quantile} from '../components/Benchmark';
+import LabControls from '../components/LabControls';
+const log=JSON.parse(readFileSync(new URL('./fixtures/weighted-run.json',import.meta.url),'utf8')) as RunLog;
+describe('laboratory contracts',()=>{
+ it('stress selectors map every target to an explicit seeded version',()=>{for(const a of ['dfs','greedy','bfs','astar','dijkstra'] as const){expect(stressMap(a,42).seed).toBe(42);expect(stressMap(a,42).stress?.version).toBe('stress/1');expect(stressPair(a)).toHaveLength(2);}});
+ it('showcase contains five fixed reproducible scenarios',()=>{expect(presets).toHaveLength(5);expect(new Set(presets.map(p=>p.title)).size).toBe(5);for(const p of presets){expect(p.map.seed).toBeGreaterThanOrEqual(0);expect(p.pair).toHaveLength(2);expect(p.objective.length).toBeGreaterThan(10);}});
+ it('renders selectors, stress controls, demo and heuristic lab',()=>{const html=renderToStaticMarkup(createElement(LabControls,{busy:false,map:log.map_config,expose:()=>{},showcase:()=>{},lab:()=>{}}));for(const label of ['Stress target','Showcase preset','Heuristic lab algorithm','Expose weakness','Demo mode','branch_depth'])expect(html).toContain(label);});
+ it('ghost counts come from recorded prefixes and conserve expanded sets',()=>{const r=new Replay(log);const empty=initialState(log.grid.cells.length);r.seek(log.events.length);const d=ghostDiff(r.state,empty);expect(d.shared).toBe(0);expect(d.left).toBe(log.metrics.expanded);expect(d.right).toBe(0);const same=ghostDiff(r.state,r.state);expect(same.shared).toBe(log.metrics.expanded);expect(same.overlap).toBe(r.state.path.length);});
+ it('node history omits future and absent events and counts actual parent changes',()=>{expect(nodeHistory(log.events,log.grid.start,0).history).toEqual([]);const h=nodeHistory(log.events,log.grid.start,log.events.length);expect(h.history.some(e=>e.type==='node_expanded')).toBe(true);expect(h.changes).toBe(0);const events=[{type:'parent_updated' as const,node:2,parent:1,sequence:0,tick:0},{type:'parent_updated' as const,node:2,parent:3,sequence:1,tick:0}];expect(nodeHistory(events,2,2).changes).toBe(1);});
+ it('markers point immediately after the actual recorded event',()=>{for(const m of eventMarkers(log)){expect(m.cursor).toBe(m.event+1);expect(m.cursor).toBeLessThanOrEqual(log.events.length);}expect(eventMarkers(log).map(m=>m.label)).toContain('Goal expanded');expect(eventMarkers(log).map(m=>m.label)).toContain('Max frontier');});
+ it('layers respect algorithm contexts and use a single selected field',()=>{expect(allowedLayers('bfs')).not.toContain('g');expect(allowedLayers('dijkstra')).toContain('g');expect(allowedLayers('greedy')).toContain('h');expect(allowedLayers('astar')).toContain('f');});
+ it('percentage synchronization uses each log event length',()=>{const short={...log,events:log.events.slice(0,200)};const r=new RacePlayback([log,short]);r.setSync('percentage');r.seek(Math.floor(r.length/2));expect(r.replays[0].cursor).toBe(Math.floor(r.length/2));expect(r.replays[1].cursor).toBe(Math.floor(r.cursor/r.length*200));});
+ it('expansion synchronization aligns real counts and restores end states',()=>{const r=new RacePlayback([log,log]);r.setSync('expansion');r.seek(Math.floor(r.length/2));expect(r.replays[0].state.metrics.expanded).toBe(r.replays[1].state.metrics.expanded);r.seek(r.length);expect(r.replays[0].state.metrics).toEqual(log.metrics);r.seek(0);r.stepExpansion();expect(r.replays[0].state.metrics.expanded).toBe(1);});
+ it('marker jump respects percentage mode',()=>{const r=new RacePlayback([log,log]);r.setSync('percentage');const marker=eventMarkers(log).find(m=>m.label==='Goal expanded')!;r.jump(0,marker.cursor);expect(r.replays[0].cursor).toBeGreaterThanOrEqual(marker.cursor);});
+ it('benchmark parser reads actual saved CLI schema without running algorithms',()=>{const rows=parseBenchmark(JSON.parse(readFileSync('benchmark.json','utf8')));expect(rows).toHaveLength(360);expect(rows[0].family).toBe('open');expect(rows[0].metrics.expanded).toBeGreaterThan(0);expect(quantile([],0.95)).toBeNull();expect(quantile([10,2,5],.5)).toBe(5);});
+ it('benchmark missing or malformed data is rejected without synthetic zero',()=>{expect(()=>parseBenchmark({})).toThrow();expect(()=>parseBenchmark({records:[{mapFamily:'open',algorithm:'astar',size:32,computeMs:NaN}]})).toThrow();});
+});
