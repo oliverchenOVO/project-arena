@@ -1,0 +1,15 @@
+name: ARENA Phase 1.1 stress gate
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  stress:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - run: cargo run --release -p arena-cli -- gate-phase11 --output phase11-stress-gate.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: phase11-stress-gate
+          path: phase11-stress-gate.json
