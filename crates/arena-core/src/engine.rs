@@ -137,7 +137,7 @@ impl RunLog {
     pub fn validate(&self) -> Result<(), String> {
         if self.schema_version != SCHEMA_VERSION
             || self.engine_version != ENGINE_VERSION
-            || self.generator_version != "grid/1"
+            || self.generator_version != crate::stress::version(&self.map_config)
             || self.rng_version != "splitmix64/1"
             || self.terrain_costs != [1, 3, 5, 10]
         {
@@ -145,6 +145,9 @@ impl RunLog {
         }
         self.grid.validate()?;
         self.config.validate()?;
+        if crate::stress::is_stress(self.map_config.generator) {
+            crate::stress::validate(&self.map_config)?;
+        }
         if self.map_config.width != self.grid.width
             || self.map_config.height != self.grid.height
             || self.map_config.wall_percent > 100
@@ -248,6 +251,9 @@ pub fn execute(
     map_config: &MapConfig,
     config: &RunConfig,
 ) -> Result<Execution, String> {
+    if crate::stress::is_stress(map_config.generator) {
+        crate::stress::validate(map_config)?;
+    }
     grid.validate()?;
     config.validate()?;
     if map_config.width != grid.width
@@ -425,7 +431,7 @@ pub fn execute(
         schema_version: SCHEMA_VERSION,
         engine_version: ENGINE_VERSION.into(),
         run_id,
-        generator_version: "grid/1".into(),
+        generator_version: crate::stress::version(map_config).into(),
         rng_version: "splitmix64/1".into(),
         terrain_costs: [1, 3, 5, 10],
         map_config: map_config.clone(),

@@ -78,7 +78,13 @@ pub struct Replay<'a> {
 }
 impl<'a> Replay<'a> {
     pub fn new(events: &'a [Event], node_count: usize) -> Self {
-        let checkpoint_interval = 256.max(events.len().div_ceil(32));
+        Self::with_budget(events, node_count, 32)
+    }
+    pub fn checkpoint_count(&self) -> usize {
+        self.snapshots.len()
+    }
+    pub fn with_budget(events: &'a [Event], node_count: usize, budget: usize) -> Self {
+        let checkpoint_interval = 256.max(events.len().div_ceil(budget.max(1)));
         let mut state = ReplayState::new(node_count);
         let mut snapshots = vec![(0, state.clone())];
         for (i, event) in events.iter().enumerate() {

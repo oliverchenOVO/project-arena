@@ -26,7 +26,24 @@ pub fn handle(request: Request) -> Result<Value, String> {
             map_config,
             configs,
         } => {
-            if configs.is_empty() || configs.len() > 4 {
+            let lab = configs.len() == 5
+                && configs[4].algorithm == crate::Algorithm::Dijkstra
+                && configs[..4].iter().all(|c| {
+                    c.algorithm == configs[0].algorithm
+                        && matches!(
+                            c.algorithm,
+                            crate::Algorithm::Astar | crate::Algorithm::Greedy
+                        )
+                })
+                && [
+                    crate::Heuristic::Zero,
+                    crate::Heuristic::Manhattan,
+                    crate::Heuristic::Euclidean,
+                    crate::Heuristic::Chebyshev,
+                ]
+                .iter()
+                .all(|h| configs[..4].iter().any(|c| c.heuristic == *h));
+            if configs.is_empty() || (configs.len() > 4 && !lab) {
                 return Err("race needs 1..4 contenders".into());
             }
             // Desktop bounds limit log volume, not algorithm correctness.
@@ -40,10 +57,10 @@ pub fn handle(request: Request) -> Result<Value, String> {
                 features.push(crate::analysis::features(&grid, &run.path));
                 logs.push(run.log);
             }
-            Ok(json!({"logs":logs,"features":features}))
+            Ok(result(&logs, &features))
         }
         Request::Validate { logs } => {
-            if logs.is_empty() || logs.len() > 4 {
+            if logs.is_empty() || logs.len() > 5 {
                 return Err("import needs 1..4 logs".into());
             }
             let first = &logs[0];
@@ -71,7 +88,23 @@ pub fn handle(request: Request) -> Result<Value, String> {
                     crate::analysis::features(&log.grid, path)
                 })
                 .collect::<Vec<_>>();
-            Ok(json!({"logs":logs,"features":features}))
+            Ok(result(&logs, &features))
         }
     }
+}
+
+fn result(logs: &[RunLog], features: &[crate::analysis::MapFeatures]) -> Value {
+    let baseline = logs
+        .iter()
+        .find(|l| l.config.algorithm == crate::Algorithm::Dijkstra);
+    let steps = logs
+        .iter()
+        .find(|l| l.config.algorithm == crate::Algorithm::Bfs)
+        .and_then(|l| l.metrics.path_length);
+    let observations = crate::observation::observations(logs, baseline, steps);
+    let markers = logs
+        .iter()
+        .map(crate::observation::markers)
+        .collect::<Vec<_>>();
+    json!({"logs":logs,"features":features,"observations":observations,"markers":markers})
 }

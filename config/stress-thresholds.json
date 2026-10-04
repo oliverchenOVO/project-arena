@@ -1,0 +1,1 @@
+{"version":"stress-effect/1","dfs":{"strong_ratio":2,"moderate_ratio":1.25},"greedy":{"strong_cost_ratio":1.25,"moderate_cost_ratio":1.01},"astar":{"strong_expansion_ratio":0.9,"moderate_expansion_ratio":0.7},"bfs":{"strong_cost_ratio":1.5,"moderate_cost_ratio":1.01}}

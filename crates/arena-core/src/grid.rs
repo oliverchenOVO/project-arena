@@ -97,6 +97,10 @@ pub enum Generator {
     Corridors,
     Weighted,
     HeuristicTrap,
+    DfsDeepTrap,
+    GreedyTrap,
+    LowInformation,
+    BfsWeightedLesson,
 }
 
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
@@ -106,6 +110,8 @@ pub struct MapConfig {
     pub height: usize,
     pub generator: Generator,
     pub wall_percent: u32,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub stress: Option<crate::stress::StressParams>,
 }
 
 impl Default for MapConfig {
@@ -116,6 +122,7 @@ impl Default for MapConfig {
             height: 32,
             generator: Generator::Obstacles,
             wall_percent: 25,
+            stress: None,
         }
     }
 }
@@ -146,6 +153,9 @@ impl SeededRng {
 }
 
 pub fn generate(config: &MapConfig) -> Result<Grid, String> {
+    if crate::stress::is_stress(config.generator) {
+        return crate::stress::generate(config);
+    }
     if config.width == 0
         || config.height == 0
         || config.width > 256
@@ -165,6 +175,10 @@ pub fn generate(config: &MapConfig) -> Result<Grid, String> {
     let mut rng = SeededRng::new(config.seed);
     match config.generator {
         Generator::Open => {}
+        Generator::DfsDeepTrap
+        | Generator::GreedyTrap
+        | Generator::LowInformation
+        | Generator::BfsWeightedLesson => unreachable!(),
         Generator::Obstacles | Generator::Weighted => {
             for cell in &mut grid.cells {
                 if rng.below(100) < config.wall_percent as u64 {

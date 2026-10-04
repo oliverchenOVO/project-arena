@@ -1,3 +1,4 @@
+mod lab;
 use arena_core::grid::SeededRng;
 use arena_core::replay::Replay;
 use arena_core::validation::{reference_cost, verify_execution};
@@ -28,6 +29,10 @@ fn generator(value: &str) -> Result<Generator, String> {
         "corridors" => Ok(Generator::Corridors),
         "weighted" => Ok(Generator::Weighted),
         "heuristic_trap" => Ok(Generator::HeuristicTrap),
+        "dfs_deep_trap" => Ok(Generator::DfsDeepTrap),
+        "greedy_trap" => Ok(Generator::GreedyTrap),
+        "low_information" => Ok(Generator::LowInformation),
+        "bfs_weighted_lesson" => Ok(Generator::BfsWeightedLesson),
         _ => Err(format!("unknown generator: {value}")),
     }
 }
@@ -82,6 +87,7 @@ fn gate(options: &BTreeMap<String, String>, phase1: bool) -> Result<(), String> 
             height: 16,
             generator: families[seed as usize % families.len()],
             wall_percent: if seed % 2 == 0 { 15 } else { 35 },
+            stress: None,
         };
         let grid = generate(&map)?;
         if grid != generate(&map)? {
@@ -170,6 +176,7 @@ fn benchmark(options: &BTreeMap<String, String>) -> Result<(), String> {
                     height: size,
                     generator,
                     wall_percent,
+                    stress: None,
                 };
                 let grid = generate(&map)?;
                 for a in [
@@ -255,7 +262,8 @@ fn main_run() -> Result<(), String> {
             "heuristic",
             "output",
         ],
-        "gate" | "gate-phase1" | "benchmark" => &["output"],
+        "gate" | "gate-phase1" | "benchmark" | "gate-phase11" | "profile-seek"
+        | "benchmark-stress" => &["output"],
         "replay" => &["input", "cursor"],
         "help" | "bridge" => &[],
         _ => return Err(format!("unknown command {command}")),
@@ -278,6 +286,18 @@ fn main_run() -> Result<(), String> {
         "gate" => gate(&options, false),
         "gate-phase1" => gate(&options, true),
         "benchmark" => benchmark(&options),
+        "benchmark-stress" => {
+            let report = lab::benchmark_stress()?;
+            output(options.get("output"), &report)
+        }
+        "gate-phase11" => {
+            let report = lab::gate()?;
+            output(options.get("output"), &report)
+        }
+        "profile-seek" => {
+            let report = lab::profile()?;
+            output(options.get("output"), &report)
+        }
         "run" => {
             let mut map = MapConfig::default();
             if let Some(v) = options.get("seed") {
@@ -334,7 +354,7 @@ fn main_run() -> Result<(), String> {
             Ok(())
         }
         _ => {
-            println!("ARENA headless\n  arena run --seed 123 --algorithm astar --generator weighted --output run.arena.json\n  arena replay --input run.arena.json --cursor 256\n  arena gate --output phase0-gate.json\n  arena benchmark --output benchmark.json");
+            println!("ARENA headless\n  arena run --seed 123 --algorithm astar --generator weighted --output run.arena.json\n  arena replay --input run.arena.json --cursor 256\n  arena gate --output phase0-gate.json\n  arena benchmark --output benchmark.json\n  arena gate-phase11 --output phase11-stress-gate.json\n  arena benchmark-stress --output stress-benchmark.json\n  arena profile-seek --output phase11-seek-profile.json");
             Ok(())
         }
     }

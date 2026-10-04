@@ -4,7 +4,9 @@ pub mod bridge;
 pub mod engine;
 pub mod event;
 pub mod grid;
+pub mod observation;
 pub mod replay;
+pub mod stress;
 pub mod validation;
 
 pub use engine::{execute, Algorithm, Heuristic, RunConfig, RunLog};
