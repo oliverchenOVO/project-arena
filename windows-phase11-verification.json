@@ -1,0 +1,151 @@
+{
+  "version": "windows-phase11/1",
+  "productVersion": "0.1.1",
+  "url": "http://tauri.localhost/",
+  "title": "Project ARENA — Algorithm Arena",
+  "tauri": true,
+  "showcase": [
+    {
+      "preset": 0,
+      "canonicalHashes": [
+        "aa13118796bac6d2dd3d7777275dd7394df457e49d87b3f9cfeba35fcf609d08",
+        "4912f88da5401cadcf0a99fdf0ba30965a02b628b986862a6249589b8badf6cc"
+      ],
+      "replayMatches": true,
+      "ghost": true,
+      "inspector": true,
+      "analysis": true,
+      "final": [
+        "Expanded 63Frontier 60Path cost 62",
+        "Expanded 1,024Frontier 0Path cost 62"
+      ]
+    },
+    {
+      "preset": 1,
+      "canonicalHashes": [
+        "c281c7510826de1483dea3ee9653d72efc2325f1810a2d2a763c784922795ac5",
+        "8a9ae8aa386cd6ba2b572736e1cea77f3302cc0bac871062face9c9917da8d42"
+      ],
+      "replayMatches": true,
+      "ghost": true,
+      "inspector": true,
+      "analysis": true,
+      "final": [
+        "Expanded 175Frontier 6Path cost 27",
+        "Expanded 209Frontier 0Path cost 27"
+      ]
+    },
+    {
+      "preset": 2,
+      "canonicalHashes": [
+        "bd4fc01f684d1c0f433dd9946d09f5223116b6e87d9808662d48c595ee8756b7",
+        "5c72eb47b9d7398e1e2836269c548201e9013353b5666547797882998a55c881"
+      ],
+      "replayMatches": true,
+      "ghost": true,
+      "inspector": true,
+      "analysis": true,
+      "final": [
+        "Expanded 54Frontier 20Path cost 146",
+        "Expanded 782Frontier 15Path cost 52"
+      ]
+    },
+    {
+      "preset": 3,
+      "canonicalHashes": [
+        "59c5e2376131903bfafc2516a74b961b0dfe1827f12b597c432fa5cfc63cc750",
+        "fbc4087e8429d466fec4ebc1b81778bc43bc8355140002a737b669772c625147"
+      ],
+      "replayMatches": true,
+      "ghost": true,
+      "inspector": true,
+      "analysis": true,
+      "final": [
+        "Expanded 58Frontier 1Path cost 191",
+        "Expanded 39Frontier 1Path cost 33"
+      ]
+    },
+    {
+      "preset": 4,
+      "canonicalHashes": [
+        "ea3788b4e6cf438dd6e309ef8b9d0273048bbb7b829d50a4ec9d673f8814a261",
+        "7ceda607b61a97222461ca1d9cfa87708197d33264f429b8742253181ded909a"
+      ],
+      "replayMatches": true,
+      "ghost": true,
+      "inspector": true,
+      "analysis": true,
+      "final": [
+        "Expanded 462Frontier 6Path cost 143",
+        "Expanded 478Frontier 0Path cost 143"
+      ]
+    }
+  ],
+  "exposeWeakness": true,
+  "heuristicLab": true,
+  "markers": true,
+  "benchmarkViewer": true,
+  "demoHashes": [
+    [
+      "59c5e2376131903bfafc2516a74b961b0dfe1827f12b597c432fa5cfc63cc750",
+      "fbc4087e8429d466fec4ebc1b81778bc43bc8355140002a737b669772c625147"
+    ],
+    [
+      "59c5e2376131903bfafc2516a74b961b0dfe1827f12b597c432fa5cfc63cc750",
+      "fbc4087e8429d466fec4ebc1b81778bc43bc8355140002a737b669772c625147"
+    ]
+  ],
+  "restartHashesMatch": true,
+  "consoleErrors": [],
+  "remoteRequests": [],
+  "baselineSmoke": {
+    "buildType": "Tauri 2 Windows x64 release executable; NSIS installer also built",
+    "url": "http://tauri.localhost/",
+    "title": "Project ARENA — Algorithm Arena",
+    "tauri": true,
+    "httpsRequestsBlocked": true,
+    "remoteRequests": [],
+    "consoleErrors": [],
+    "cases": [
+      {
+        "a": "bfs",
+        "b": "dfs",
+        "family": "open",
+        "final": [
+          "Expanded 256Frontier 0Path cost 30",
+          "Expanded 31Frontier 28Path cost 30"
+        ],
+        "replayMatches": true,
+        "inspector": true,
+        "analysis": true
+      },
+      {
+        "a": "dijkstra",
+        "b": "astar",
+        "family": "weighted",
+        "final": [
+          "Expanded 212Frontier 7Path cost 50",
+          "Expanded 114Frontier 35Path cost 50"
+        ],
+        "replayMatches": true,
+        "inspector": true,
+        "analysis": true
+      },
+      {
+        "a": "astar",
+        "b": "greedy",
+        "family": "backtracker",
+        "final": [
+          "Expanded 47Frontier 3Path cost 46",
+          "Expanded 47Frontier 3Path cost 46"
+        ],
+        "replayMatches": true,
+        "inspector": true,
+        "analysis": true
+      }
+    ]
+  },
+  "portableCopyVerified": true,
+  "freshWebView2ProfileVerified": true,
+  "executableSHA256": "BFFC0558EF84190EC601A9BDD664FBB8F58D24108D27646F7897B2CA07E5C40F"
+}

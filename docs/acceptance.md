@@ -1,3 +1,5 @@
+> Historical Phase 1 evidence. Current Phase 1.1 results and Windows 0.1.1 validation are in [phase11.md](phase11.md).
+
 # Phase 1 acceptance — 2026-10-04 (Asia/Taipei)
 
 Local acceptance: **PHASE 1 PASS**. Remote CI status must be read from the linked workflow; local PASS does not imply that an in-progress CI run has completed.

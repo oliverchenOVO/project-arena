@@ -1,0 +1,192 @@
+{
+  "version": "phase11-evidence/1",
+  "stress": {
+    "dfs_deep_trap": {
+      "seeds": 100,
+      "hits": 100,
+      "missed_seeds": [],
+      "measure": "dfs_expansion_ratio",
+      "min": 7.142857142857143,
+      "mean": 7.416428571428572,
+      "max": 7.785714285714286
+    },
+    "greedy_trap": {
+      "seeds": 100,
+      "hits": 100,
+      "missed_seeds": [],
+      "measure": "greedy_cost_ratio",
+      "min": 1.11864406779661,
+      "mean": 2.703865056515326,
+      "max": 4.478260869565218,
+      "greedy_expansion_ratio_mean": 0.07392083132728766
+    },
+    "low_information": {
+      "seeds": 100,
+      "hits": 69,
+      "missed_seeds": [
+        0,
+        2,
+        3,
+        4,
+        8,
+        9,
+        10,
+        14,
+        25,
+        30,
+        31,
+        33,
+        43,
+        46,
+        53,
+        54,
+        57,
+        59,
+        60,
+        64,
+        68,
+        70,
+        79,
+        83,
+        84,
+        85,
+        88,
+        91,
+        94,
+        96,
+        99
+      ],
+      "measure": "astar_expansion_ratio",
+      "min": 0.7111111111111111,
+      "mean": 0.9239614975058674,
+      "max": 0.9937238493723849
+    },
+    "bfs_weighted_lesson": {
+      "seeds": 100,
+      "hits": 100,
+      "missed_seeds": [],
+      "measure": "bfs_cost_ratio",
+      "min": 5.636363636363637,
+      "mean": 6.406060606060606,
+      "max": 7.606060606060606
+    }
+  },
+  "determinism": {
+    "maps": 400,
+    "runs": 4000,
+    "hash_checks": 2000,
+    "seek_checks": 164172,
+    "map_mismatch": 0,
+    "hash_mismatch": 0,
+    "replay_divergence": 0
+  },
+  "seek": {
+    "retained_strategy": "fixed32",
+    "reason": "density128 lowers suffix length but increases memory and does not improve measured pooled p95 or worst-run p95",
+    "results": {
+      "fixed32": {
+        "runs": 120,
+        "samples": 12000,
+        "seek_p50_ms": 0.8329,
+        "seek_p95_ms": 2.3586,
+        "worst_individual_p95_ms": 27.034499999999998,
+        "checkpoint_memory_mean_bytes_proxy": 38748160,
+        "checkpoint_memory_max_bytes_proxy": 46137344,
+        "checkpoint_count_min": 1,
+        "checkpoint_count_max": 32,
+        "average_suffix": 1326.5188333333333,
+        "max_events": 228351,
+        "serialization_p95_ms": 93.6893,
+        "reconstruction_build_p95_ms": 109.16430000000001
+      },
+      "density128": {
+        "runs": 120,
+        "samples": 12000,
+        "seek_p50_ms": 0.8331999999999999,
+        "seek_p95_ms": 2.6148000000000002,
+        "worst_individual_p95_ms": 37.3962,
+        "checkpoint_memory_mean_bytes_proxy": 127178069.33333333,
+        "checkpoint_memory_max_bytes_proxy": 184549376,
+        "checkpoint_count_min": 1,
+        "checkpoint_count_max": 128,
+        "average_suffix": 367.44633333333337,
+        "max_events": 228351,
+        "serialization_p95_ms": 93.6893,
+        "reconstruction_build_p95_ms": 264.9081
+      }
+    }
+  },
+  "benchmark": {
+    "records": 360,
+    "legacy_hash_and_event_matches": 360,
+    "stress_records": 180,
+    "results": {
+      "32": {
+        "records": 120,
+        "compute_p50_ms": 0.3982,
+        "compute_p95_ms": 1.3624,
+        "worst_individual_seek_p95_ms": 0.2455
+      },
+      "64": {
+        "records": 120,
+        "compute_p50_ms": 1.4785,
+        "compute_p95_ms": 6.6841,
+        "worst_individual_seek_p95_ms": 0.5248
+      },
+      "128": {
+        "records": 120,
+        "compute_p50_ms": 6.0947,
+        "compute_p95_ms": 32.9981,
+        "worst_individual_seek_p95_ms": 36.4023
+      }
+    }
+  },
+  "phase0": {
+    "algorithms": [
+      "bfs",
+      "dijkstra",
+      "astar"
+    ],
+    "crashes": 0,
+    "determinismComparisons": 300,
+    "determinismMismatches": 0,
+    "durationMs": 1477.5048,
+    "engineVersion": "arena-engine/1",
+    "executions": 600,
+    "generatorFamilies": 8,
+    "invalidPaths": 0,
+    "mapDeterminismCases": 100,
+    "optimalityCases": 600,
+    "repetitions": 2,
+    "replayCases": 600,
+    "replayDivergences": 0,
+    "seedsTested": 100,
+    "seekCases": 16950,
+    "status": "PHASE 0 PASS"
+  },
+  "phase1": {
+    "algorithms": [
+      "bfs",
+      "dijkstra",
+      "astar",
+      "dfs",
+      "greedy"
+    ],
+    "crashes": 0,
+    "determinismComparisons": 500,
+    "determinismMismatches": 0,
+    "durationMs": 2103.0299999999997,
+    "engineVersion": "arena-engine/1",
+    "executions": 1000,
+    "generatorFamilies": 8,
+    "invalidPaths": 0,
+    "mapDeterminismCases": 100,
+    "optimalityCases": 600,
+    "repetitions": 2,
+    "replayCases": 1000,
+    "replayDivergences": 0,
+    "seedsTested": 100,
+    "seekCases": 24966,
+    "status": "PHASE 1 CORE PASS"
+  }
+}

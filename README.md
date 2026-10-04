@@ -4,6 +4,14 @@ An execution-driven 2D pathfinding experiment platform built with Rust, React, T
 
 ![Real Dijkstra vs A* weighted-grid replay](docs/screenshots/race.png)
 
+## Phase 1.1 laboratory
+
+Version **0.1.1** adds four Rust stress generators, EXPOSE WEAKNESS, four-heuristic comparison with a measured Dijkstra reference, Ghost Overlay / Diff Mode, recorded node history, replay markers, three synchronization modes, rule-based observations, five Showcase presets / Demo Mode and a saved-JSON BENCHMARK viewer.
+
+See [Phase 1.1 evidence and contracts](docs/phase11.md) and [measured summary](phase11-summary.json). The unchanged 360-record corpus reproduces every previous hash/event count; the new four-family corpus has 4,000 repeated executions and zero divergences. A denser checkpoint candidate was measured on the same 128 corpus and rejected; the original strategy remains.
+
+![Packaged Ghost comparison](docs/screenshots/phase11-windows-ghost.png)
+
 ## Product
 
 - **BUILD:** seeded generators, dimensions, start/goal placement, drag painting, weighted terrain, erase and clear. Editing invalidates the previous run.
@@ -115,7 +123,7 @@ cargo run --release -p arena-cli -- benchmark --output benchmark.json
 | 64×64 | 2.494 | 39.292 | 1.672 |
 | 128×128 | 8.677 | 277.989 | 252.207 |
 
-These are non-isolated local measurements across different problems, including unreachable maps, not a universal speed ranking. `benchmark.json` retains compute times, event counts, checkpoint construction, replay and seek p50/p95. Large-log seek latency/memory remain optimization work.
+These are non-isolated local measurements across different problems, including unreachable maps, not a universal speed ranking. `benchmark.json` retains compute times, event counts, checkpoint construction, replay and seek p50/p95. Large-log seek latency/memory remain a tradeoff; the controlled Phase 1.1 comparison is documented separately.
 
 ## Windows build
 
@@ -124,13 +132,13 @@ cargo fmt --manifest-path src-tauri/Cargo.toml --check
 npm run desktop:build
 ```
 
-Outputs: `src-tauri/target/release/project-arena.exe` and `src-tauri/target/release/bundle/nsis/Project ARENA_0.1.0_x64-setup.exe`. Builds generate and include locked dependency license notices. The installer can download WebView2 when missing; offline core works once the runtime is installed. Binaries are unsigned. Code signing and clean-machine installer testing are not claimed.
+Outputs: `src-tauri/target/release/project-arena.exe` and `src-tauri/target/release/bundle/nsis/Project ARENA_0.1.1_x64-setup.exe`. Builds generate and include locked dependency license notices. The installer can download WebView2 when missing; offline core works once the runtime is installed. Binaries are unsigned. Code signing and clean-machine installer testing are not claimed.
 
 ![Recorded node inspector](docs/screenshots/inspect.png)
 ![Measured analysis](docs/screenshots/analyze.png)
 
 ## Roadmap
 
-Optimize large-log replay, configure an optional explanation provider, add explicitly labeled weakness-exposure scenarios and sign Windows releases. Sorting, 3D, accounts, multiplayer and extra algorithm families stay outside Phase 1 scope.
+Continue investigating compact replay states, configure an optional explanation provider and sign Windows releases. Sorting, 3D, accounts, multiplayer and extra algorithm families stay outside Phase 1 scope.
 
 MIT license. See `THIRD_PARTY_NOTICES.md` and `docs/acceptance.md` for limitations and evidence.
