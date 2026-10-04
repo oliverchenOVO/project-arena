@@ -3,7 +3,7 @@ import {resolve} from 'node:path';
 import {writeFile} from 'node:fs/promises';
 const require=createRequire(resolve('package.json'));
 const {chromium}=require('@playwright/test');
-const browser=await chromium.connectOverCDP('http://127.0.0.1:9223',{timeout:60000});
+const browser=await chromium.connectOverCDP(process.env.ARENA_CDP_URL||'http://127.0.0.1:9223',{timeout:60000});
 const page=browser.contexts()[0].pages()[0];
 const errors=[];page.on('pageerror',e=>errors.push(e.message));
 const remoteRequests=[];page.on('request',req=>{if(req.url().startsWith('https:'))remoteRequests.push(req.url());});

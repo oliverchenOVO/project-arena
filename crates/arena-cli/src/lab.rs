@@ -72,9 +72,18 @@ pub fn gate() -> Result<Value, String> {
                 .zip(d.path_cost)
                 .map(|(a, b)| a as f64 / b as f64);
             let hit = match family {
-                Generator::DfsDeepTrap => dfs >= 1.25,
+                Generator::DfsDeepTrap => {
+                    dfs >= arena_core::observation::thresholds()["dfs"]["moderate_ratio"]
+                        .as_f64()
+                        .unwrap()
+                }
                 Generator::GreedyTrap => greedy.is_some_and(|r| r > 1.0),
-                Generator::LowInformation => astar >= 0.9,
+                Generator::LowInformation => {
+                    astar
+                        >= arena_core::observation::thresholds()["astar"]["strong_expansion_ratio"]
+                            .as_f64()
+                            .unwrap()
+                }
                 Generator::BfsWeightedLesson => bfs_cost.is_some_and(|r| r > 1.0),
                 _ => false,
             };

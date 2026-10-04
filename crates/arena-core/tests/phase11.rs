@@ -172,3 +172,28 @@ fn alternative_checkpoints_preserve_every_sampled_prefix() {
         }
     }
 }
+
+#[test]
+fn stress_badge_boundaries_follow_versioned_configuration() {
+    let t = thresholds();
+    for (key, measure, strong, moderate) in [
+        ("dfs", "ratio", 2.0, 1.25),
+        ("greedy", "cost_ratio", 1.25, 1.01),
+        ("astar", "expansion_ratio", 0.9, 0.7),
+        ("bfs", "cost_ratio", 1.5, 1.01),
+    ] {
+        assert_eq!(
+            arena_core::observation::badge(&t, key, measure, Some(strong)),
+            Some("STRONGLY EXPOSED")
+        );
+        assert_eq!(
+            arena_core::observation::badge(&t, key, measure, Some(moderate)),
+            Some("MODERATELY EXPOSED")
+        );
+        assert_eq!(
+            arena_core::observation::badge(&t, key, measure, Some(moderate - 0.0001)),
+            Some("WEAK EFFECT")
+        );
+        assert_eq!(arena_core::observation::badge(&t, key, measure, None), None);
+    }
+}

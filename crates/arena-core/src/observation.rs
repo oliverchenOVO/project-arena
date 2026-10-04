@@ -141,22 +141,7 @@ pub fn observations(
             Algorithm::Bfs => ("bfs", cost_ratio, "cost_ratio"),
             Algorithm::Dijkstra => ("dijkstra", None, "ratio"),
         };
-        let badge = effect.map(|v| {
-            if v >= t[key][format!("strong_{threshold_key}")]
-                .as_f64()
-                .unwrap_or(f64::INFINITY)
-            {
-                "STRONGLY EXPOSED"
-            } else if v
-                >= t[key][format!("moderate_{threshold_key}")]
-                    .as_f64()
-                    .unwrap_or(f64::INFINITY)
-            {
-                "MODERATELY EXPOSED"
-            } else {
-                "WEAK EFFECT"
-            }
-        });
+        let badge = badge(&t, key, threshold_key, effect);
         let optimal = m.path_cost.zip(optimal_cost).map(|(a, b)| a == b);
         measured.push(json!({"algorithm":log.config.algorithm,"heuristic":log.config.heuristic,"metrics":m,"initial_h":log.config.heuristic.estimate(&log.grid,log.grid.start),"expanded_h_sum":sum}));
         derived.push(json!({"algorithm":log.config.algorithm,"heuristic":log.config.heuristic,"average_h_at_expansion":if m.expanded>0{Some(sum as f64/m.expanded as f64)}else{None},"effective_branching_proxy":branch,"expansion_ratio_to_dijkstra":r,"heuristic_guidance_ratio":r.map(|v|1.0-v),"path_cost_optimal":optimal,"step_optimal":m.path_length.zip(step_optimal).map(|(a,b)|a==b),"cost_ratio_to_optimal":cost_ratio,"expanded_vs_best":ratio(m.expanded,best),"stress_effect":effect,"badge":badge}));
@@ -183,4 +168,23 @@ pub fn observations(
         );
     }
     json!({"version":"observation/1","problem":logs.first().map(|l|&l.map_config),"measured":measured,"derived":derived,"interpretation":interpretation,"baseline":{"algorithm":baseline.map(|b|b.config.algorithm),"optimal_cost_reference":baseline.or_else(||logs.iter().find(|l|l.config.algorithm==Algorithm::Astar)).map(|l|l.config.algorithm),"expanded":baseline.map(|b|b.metrics.expanded),"optimal_cost":optimal_cost,"step_optimal_length":step_optimal,"hash":baseline.map(|b|&b.canonical_hash)},"thresholds":t,"formulas":{"guidance":"1 - expanded / Dijkstra expanded","branching_proxy":"expanded^(1 / solution edges); proxy, not solved effective branching factor","cost_overhead":"cost / optimal cost - 1","admissibility":"All four integer heuristics are admissible and consistent for four-way movement with destination costs >= 1; this does not make Greedy optimal."}})
+}
+
+pub fn badge(t: &Value, key: &str, measure: &str, score: Option<f64>) -> Option<&'static str> {
+    score.map(|v| {
+        if v >= t[key][format!("strong_{measure}")]
+            .as_f64()
+            .unwrap_or(f64::INFINITY)
+        {
+            "STRONGLY EXPOSED"
+        } else if v
+            >= t[key][format!("moderate_{measure}")]
+                .as_f64()
+                .unwrap_or(f64::INFINITY)
+        {
+            "MODERATELY EXPOSED"
+        } else {
+            "WEAK EFFECT"
+        }
+    })
 }
