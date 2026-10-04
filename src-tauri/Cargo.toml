@@ -1,6 +1,6 @@
 [package]
 name = "project-arena"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 license = "MIT"
 description = "Deterministic algorithm experiment platform"

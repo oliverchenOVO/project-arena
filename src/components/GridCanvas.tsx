@@ -1,3 +1,4 @@
+import {useLocale} from '../i18n';
 import { useEffect,useRef } from 'react';
 import type {Grid,ReplayState} from '../model';
 import type {RacePlayback} from '../playback';
@@ -5,6 +6,7 @@ import type {Layer} from '../laboratory';
 
 interface Props {grid:Grid;accent?:string;store:RacePlayback|null;index?:number;onCell:(node:number)=>void;editable?:boolean;selected:number|null;layer?:Layer;ghost?:boolean}
 export default function GridCanvas({grid,accent='#4dd6c6',store,index=0,onCell,editable=false,selected,layer='state',ghost=false}:Props) {
+  const {t}=useLocale();
   const ref=useRef<HTMLCanvasElement>(null);
   const dragging=useRef(false);
   const lastNode=useRef(-1);
@@ -48,7 +50,7 @@ export default function GridCanvas({grid,accent='#4dd6c6',store,index=0,onCell,e
   },[grid,accent,store,index,selected,layer,ghost]);
   const cellAt=(event:React.PointerEvent<HTMLCanvasElement>)=>{const rect=event.currentTarget.getBoundingClientRect();const x=Math.min(grid.width-1,Math.max(0,Math.floor((event.clientX-rect.left)/rect.width*grid.width)));const y=Math.min(grid.height-1,Math.max(0,Math.floor((event.clientY-rect.top)/rect.height*grid.height)));return y*grid.width+x;};
   const paint=(event:React.PointerEvent<HTMLCanvasElement>)=>{const node=cellAt(event);if(lastNode.current!==node){lastNode.current=node;onCell(node);}};
-  return <canvas ref={ref} className={'grid-canvas'+(editable?' editable':'')} style={{aspectRatio:`${grid.width}/${grid.height}`}} aria-label={editable?'Editable problem grid':'Algorithm execution grid'}
+  return <canvas ref={ref} className={'grid-canvas'+(editable?' editable':'')} style={{aspectRatio:`${grid.width}/${grid.height}`,"--grid-ratio":grid.width/grid.height} as React.CSSProperties} aria-label={t(t(editable?'Editable problem grid':'Algorithm execution grid'))}
     onPointerDown={event=>{if(event.button!==0)return;dragging.current=true;lastNode.current=-1;event.currentTarget.setPointerCapture(event.pointerId);paint(event);}}
     onPointerMove={event=>{if(dragging.current&&editable)paint(event);}}
     onPointerUp={()=>{dragging.current=false;lastNode.current=-1;}} onPointerCancel={()=>{dragging.current=false;lastNode.current=-1;}}/>;

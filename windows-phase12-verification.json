@@ -1,0 +1,168 @@
+{
+  "version": "0.1.2",
+  "viewport": {
+    "width": 1440,
+    "height": 1000,
+    "devicePixelRatio": 1.25
+  },
+  "tauri": true,
+  "url": "http://tauri.localhost/#",
+  "title": "Project ARENA — Algorithm Arena",
+  "freshProfile": true,
+  "portableCopyVerified": true,
+  "artifacts": [
+    {
+      "path": "F:\\CodeX開發小東東\\AI Algorithm Arena\\output\\windows\\portable\\Project-ARENA.exe",
+      "bytes": 10343424,
+      "sha256": "B5591AF905C47FD5604C43DABF85676E686B2E689642F9C2608AC38E9371B3E5"
+    },
+    {
+      "path": "F:\\CodeX開發小東東\\AI Algorithm Arena\\output\\windows\\Project-ARENA-0.1.2-portable.zip",
+      "bytes": 4068428,
+      "sha256": "8F0468551B4C1A9FD7300216D67620E95B60A2984C1835C0C5B9B4B0E4142973"
+    },
+    {
+      "path": "F:\\CodeX開發小東東\\AI Algorithm Arena\\output\\windows\\Project ARENA_0.1.2_x64-setup.exe",
+      "bytes": 2899760,
+      "sha256": "A7449597880709973487CFC1CCCBFC1E1681A0357575D47989898685BC020751"
+    }
+  ],
+  "cases": [
+    {
+      "locale": "zh-TW",
+      "scenario": 0,
+      "replayMatches": true,
+      "inspector": true,
+      "charts": 4,
+      "hashes": [
+        "aa13118796bac6d2dd3d7777275dd7394df457e49d87b3f9cfeba35fcf609d08",
+        "4912f88da5401cadcf0a99fdf0ba30965a02b628b986862a6249589b8badf6cc"
+      ]
+    },
+    {
+      "locale": "zh-TW",
+      "scenario": 1,
+      "replayMatches": true,
+      "inspector": true,
+      "charts": 4,
+      "hashes": [
+        "c281c7510826de1483dea3ee9653d72efc2325f1810a2d2a763c784922795ac5",
+        "8a9ae8aa386cd6ba2b572736e1cea77f3302cc0bac871062face9c9917da8d42"
+      ]
+    },
+    {
+      "locale": "zh-TW",
+      "scenario": 2,
+      "replayMatches": true,
+      "inspector": true,
+      "charts": 4,
+      "hashes": [
+        "bd4fc01f684d1c0f433dd9946d09f5223116b6e87d9808662d48c595ee8756b7",
+        "5c72eb47b9d7398e1e2836269c548201e9013353b5666547797882998a55c881"
+      ]
+    },
+    {
+      "locale": "zh-TW",
+      "scenario": 3,
+      "replayMatches": true,
+      "inspector": true,
+      "charts": 4,
+      "hashes": [
+        "59c5e2376131903bfafc2516a74b961b0dfe1827f12b597c432fa5cfc63cc750",
+        "fbc4087e8429d466fec4ebc1b81778bc43bc8355140002a737b669772c625147"
+      ]
+    },
+    {
+      "locale": "zh-TW",
+      "scenario": 4,
+      "replayMatches": true,
+      "inspector": true,
+      "charts": 4,
+      "hashes": [
+        "ea3788b4e6cf438dd6e309ef8b9d0273048bbb7b829d50a4ec9d673f8814a261",
+        "7ceda607b61a97222461ca1d9cfa87708197d33264f429b8742253181ded909a"
+      ]
+    },
+    {
+      "locale": "zh-TW",
+      "heuristicPanes": 5,
+      "importValidated": true,
+      "benchmarkLoaded": true
+    },
+    {
+      "locale": "en",
+      "scenario": 0,
+      "replayMatches": true,
+      "inspector": true,
+      "charts": 4,
+      "hashes": [
+        "aa13118796bac6d2dd3d7777275dd7394df457e49d87b3f9cfeba35fcf609d08",
+        "4912f88da5401cadcf0a99fdf0ba30965a02b628b986862a6249589b8badf6cc"
+      ]
+    },
+    {
+      "locale": "en",
+      "scenario": 1,
+      "replayMatches": true,
+      "inspector": true,
+      "charts": 4,
+      "hashes": [
+        "c281c7510826de1483dea3ee9653d72efc2325f1810a2d2a763c784922795ac5",
+        "8a9ae8aa386cd6ba2b572736e1cea77f3302cc0bac871062face9c9917da8d42"
+      ]
+    },
+    {
+      "locale": "en",
+      "scenario": 2,
+      "replayMatches": true,
+      "inspector": true,
+      "charts": 4,
+      "hashes": [
+        "bd4fc01f684d1c0f433dd9946d09f5223116b6e87d9808662d48c595ee8756b7",
+        "5c72eb47b9d7398e1e2836269c548201e9013353b5666547797882998a55c881"
+      ]
+    },
+    {
+      "locale": "en",
+      "scenario": 3,
+      "replayMatches": true,
+      "inspector": true,
+      "charts": 4,
+      "hashes": [
+        "59c5e2376131903bfafc2516a74b961b0dfe1827f12b597c432fa5cfc63cc750",
+        "fbc4087e8429d466fec4ebc1b81778bc43bc8355140002a737b669772c625147"
+      ]
+    },
+    {
+      "locale": "en",
+      "scenario": 4,
+      "replayMatches": true,
+      "inspector": true,
+      "charts": 4,
+      "hashes": [
+        "ea3788b4e6cf438dd6e309ef8b9d0273048bbb7b829d50a4ec9d673f8814a261",
+        "7ceda607b61a97222461ca1d9cfa87708197d33264f429b8742253181ded909a"
+      ]
+    },
+    {
+      "locale": "en",
+      "heuristicPanes": 5,
+      "importValidated": true,
+      "benchmarkLoaded": true
+    }
+  ],
+  "screenshots": [
+    "docs/screenshots/phase12-zh-landing.png",
+    "docs/screenshots/phase12-zh-astar-dijkstra-race.png",
+    "docs/screenshots/phase12-windows-packaged.png",
+    "docs/screenshots/phase12-zh-overlay-diff.png",
+    "docs/screenshots/phase12-zh-inspector-astar-dijkstra.png",
+    "docs/screenshots/phase12-zh-analysis.png",
+    "docs/screenshots/phase12-zh-inspector-bfs-dijkstra.png",
+    "docs/screenshots/phase12-zh-stress-lab.png",
+    "docs/screenshots/phase12-zh-benchmark.png",
+    "docs/screenshots/phase12-en-race.png"
+  ],
+  "consoleErrors": [],
+  "remoteRequests": []
+}

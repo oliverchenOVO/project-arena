@@ -1,0 +1,72 @@
+{
+  "status": "PHASE 1.2 PASS",
+  "version": "0.1.2",
+  "localization": {
+    "locales": [
+      "zh-TW",
+      "en"
+    ],
+    "keys": 374,
+    "missingKeys": [],
+    "preference": "saved locale > browser languages > zh-TW",
+    "liveSwitchCanonicalExportIdentical": true
+  },
+  "determinism": {
+    "engineVersion": "arena-engine/1",
+    "executions": 5600,
+    "seeks": 206088,
+    "repeatHashComparisons": 2800,
+    "hashMismatches": 0,
+    "replayDivergences": 0,
+    "historicalHashComparisons": 2540,
+    "historicalStressHashMismatches": 0,
+    "benchmark": {
+      "records": 360,
+      "hashMismatches": 0,
+      "metricMismatches": 0
+    },
+    "stressBenchmark": {
+      "records": 180,
+      "hashMismatches": 0,
+      "metricMismatches": 0
+    }
+  },
+  "tests": {
+    "rust": 39,
+    "frontend": 48,
+    "e2e": {
+      "expected": 33,
+      "unexpected": 0,
+      "flaky": 0,
+      "skipped": 0
+    }
+  },
+  "showcase": {
+    "fixedScenarios": 5,
+    "guidedMarkers": 3,
+    "summaryConclusions": 3
+  },
+  "desktop": {
+    "tauri": true,
+    "cases": 12,
+    "consoleErrors": [],
+    "remoteRequests": [],
+    "screenshots": [
+      "docs/screenshots/phase12-zh-landing.png",
+      "docs/screenshots/phase12-zh-astar-dijkstra-race.png",
+      "docs/screenshots/phase12-windows-packaged.png",
+      "docs/screenshots/phase12-zh-overlay-diff.png",
+      "docs/screenshots/phase12-zh-inspector-astar-dijkstra.png",
+      "docs/screenshots/phase12-zh-analysis.png",
+      "docs/screenshots/phase12-zh-inspector-bfs-dijkstra.png",
+      "docs/screenshots/phase12-zh-stress-lab.png",
+      "docs/screenshots/phase12-zh-benchmark.png",
+      "docs/screenshots/phase12-en-race.png"
+    ]
+  },
+  "knownIssues": [
+    "No optional AI provider configured",
+    "Unsigned Windows artifacts; clean-machine installer testing not claimed",
+    "Guided demo duration varies with playback speed and user pauses"
+  ]
+}

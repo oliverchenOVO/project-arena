@@ -2,11 +2,21 @@
 
 An execution-driven 2D pathfinding experiment platform built with Rust, React, TypeScript, Vite and Tauri 2. Compare algorithms on the same problem, inspect recorded state and replay the exact event log offline.
 
-![Real Dijkstra vs A* weighted-grid replay](docs/screenshots/race.png)
+[繁體中文版](README.zh-TW.md) · Version **0.1.2**
+
+![Actual packaged A* vs Dijkstra replay](docs/screenshots/phase12-zh-astar-dijkstra-race.png)
+
+## Phase 1.2 localization and presentation
+
+Traditional Chinese and English share a complete central dictionary. The saved preference wins over browser language, with zh-TW as the fallback. Switching language keeps the same map, seed, logs, metrics, playback position and canonical export. No search runs during a language switch.
+
+Start with five real fixed-seed showcase cards or enter the laboratory. The guided demo pauses at three recorded milestones, continues to measured analysis and repeats the same hashes on restart. Configuration collapses after execution; Presentation Mode keeps race panes, metrics and playback in focus and exits with Escape. Analysis shows an observed headline and four independent metric charts, with measured data, derived formulas and rule-based interpretation identified separately.
+
+See [Phase 1.2 acceptance](docs/phase12.md), [machine-readable evidence](phase12-summary.json) and [Windows verification](windows-phase12-verification.json). All 540 legacy benchmark records and 2,000 saved stress hashes remain identical.
 
 ## Phase 1.1 laboratory
 
-Version **0.1.1** adds four Rust stress generators, EXPOSE WEAKNESS, four-heuristic comparison with a measured Dijkstra reference, Ghost Overlay / Diff Mode, recorded node history, replay markers, three synchronization modes, rule-based observations, five Showcase presets / Demo Mode and a saved-JSON BENCHMARK viewer.
+Version **0.1.1** added four Rust stress generators, EXPOSE WEAKNESS, four-heuristic comparison with a measured Dijkstra reference, Ghost Overlay / Diff Mode, recorded node history, replay markers, three synchronization modes, rule-based observations, five Showcase presets / Demo Mode and a saved-JSON BENCHMARK viewer.
 
 See [Phase 1.1 evidence and contracts](docs/phase11.md) and [measured summary](phase11-summary.json). The unchanged 360-record corpus reproduces every previous hash/event count; the new four-family corpus has 4,000 repeated executions and zero divergences. A denser checkpoint candidate was measured on the same 128 corpus and rejected; the original strategy remains.
 
@@ -22,7 +32,7 @@ See [Phase 1.1 evidence and contracts](docs/phase11.md) and [measured summary](p
 - **Headless:** execution, canonical hashes, saved-log replay, gates and benchmark JSON/readable summaries.
 - **Windows:** x64 executable and unsigned NSIS installer; actual packaged execution, replay, inspection and analysis verified with HTTPS requests blocked.
 
-No API key is required. Execution never calls an LLM. The optional explanation provider interface is isolated; the bundled provider reports unavailability. No live AI provider is configured.
+No API key is required. Execution never calls an LLM. The optional explanation provider interface is isolated; the unconfigured provider is a muted informational panel. No live AI provider is configured.
 
 ## Architecture
 
@@ -46,7 +56,7 @@ Execution finishes into a log before visual playback starts. Playback duration n
 
 | Algorithm | Frontier | Guarantee |
 | --- | --- | --- |
-| BFS | FIFO | Optimal steps on uniform grids |
+| BFS | FIFO | Minimum steps; weighted cost can differ |
 | Dijkstra | Priority queue | Optimal non-negative terrain cost |
 | A* | Priority queue, g + h | Optimal cost with supported admissible heuristics |
 | DFS | LIFO | Reachability; no shortest-path guarantee |
@@ -98,7 +108,7 @@ npm run test:e2e
 
 If installed Rust is absent from PATH, prepend `$env:USERPROFILE\.cargo\bin`. Browser mode needs the Rust dev adapter; `vite preview` serves assets only. Use Tauri for standalone offline execution.
 
-Rust: **29 tests**; frontend: **30 unit cases**, including replay reduction against a real Rust-produced fixture and unreachable-cost analysis. **18 Playwright flows** cover three pairings × five map families, editor validity, four contenders, saved-log import and 390px responsiveness. Gates use an independent O(V²) optimality oracle, with separate step/cost objectives.
+Rust: **39 tests**; frontend: **48 unit cases**, including replay reduction against a real Rust-produced fixture and unreachable-cost analysis. **33 Playwright flows** cover three pairings × five map families, editor validity, four contenders, saved-log import and 390px responsiveness, five showcase presets, live locale persistence, canonical export invariance and English core smoke. The original 24 flows now run in zh-TW; nine added flows cover localization and both languages. Gates use an independent O(V²) optimality oracle, with separate step/cost objectives.
 
 ```powershell
 cargo run --release -p arena-cli -- gate --output phase0-gate.json
@@ -132,10 +142,10 @@ cargo fmt --manifest-path src-tauri/Cargo.toml --check
 npm run desktop:build
 ```
 
-Outputs: `src-tauri/target/release/project-arena.exe` and `src-tauri/target/release/bundle/nsis/Project ARENA_0.1.1_x64-setup.exe`. Builds generate and include locked dependency license notices. The installer can download WebView2 when missing; offline core works once the runtime is installed. Binaries are unsigned. Code signing and clean-machine installer testing are not claimed.
+Outputs: `src-tauri/target/release/project-arena.exe` and `src-tauri/target/release/bundle/nsis/Project ARENA_0.1.2_x64-setup.exe`. Builds generate and include locked dependency license notices. The installer can download WebView2 when missing; offline core works once the runtime is installed. Binaries are unsigned. Code signing and clean-machine installer testing are not claimed.
 
-![Recorded node inspector](docs/screenshots/inspect.png)
-![Measured analysis](docs/screenshots/analyze.png)
+![Localized recorded node inspector](docs/screenshots/phase12-zh-inspector-astar-dijkstra.png)
+![Localized measured analysis](docs/screenshots/phase12-zh-analysis.png)
 
 ## Roadmap
 

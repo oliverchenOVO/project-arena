@@ -25,7 +25,7 @@ export interface DerivedObservation {algorithm:Algorithm;heuristic:Heuristic;ave
 export interface Observations {version:string;measured:unknown[];derived:DerivedObservation[];interpretation:{algorithm:Algorithm;text:string;rule_version:string}[];thresholds:unknown;formulas:Record<string,string>;baseline:unknown}
 export interface Marker {label:string;cursor:number;event:number;value?:number}
 export interface RaceResult {logs:RunLog[];features:Features[];observations?:Observations;markers?:Marker[][]}
-export const names:Record<Algorithm,string>={bfs:'BFS',dijkstra:'Dijkstra',astar:'A*',dfs:'DFS',greedy:'Greedy best-first'};
+export const names:Record<Algorithm,string>={bfs:'BFS',dijkstra:'Dijkstra',astar:'A*',dfs:'DFS',greedy:'Greedy Best-First'};
 export const accents:Record<Algorithm,string>={bfs:'#9c9fed',dijkstra:'#569ee7',astar:'#4dd6c6',dfs:'#d8a969',greedy:'#d18bb0'};
 export const generators:Record<Generator,string>={open:'Open field',obstacles:'Random obstacles',backtracker:'Backtracker maze',division:'Division maze',rooms:'Rooms',corridors:'Narrow corridors',weighted:'Weighted terrain',heuristic_trap:'Heuristic stress case',dfs_deep_trap:'DFS deep trap · stress/1',greedy_trap:'Greedy barrier & terrain trap · stress/1',low_information:'A* low information · stress/1',bfs_weighted_lesson:'BFS weighted lesson · stress/1'};
 export const defaultMap:MapConfig={seed:123,width:32,height:32,generator:'weighted',wall_percent:15};
