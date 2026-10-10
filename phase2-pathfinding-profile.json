@@ -1,0 +1,17 @@
+{
+  "runtime": "Chromium on shared Windows development host",
+  "size": 128,
+  "algorithms": [
+    "dijkstra",
+    "astar"
+  ],
+  "events": [
+    228351,
+    4061
+  ],
+  "frameSamples": 120,
+  "frameP50Ms": 33.30000000000018,
+  "frameP95Ms": 50,
+  "frameMaxMs": 50,
+  "scope": "Live RAF intervals during recorded playback; host load affects timings"
+}

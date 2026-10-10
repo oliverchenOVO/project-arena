@@ -1,0 +1,5050 @@
+{
+  "arch": "x86_64",
+  "build": "release",
+  "engineVersion": "arena-engine/1",
+  "generatorVersion": "stress/1",
+  "os": "windows",
+  "records": [
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.1234,
+      "events": 1783,
+      "expanded": 175,
+      "logicalOps": 1237,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 32,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 27,
+      "peakFrontier": 9,
+      "runHash": "c281c7510826de1483dea3ee9653d72efc2325f1810a2d2a763c784922795ac5",
+      "seed": 123,
+      "size": 32
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.1177,
+      "events": 1783,
+      "expanded": 175,
+      "logicalOps": 1237,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 32,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 27,
+      "peakFrontier": 9,
+      "runHash": "7ade6a5ed5a13f9ea9319fe3c281cc103574b6dd5ea56c2c989411f184a62ad5",
+      "seed": 123,
+      "size": 32
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.0624,
+      "events": 325,
+      "expanded": 28,
+      "logicalOps": 214,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 32,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 27,
+      "peakFrontier": 9,
+      "runHash": "174e4a3fb7d695c4d7e735458086583f5e9ca4b1b1ae2edd477700c36a4a803d",
+      "seed": 123,
+      "size": 32
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.1301,
+      "events": 2087,
+      "expanded": 209,
+      "logicalOps": 1457,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 32,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 27,
+      "peakFrontier": 2,
+      "runHash": "8a9ae8aa386cd6ba2b572736e1cea77f3302cc0bac871062face9c9917da8d42",
+      "seed": 123,
+      "size": 32
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.0214,
+      "events": 325,
+      "expanded": 28,
+      "logicalOps": 214,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 32,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 27,
+      "peakFrontier": 9,
+      "runHash": "0ecd320b5fd5cf2222fd3db7968f929905b807eaafcc724f8628780ade715f0f",
+      "seed": 123,
+      "size": 32
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.0782,
+      "events": 1803,
+      "expanded": 177,
+      "logicalOps": 1251,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 32,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 27,
+      "peakFrontier": 9,
+      "runHash": "746f62d8f3d76c942a548cbd8c7936344c8b9e7b9d2c11ff8ae3b6acd3c0cd06",
+      "seed": 456,
+      "size": 32
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.1671,
+      "events": 1803,
+      "expanded": 177,
+      "logicalOps": 1251,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 32,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 27,
+      "peakFrontier": 9,
+      "runHash": "e337caed046646bdec3eb5270d108e8a80a2866ea2194051b23bde3bf6e66df3",
+      "seed": 456,
+      "size": 32
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.0599,
+      "events": 325,
+      "expanded": 28,
+      "logicalOps": 214,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 32,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 27,
+      "peakFrontier": 9,
+      "runHash": "37287f670ba70880acaa27f0bdf7e38711eed1ad1d0929ad0af758c12380a829",
+      "seed": 456,
+      "size": 32
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.1271,
+      "events": 2147,
+      "expanded": 215,
+      "logicalOps": 1499,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 32,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 27,
+      "peakFrontier": 2,
+      "runHash": "eeee14a0a65b5599fffac33d0f879783ee14e5442164b71e9c27887d40ba3587",
+      "seed": 456,
+      "size": 32
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.0802,
+      "events": 325,
+      "expanded": 28,
+      "logicalOps": 214,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 32,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 27,
+      "peakFrontier": 9,
+      "runHash": "af9766843395a71bac7e8fe4f7165102aff905b72361daebad69cfaf547b0251",
+      "seed": 456,
+      "size": 32
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.0733,
+      "events": 1773,
+      "expanded": 174,
+      "logicalOps": 1230,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 32,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 27,
+      "peakFrontier": 9,
+      "runHash": "482da869e07907f515c59842f66e1f15a18fa5340b038ffa77b98e0ef9a09dbe",
+      "seed": 789,
+      "size": 32
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.0792,
+      "events": 1773,
+      "expanded": 174,
+      "logicalOps": 1230,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 32,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 27,
+      "peakFrontier": 9,
+      "runHash": "cbf5faa3a2d0298d219e92e30a6ff800db849be7666ff2cf730a41e6bd950ac5",
+      "seed": 789,
+      "size": 32
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.0424,
+      "events": 325,
+      "expanded": 28,
+      "logicalOps": 214,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 32,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 27,
+      "peakFrontier": 9,
+      "runHash": "1fbf9558296fb8cf8badb02120bf21ecf5cfc8881bdffae5d5e3ba715ff39f64",
+      "seed": 789,
+      "size": 32
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.0672,
+      "events": 2057,
+      "expanded": 206,
+      "logicalOps": 1436,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 32,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 27,
+      "peakFrontier": 2,
+      "runHash": "23520f9d425c33bc83f7d39cbc1b08eccc68277909e2ac707d7ef25ee6d8a93a",
+      "seed": 789,
+      "size": 32
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.036,
+      "events": 325,
+      "expanded": 28,
+      "logicalOps": 214,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 32,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 27,
+      "peakFrontier": 9,
+      "runHash": "bf7838f004c18f70cc2135430276c7c6ac4175cb95f8801f365f17f4b2718ed6",
+      "seed": 789,
+      "size": 32
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.1066,
+      "events": 3853,
+      "expanded": 277,
+      "logicalOps": 2944,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 32,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 99,
+      "peakFrontier": 26,
+      "runHash": "e7bad17c558239bdb37ae4ca723b7296e9315041608425cacd90fb120a5d65e5",
+      "seed": 123,
+      "size": 32
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.4216,
+      "events": 10901,
+      "expanded": 797,
+      "logicalOps": 8462,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 32,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 54,
+      "peakFrontier": 26,
+      "runHash": "be7c69ded127e526a42e8950607ca173853ceb7e3eca080fe987cd4b5dbfd74f",
+      "seed": 123,
+      "size": 32
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.3169,
+      "events": 5611,
+      "expanded": 403,
+      "logicalOps": 4270,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 32,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 54,
+      "peakFrontier": 44,
+      "runHash": "880da2a9f2c90b62482e6adb9895a2f41e5ed3a7174180fce4ac29ff088634a3",
+      "seed": 123,
+      "size": 32
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.1983,
+      "events": 4771,
+      "expanded": 281,
+      "logicalOps": 3139,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 32,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 280,
+      "peakFrontier": 263,
+      "runHash": "5d977b6a68349ba73f008738dd375e6aaf3daae545d77bbdfe679f7cb709475d",
+      "seed": 123,
+      "size": 32
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.0896,
+      "events": 575,
+      "expanded": 40,
+      "logicalOps": 401,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 32,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 126,
+      "peakFrontier": 18,
+      "runHash": "ea8f4b7a6f492f57115301d79e9889a0fa58966f4300f976033951f0a7a6ef86",
+      "seed": 123,
+      "size": 32
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.1816,
+      "events": 4645,
+      "expanded": 335,
+      "logicalOps": 3562,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 32,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 110,
+      "peakFrontier": 26,
+      "runHash": "ddca47bd1d72aad396e5b965321149c1521a18b9f247cd52883a7364710f7592",
+      "seed": 456,
+      "size": 32
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.363,
+      "events": 10695,
+      "expanded": 782,
+      "logicalOps": 8301,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 32,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 52,
+      "peakFrontier": 28,
+      "runHash": "5c72eb47b9d7398e1e2836269c548201e9013353b5666547797882998a55c881",
+      "seed": 456,
+      "size": 32
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.2954,
+      "events": 5585,
+      "expanded": 401,
+      "logicalOps": 4253,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 32,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 52,
+      "peakFrontier": 43,
+      "runHash": "a32e28173090d4c89cbf7f820b7deb4024dd66051d84d61e9e8ebfd6f5520ce6",
+      "seed": 456,
+      "size": 32
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.2043,
+      "events": 6913,
+      "expanded": 450,
+      "logicalOps": 4861,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 32,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 250,
+      "peakFrontier": 320,
+      "runHash": "8101e4521120983075cda9d20f1bf030490eb2975d24558d4ee754f5bbbeb280",
+      "seed": 456,
+      "size": 32
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.0871,
+      "events": 777,
+      "expanded": 54,
+      "logicalOps": 552,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 32,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 146,
+      "peakFrontier": 21,
+      "runHash": "bd4fc01f684d1c0f433dd9946d09f5223116b6e87d9808662d48c595ee8756b7",
+      "seed": 456,
+      "size": 32
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.2383,
+      "events": 5437,
+      "expanded": 393,
+      "logicalOps": 4180,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 32,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 121,
+      "peakFrontier": 26,
+      "runHash": "4952d60d183ffa075c15b27f94f5411b470c6404ccd23d49799a1942e0f8ab9b",
+      "seed": 789,
+      "size": 32
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.6787,
+      "events": 10489,
+      "expanded": 767,
+      "logicalOps": 8140,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 32,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 50,
+      "peakFrontier": 30,
+      "runHash": "0bf55e90af00d30038dd1d8d9951b815961ffbff0ed30ca219d1d8963c07c16a",
+      "seed": 789,
+      "size": 32
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.1947,
+      "events": 5569,
+      "expanded": 400,
+      "logicalOps": 4243,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 32,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 50,
+      "peakFrontier": 42,
+      "runHash": "38cdd288981d262951506197791185de7db67cc4dd8c9801c1ecc3da1d197e1f",
+      "seed": 789,
+      "size": 32
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.1426,
+      "events": 4215,
+      "expanded": 249,
+      "logicalOps": 2769,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 32,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 248,
+      "peakFrontier": 233,
+      "runHash": "b19a6b2d815fa07788cbb6a6184d99a8e100a856e32d35c8e11e7ddbde2b6103",
+      "seed": 789,
+      "size": 32
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.0572,
+      "events": 1007,
+      "expanded": 70,
+      "logicalOps": 725,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 32,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 166,
+      "peakFrontier": 24,
+      "runHash": "7eeb5507c2a94a7c117c71debe1071e0468579bb201ef01dadf6c8359faebd4d",
+      "seed": 789,
+      "size": 32
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.139,
+      "events": 4837,
+      "expanded": 478,
+      "logicalOps": 3400,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 32,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "low_information",
+      "pathCost": 143,
+      "peakFrontier": 7,
+      "runHash": "c2bebde7f4509606af15447c2080deb04251009d6e681b97a1e3a733a7caf414",
+      "seed": 123,
+      "size": 32
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.2972,
+      "events": 4837,
+      "expanded": 478,
+      "logicalOps": 3400,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 32,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "low_information",
+      "pathCost": 143,
+      "peakFrontier": 7,
+      "runHash": "7ceda607b61a97222461ca1d9cfa87708197d33264f429b8742253181ded909a",
+      "seed": 123,
+      "size": 32
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.2311,
+      "events": 4735,
+      "expanded": 462,
+      "logicalOps": 3312,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 32,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "low_information",
+      "pathCost": 143,
+      "peakFrontier": 10,
+      "runHash": "ea3788b4e6cf438dd6e309ef8b9d0273048bbb7b829d50a4ec9d673f8814a261",
+      "seed": 123,
+      "size": 32
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.1263,
+      "events": 2303,
+      "expanded": 218,
+      "logicalOps": 1586,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 32,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "low_information",
+      "pathCost": 217,
+      "peakFrontier": 21,
+      "runHash": "0ccec54b988cb359ece185939d2d39c6e64c6bab0f192bdea2c106b253d57432",
+      "seed": 123,
+      "size": 32
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.1747,
+      "events": 3729,
+      "expanded": 362,
+      "logicalOps": 2592,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 32,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "low_information",
+      "pathCost": 291,
+      "peakFrontier": 17,
+      "runHash": "b36abc4c35984228f4292ad6bd3126af34acb33f8e8bf2ef220fa9c5dc497cd0",
+      "seed": 123,
+      "size": 32
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.1706,
+      "events": 4833,
+      "expanded": 478,
+      "logicalOps": 3396,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 32,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "low_information",
+      "pathCost": 161,
+      "peakFrontier": 7,
+      "runHash": "b9dce800b82445dcae2e84bd84cedc67baa04f7d77aec2bb182cd2f18d1ce563",
+      "seed": 456,
+      "size": 32
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.1781,
+      "events": 4833,
+      "expanded": 478,
+      "logicalOps": 3396,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 32,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "low_information",
+      "pathCost": 161,
+      "peakFrontier": 7,
+      "runHash": "38711dc36dac55448b75ab590015e4830d2f3221c74529a3a9188c5bbd37f792",
+      "seed": 456,
+      "size": 32
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.2911,
+      "events": 4560,
+      "expanded": 444,
+      "logicalOps": 3185,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 32,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "low_information",
+      "pathCost": 161,
+      "peakFrontier": 9,
+      "runHash": "8aff8417b18517d7df214ebd56236562bcc891a9f061927243528f4638371945",
+      "seed": 456,
+      "size": 32
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.1703,
+      "events": 3035,
+      "expanded": 292,
+      "logicalOps": 2099,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 32,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "low_information",
+      "pathCost": 291,
+      "peakFrontier": 20,
+      "runHash": "17ae6ddc47c0ae74cfc93b9a4d489a8d950752c73f55d9b9daa6966febd76138",
+      "seed": 456,
+      "size": 32
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.1294,
+      "events": 3531,
+      "expanded": 343,
+      "logicalOps": 2457,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 32,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "low_information",
+      "pathCost": 217,
+      "peakFrontier": 15,
+      "runHash": "dda1cd55dd578dea8d1fb23a38c913977a632fbb4c51bf3f52d465c3e226c219",
+      "seed": 456,
+      "size": 32
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.142,
+      "events": 4833,
+      "expanded": 478,
+      "logicalOps": 3396,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 32,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "low_information",
+      "pathCost": 135,
+      "peakFrontier": 7,
+      "runHash": "2b1582dc01139060b8987c08b8837404234696321d18238cdbc66b8f52980b26",
+      "seed": 789,
+      "size": 32
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.1738,
+      "events": 4833,
+      "expanded": 478,
+      "logicalOps": 3396,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 32,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "low_information",
+      "pathCost": 135,
+      "peakFrontier": 7,
+      "runHash": "01bc3b32548b9a94bb95dc51d180b67d54e7a680fea1b94abd91a310232a2e10",
+      "seed": 789,
+      "size": 32
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.1497,
+      "events": 4063,
+      "expanded": 395,
+      "logicalOps": 2837,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 32,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "low_information",
+      "pathCost": 135,
+      "peakFrontier": 7,
+      "runHash": "6227639f7c81417ab021f910b18e77c6a87184fea4c8b1812dcc69dd66202413",
+      "seed": 789,
+      "size": 32
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.1314,
+      "events": 1879,
+      "expanded": 178,
+      "logicalOps": 1291,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 32,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "low_information",
+      "pathCost": 177,
+      "peakFrontier": 18,
+      "runHash": "dbb5b82837598dc8dc4e69e0b8fe154c14fde6adb53035949a6c893058ca43b2",
+      "seed": 789,
+      "size": 32
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.1652,
+      "events": 2573,
+      "expanded": 248,
+      "logicalOps": 1781,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 32,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "low_information",
+      "pathCost": 211,
+      "peakFrontier": 16,
+      "runHash": "ccee99b0d9520f6507402e321fee2556ce5975b36a413960f3a3bd41033f9800",
+      "seed": 789,
+      "size": 32
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.0466,
+      "events": 583,
+      "expanded": 58,
+      "logicalOps": 403,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 32,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 221,
+      "peakFrontier": 2,
+      "runHash": "f553fa59065fcade5d46a0a54f90951f4100739d5115970a833716d6ea38ac91",
+      "seed": 123,
+      "size": 32
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.0325,
+      "events": 383,
+      "expanded": 38,
+      "logicalOps": 263,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 32,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 33,
+      "peakFrontier": 2,
+      "runHash": "e12c579a6f49c40713f82c13570057ccff1727810fc8baee975095c8abb3ee97",
+      "seed": 123,
+      "size": 32
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.0321,
+      "events": 353,
+      "expanded": 35,
+      "logicalOps": 242,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 32,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 33,
+      "peakFrontier": 2,
+      "runHash": "15bb234fe38c43f50313c7096c5876d46b0dcaee1b4af845c625b6d90d70cd2f",
+      "seed": 123,
+      "size": 32
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.0304,
+      "events": 343,
+      "expanded": 34,
+      "logicalOps": 235,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 32,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 33,
+      "peakFrontier": 2,
+      "runHash": "84012159d9072ec10b0d10684efe8c054ce410d6d20799e3e443823439c148e4",
+      "seed": 123,
+      "size": 32
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.0304,
+      "events": 303,
+      "expanded": 30,
+      "logicalOps": 207,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 32,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 221,
+      "peakFrontier": 2,
+      "runHash": "f67d337d822764733c51db15e86d69d70fbac2b7156d48b949f41800643de3ab",
+      "seed": 123,
+      "size": 32
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.0328,
+      "events": 583,
+      "expanded": 58,
+      "logicalOps": 403,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 32,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 216,
+      "peakFrontier": 2,
+      "runHash": "ff0b30e0da29b1488ec4f73a5a636d600a53264fbaf5e60ee9ed320de48ae661",
+      "seed": 456,
+      "size": 32
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.0263,
+      "events": 373,
+      "expanded": 37,
+      "logicalOps": 256,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 32,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 33,
+      "peakFrontier": 2,
+      "runHash": "ad55b8563e98d5e955676838cb7c88d81a7c4eb4a02ca28a94ccf0da8ad8bb03",
+      "seed": 456,
+      "size": 32
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.0313,
+      "events": 343,
+      "expanded": 34,
+      "logicalOps": 235,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 32,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 33,
+      "peakFrontier": 2,
+      "runHash": "88c7c3952f3c16d13492dbead25cf74beeb6d9443cbaf900597e246a88193997",
+      "seed": 456,
+      "size": 32
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.0307,
+      "events": 343,
+      "expanded": 34,
+      "logicalOps": 235,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 32,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 33,
+      "peakFrontier": 2,
+      "runHash": "eb9856f5e08c51b6f9cb466e837840a42e7c3a5406c3b242f40086970aedaa7a",
+      "seed": 456,
+      "size": 32
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.0335,
+      "events": 303,
+      "expanded": 30,
+      "logicalOps": 207,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 32,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 216,
+      "peakFrontier": 2,
+      "runHash": "f41a202c8c5ada432ea52902ba76968d1bc314cc5d533c2e7e6db23dca8fa9d7",
+      "seed": 456,
+      "size": 32
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.0514,
+      "events": 583,
+      "expanded": 58,
+      "logicalOps": 403,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 32,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 191,
+      "peakFrontier": 2,
+      "runHash": "59c5e2376131903bfafc2516a74b961b0dfe1827f12b597c432fa5cfc63cc750",
+      "seed": 789,
+      "size": 32
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.044,
+      "events": 393,
+      "expanded": 39,
+      "logicalOps": 270,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 32,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 33,
+      "peakFrontier": 2,
+      "runHash": "fbc4087e8429d466fec4ebc1b81778bc43bc8355140002a737b669772c625147",
+      "seed": 789,
+      "size": 32
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.0306,
+      "events": 353,
+      "expanded": 35,
+      "logicalOps": 242,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 32,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 33,
+      "peakFrontier": 2,
+      "runHash": "873bbcbf436810d13efd210b0b54466d3586bbc8d8e20bf0afa217d97f3cd0fa",
+      "seed": 789,
+      "size": 32
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.0331,
+      "events": 343,
+      "expanded": 34,
+      "logicalOps": 235,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 32,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 33,
+      "peakFrontier": 2,
+      "runHash": "9fa08de986d6401c286a5a7f8fdf3819382bbbb6b5cc7d7c768a6e4c06651d15",
+      "seed": 789,
+      "size": 32
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.0319,
+      "events": 303,
+      "expanded": 30,
+      "logicalOps": 207,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 32,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 24,
+          "corridor_width": 1,
+          "goal_placement": 28,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 32
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 191,
+      "peakFrontier": 2,
+      "runHash": "b5cffc5ce5232c6866ad4a9f79750ab77436b076a8e18460d7eaf6c271a524c1",
+      "seed": 789,
+      "size": 32
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.257,
+      "events": 4663,
+      "expanded": 463,
+      "logicalOps": 3253,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 64,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 59,
+      "peakFrontier": 9,
+      "runHash": "b2113747e758967fdf9803535ca8ccaac0639c7f6578cd15414943a54a3b0cae",
+      "seed": 123,
+      "size": 64
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.3319,
+      "events": 4663,
+      "expanded": 463,
+      "logicalOps": 3253,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 64,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 59,
+      "peakFrontier": 9,
+      "runHash": "75be4657146d4153f8e7fed6a5d17576c350670d93ea76e8d7918d23a345186c",
+      "seed": 123,
+      "size": 64
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.1546,
+      "events": 645,
+      "expanded": 60,
+      "logicalOps": 438,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 64,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 59,
+      "peakFrontier": 9,
+      "runHash": "59f67935c2339aff648a8fc4aec4f67283a6b0de50f5cc8439d7842dc578705c",
+      "seed": 123,
+      "size": 64
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.2752,
+      "events": 4967,
+      "expanded": 497,
+      "logicalOps": 3473,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 64,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 59,
+      "peakFrontier": 2,
+      "runHash": "4001e254b2aa9699ace23164fe249e748c0e8dcb25813b35fc24404bf22cae22",
+      "seed": 123,
+      "size": 64
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.1411,
+      "events": 645,
+      "expanded": 60,
+      "logicalOps": 438,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 64,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 59,
+      "peakFrontier": 9,
+      "runHash": "751862540dcfcf3508a36547d74ef1aa38878e70a9d01095de06e5775bfcfbc9",
+      "seed": 123,
+      "size": 64
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.2558,
+      "events": 4683,
+      "expanded": 465,
+      "logicalOps": 3267,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 64,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 59,
+      "peakFrontier": 9,
+      "runHash": "1baf4399d88018df4e3eee10b9451d5ea4fd55d5e9a67bb97d5f4a33f9507eba",
+      "seed": 456,
+      "size": 64
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.3833,
+      "events": 4683,
+      "expanded": 465,
+      "logicalOps": 3267,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 64,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 59,
+      "peakFrontier": 9,
+      "runHash": "85e6181f199e7fdd3169694f2ce0b2b0f6eda0ea2ab80124d2eed49bb4bf4ddf",
+      "seed": 456,
+      "size": 64
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.1877,
+      "events": 645,
+      "expanded": 60,
+      "logicalOps": 438,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 64,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 59,
+      "peakFrontier": 9,
+      "runHash": "d6834b93b30daccab9dfd2de451270cdb9559b39c496775fa3b7e38bb92f3b9a",
+      "seed": 456,
+      "size": 64
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.4546,
+      "events": 5027,
+      "expanded": 503,
+      "logicalOps": 3515,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 64,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 59,
+      "peakFrontier": 2,
+      "runHash": "778af2a785f6ecbb23c5ff2fc4ce3fcea16b8670b235152ec2cf1ae2c7ceb9b9",
+      "seed": 456,
+      "size": 64
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.1485,
+      "events": 645,
+      "expanded": 60,
+      "logicalOps": 438,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 64,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 59,
+      "peakFrontier": 9,
+      "runHash": "9d005386af0bebb345cc7677ee19cf9f96ceb5986f351918e0c9dfcc6794fc7f",
+      "seed": 456,
+      "size": 64
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.3348,
+      "events": 4653,
+      "expanded": 462,
+      "logicalOps": 3246,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 64,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 59,
+      "peakFrontier": 9,
+      "runHash": "753c5f0d223e1481268eeb63d088840690a31a7914e211e93f3e7655bd88df60",
+      "seed": 789,
+      "size": 64
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.302,
+      "events": 4653,
+      "expanded": 462,
+      "logicalOps": 3246,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 64,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 59,
+      "peakFrontier": 9,
+      "runHash": "325acdf4feada0833558aa663a6050acd072046045c2c69674569a91edaad5b4",
+      "seed": 789,
+      "size": 64
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.4058,
+      "events": 645,
+      "expanded": 60,
+      "logicalOps": 438,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 64,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 59,
+      "peakFrontier": 9,
+      "runHash": "59ce8c45295473e10bc2c6652186628f5f8fbae40bb5c41046679989ac2623e5",
+      "seed": 789,
+      "size": 64
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.2445,
+      "events": 4937,
+      "expanded": 494,
+      "logicalOps": 3452,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 64,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 59,
+      "peakFrontier": 2,
+      "runHash": "10c0bde20029e43704d3ac3d6cbb9e418f4505f0f9396a4d70b231bcc6b20be1",
+      "seed": 789,
+      "size": 64
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.1762,
+      "events": 645,
+      "expanded": 60,
+      "logicalOps": 438,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 64,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 59,
+      "peakFrontier": 9,
+      "runHash": "46a8d0604f646f14345c95dd6706f9893108c8d349c7b4faadbf9d96c1698c8c",
+      "seed": 789,
+      "size": 64
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.482,
+      "events": 15085,
+      "expanded": 1077,
+      "logicalOps": 11680,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 64,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 187,
+      "peakFrontier": 58,
+      "runHash": "2e15cace4d4d9e8c49b363e0a60d6ff8150f9fd1f9f0e51fc86828251e293893",
+      "seed": 123,
+      "size": 64
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 1.882,
+      "events": 36167,
+      "expanded": 2607,
+      "logicalOps": 28175,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 64,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 81,
+      "peakFrontier": 58,
+      "runHash": "b51a9e1dc1871e01431ffde60d53f00e79e1a659b84560fa0a3cf56fc74da8b4",
+      "seed": 123,
+      "size": 64
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 1.0942,
+      "events": 16825,
+      "expanded": 1199,
+      "logicalOps": 13033,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 64,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 81,
+      "peakFrontier": 65,
+      "runHash": "2883fa05d3ca84b668c91a82903dc21367e0df40dc8c09cd88cc4fc693f42112",
+      "seed": 123,
+      "size": 64
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.761,
+      "events": 16507,
+      "expanded": 945,
+      "logicalOps": 10915,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 64,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 944,
+      "peakFrontier": 919,
+      "runHash": "8c117d9915163a7980346967f79c0af61e7746e95ec17344e3eb9f9f5caefb16",
+      "seed": 123,
+      "size": 64
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.2031,
+      "events": 2975,
+      "expanded": 208,
+      "logicalOps": 2225,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 64,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 286,
+      "peakFrontier": 42,
+      "runHash": "133c0decfd6434a0905779deb5a0b214377436eee3e84794c968efb129fa7193",
+      "seed": 123,
+      "size": 64
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.8446,
+      "events": 16773,
+      "expanded": 1199,
+      "logicalOps": 13002,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 64,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 198,
+      "peakFrontier": 58,
+      "runHash": "4b007bfd955b61dd4594ba0a94b1547d2418e8ebff89047f02a91085d4ab7018",
+      "seed": 456,
+      "size": 64
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 1.6689,
+      "events": 37689,
+      "expanded": 2717,
+      "logicalOps": 29364,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 64,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 83,
+      "peakFrontier": 60,
+      "runHash": "9128f33f14b890dc94ed98389a51193cc8cc8bb14318c778b2997047a4fd468e",
+      "seed": 456,
+      "size": 64
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 1.2878,
+      "events": 17735,
+      "expanded": 1264,
+      "logicalOps": 13742,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 64,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 83,
+      "peakFrontier": 67,
+      "runHash": "069e170794a25a19ed12448ae792d3470798694486447ab55ae580c4c0faaa41",
+      "seed": 456,
+      "size": 64
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.8502,
+      "events": 27913,
+      "expanded": 1794,
+      "logicalOps": 19957,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 64,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 882,
+      "peakFrontier": 1284,
+      "runHash": "5ac7bd34d27fce39e5e0e64f4be2c967790dfdbc5224099c002f6369b3c638b9",
+      "seed": 456,
+      "size": 64
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.1994,
+      "events": 3401,
+      "expanded": 238,
+      "logicalOps": 2552,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 64,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 306,
+      "peakFrontier": 45,
+      "runHash": "ac97f1c4c142c4ca8cf9a5f44a718fc40f487b519bc96a0b5e3e17f28bc42d3b",
+      "seed": 456,
+      "size": 64
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 1.1231,
+      "events": 18461,
+      "expanded": 1321,
+      "logicalOps": 14324,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 64,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 209,
+      "peakFrontier": 58,
+      "runHash": "001a47fefc8d744d69203c8404469c1007e9b180e3fa6e00ddae7f9806ef6b37",
+      "seed": 789,
+      "size": 64
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 2.1749,
+      "events": 39231,
+      "expanded": 2828,
+      "logicalOps": 30570,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 64,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 85,
+      "peakFrontier": 62,
+      "runHash": "4ed8b65b273955c1573ca7646f9dbfb21b071761b35f85623a481606c33bbb6f",
+      "seed": 789,
+      "size": 64
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 1.1589,
+      "events": 18645,
+      "expanded": 1329,
+      "logicalOps": 14451,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 64,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 85,
+      "peakFrontier": 69,
+      "runHash": "a860cd94a77cf3a8a1fe9a3b522b00b9eeae58d5e12e012375422d6bdc145725",
+      "seed": 789,
+      "size": 64
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.5532,
+      "events": 15375,
+      "expanded": 881,
+      "logicalOps": 10161,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 64,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 880,
+      "peakFrontier": 857,
+      "runHash": "d4e54ca9b849e30c1266a1b3267baf311ca65f9f14b4650cae4889d51f565f84",
+      "seed": 789,
+      "size": 64
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.2157,
+      "events": 3855,
+      "expanded": 270,
+      "logicalOps": 2901,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 64,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 326,
+      "peakFrontier": 48,
+      "runHash": "efc712e0245b3c30cdd22cc928c774d697bc5a2c90afaf8211efb4107cfd6072",
+      "seed": 789,
+      "size": 64
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.8691,
+      "events": 19941,
+      "expanded": 1982,
+      "logicalOps": 13992,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 64,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "low_information",
+      "pathCost": 609,
+      "peakFrontier": 9,
+      "runHash": "b4b258cf6b9eb927aa50cc1ce226f78c2050bde85b8d5e88415a6debc5974bd2",
+      "seed": 123,
+      "size": 64
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.7904,
+      "events": 19941,
+      "expanded": 1982,
+      "logicalOps": 13992,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 64,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "low_information",
+      "pathCost": 609,
+      "peakFrontier": 9,
+      "runHash": "8b0eb79797db29bbd5eb758d6633a3c85d48a7351f317dc5c713f38bc4daac70",
+      "seed": 123,
+      "size": 64
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.8621,
+      "events": 19505,
+      "expanded": 1926,
+      "logicalOps": 13658,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 64,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "low_information",
+      "pathCost": 609,
+      "peakFrontier": 11,
+      "runHash": "622aed5e1003fbd319bc5796928ce005b3dd58b8f309a0cf94f7cf9b6d89c079",
+      "seed": 123,
+      "size": 64
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.374,
+      "events": 9421,
+      "expanded": 918,
+      "logicalOps": 6547,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 64,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "low_information",
+      "pathCost": 917,
+      "peakFrontier": 40,
+      "runHash": "472c73fe5bb299c6cdc0e566653dafb497d782a2a74d170a5f53aff9797d56ab",
+      "seed": 123,
+      "size": 64
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.7485,
+      "events": 16169,
+      "expanded": 1594,
+      "logicalOps": 11285,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 64,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "low_information",
+      "pathCost": 963,
+      "peakFrontier": 34,
+      "runHash": "fe725f466bfda5c8cafafe8f59fe6926ef2b25a020abf82593118ace36e42b8f",
+      "seed": 123,
+      "size": 64
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.7265,
+      "events": 19937,
+      "expanded": 1982,
+      "logicalOps": 13988,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 64,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "low_information",
+      "pathCost": 671,
+      "peakFrontier": 7,
+      "runHash": "63c9e797651de378f733723fcca9739c947820e7d1acc712438aafcc1116fa4d",
+      "seed": 456,
+      "size": 64
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.7889,
+      "events": 19937,
+      "expanded": 1982,
+      "logicalOps": 13988,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 64,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "low_information",
+      "pathCost": 671,
+      "peakFrontier": 7,
+      "runHash": "7e827aea8fe3b9b41025e0bdd2db80341943776482359c4fd4efb907bd04efc9",
+      "seed": 456,
+      "size": 64
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 1.2657,
+      "events": 19774,
+      "expanded": 1953,
+      "logicalOps": 13844,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 64,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "low_information",
+      "pathCost": 671,
+      "peakFrontier": 10,
+      "runHash": "ed69fa2390228348c3b03fa097f0994a6ac1a4cd900a7c1006c9d4c9ce57bb49",
+      "seed": 456,
+      "size": 64
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.6151,
+      "events": 11227,
+      "expanded": 1096,
+      "logicalOps": 7807,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 64,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "low_information",
+      "pathCost": 1095,
+      "peakFrontier": 44,
+      "runHash": "4d917276c3454a508a8fcad72b237a679affd56e63eafc94a58612058923df83",
+      "seed": 456,
+      "size": 64
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.6249,
+      "events": 14771,
+      "expanded": 1455,
+      "logicalOps": 10313,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 64,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "low_information",
+      "pathCost": 1159,
+      "peakFrontier": 31,
+      "runHash": "abb49321c585c9645134d6ea75b281f57c2db7dc2136dc6c80ef40688f5be334",
+      "seed": 456,
+      "size": 64
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.8343,
+      "events": 19937,
+      "expanded": 1982,
+      "logicalOps": 13988,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 64,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "low_information",
+      "pathCost": 511,
+      "peakFrontier": 9,
+      "runHash": "bcb6d75b62542bb8681491b6f5d139211cf10374c3c395c471a9d417d43c1409",
+      "seed": 789,
+      "size": 64
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.8198,
+      "events": 19937,
+      "expanded": 1982,
+      "logicalOps": 13988,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 64,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "low_information",
+      "pathCost": 511,
+      "peakFrontier": 9,
+      "runHash": "54e641619cbfd28c443bd964a7e84f7bcce94ab4ef4aab76f2fcd2c7a9d170c5",
+      "seed": 789,
+      "size": 64
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.797,
+      "events": 19629,
+      "expanded": 1939,
+      "logicalOps": 13745,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 64,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "low_information",
+      "pathCost": 511,
+      "peakFrontier": 13,
+      "runHash": "77ba81b1cc90bf886ef5b1fdb276e377e674198765fd82bc83ba6993856eeb74",
+      "seed": 789,
+      "size": 64
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.4067,
+      "events": 11031,
+      "expanded": 1078,
+      "logicalOps": 7671,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 64,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "low_information",
+      "pathCost": 1077,
+      "peakFrontier": 42,
+      "runHash": "aa39dea78e1c874af26d9d601adf68b52b830b5ba7592a3d1b3ab59c6511032b",
+      "seed": 789,
+      "size": 64
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.7626,
+      "events": 13299,
+      "expanded": 1307,
+      "logicalOps": 9279,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 64,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "low_information",
+      "pathCost": 987,
+      "peakFrontier": 33,
+      "runHash": "87c2a52e4319a15b5576d350207d7500bbd5acdd11d27f6a14cce370e8073a27",
+      "seed": 789,
+      "size": 64
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.1577,
+      "events": 1223,
+      "expanded": 122,
+      "logicalOps": 851,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 64,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 461,
+      "peakFrontier": 2,
+      "runHash": "4420acaa4d764a1cd4383133a2d7f2c66d58d365618d6e0f090c311d2904b6a4",
+      "seed": 123,
+      "size": 64
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.1625,
+      "events": 743,
+      "expanded": 74,
+      "logicalOps": 515,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 64,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 65,
+      "peakFrontier": 2,
+      "runHash": "11e7cef9eec7e5f4c35eed14e9ec9c53f681e5c76371a2a4895732a560c282dd",
+      "seed": 123,
+      "size": 64
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.095,
+      "events": 673,
+      "expanded": 67,
+      "logicalOps": 466,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 64,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 65,
+      "peakFrontier": 2,
+      "runHash": "29768fac332211537ef420891c8abec3df182dec6115b24cfa5277c08f2b53cb",
+      "seed": 123,
+      "size": 64
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.099,
+      "events": 663,
+      "expanded": 66,
+      "logicalOps": 459,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 64,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 65,
+      "peakFrontier": 2,
+      "runHash": "750e8c534f061b082ee45be1283f707a6188ac8589d73a60afd199cbef52ed83",
+      "seed": 123,
+      "size": 64
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.1071,
+      "events": 623,
+      "expanded": 62,
+      "logicalOps": 431,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 64,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 461,
+      "peakFrontier": 2,
+      "runHash": "7095280c6eaef9f628d1d2543fb13dab3728bc684db773990081ff4ee39551cf",
+      "seed": 123,
+      "size": 64
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.1318,
+      "events": 1223,
+      "expanded": 122,
+      "logicalOps": 851,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 64,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 451,
+      "peakFrontier": 2,
+      "runHash": "da16c1c27578b58846652c74693c739b4499ad4f42fadc2978825ecef7bcbfe0",
+      "seed": 456,
+      "size": 64
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.137,
+      "events": 743,
+      "expanded": 74,
+      "logicalOps": 515,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 64,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 65,
+      "peakFrontier": 2,
+      "runHash": "652ccff143517e1c68b1e20557293c6c3e97d4231bf64b312d7efef496f1a0e0",
+      "seed": 456,
+      "size": 64
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.1223,
+      "events": 663,
+      "expanded": 66,
+      "logicalOps": 459,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 64,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 65,
+      "peakFrontier": 2,
+      "runHash": "be16679f144dfbe40b77837760c9418e27068b04c2e480ea768570f01ed6cb01",
+      "seed": 456,
+      "size": 64
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.2452,
+      "events": 663,
+      "expanded": 66,
+      "logicalOps": 459,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 64,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 65,
+      "peakFrontier": 2,
+      "runHash": "867b442fe3c8d2413e89a4552c8b2f8a8a14b4f93369ea0ab888ce60044558de",
+      "seed": 456,
+      "size": 64
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.1532,
+      "events": 623,
+      "expanded": 62,
+      "logicalOps": 431,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 64,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 451,
+      "peakFrontier": 2,
+      "runHash": "581984a8f339d950a61266a652792e3cf5ae9a1c626f2dd99be87e7c96c8b2f9",
+      "seed": 456,
+      "size": 64
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.1898,
+      "events": 1223,
+      "expanded": 122,
+      "logicalOps": 851,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 64,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 396,
+      "peakFrontier": 2,
+      "runHash": "cc313d9ebe5df4586ec29f049a2a1477c3a2d73d85a7e96d51643d102eb035ea",
+      "seed": 789,
+      "size": 64
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.1308,
+      "events": 753,
+      "expanded": 75,
+      "logicalOps": 522,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 64,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 65,
+      "peakFrontier": 2,
+      "runHash": "2910974441625dfb7536ffb742de317658a92ead69b880d404b344a1670dd286",
+      "seed": 789,
+      "size": 64
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.1153,
+      "events": 673,
+      "expanded": 67,
+      "logicalOps": 466,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 64,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 65,
+      "peakFrontier": 2,
+      "runHash": "b583be6ac74de7597c2f42af8bf0d4762051e52efd90a519da3780d18e30e37e",
+      "seed": 789,
+      "size": 64
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.1573,
+      "events": 663,
+      "expanded": 66,
+      "logicalOps": 459,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 64,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 65,
+      "peakFrontier": 2,
+      "runHash": "ddb16243743fe6f8d87217162c60e9ccb13cc7fc2cab068b79b9103717c0ad23",
+      "seed": 789,
+      "size": 64
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.1149,
+      "events": 623,
+      "expanded": 62,
+      "logicalOps": 431,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 64,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 56,
+          "corridor_width": 1,
+          "goal_placement": 60,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 64
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 396,
+      "peakFrontier": 2,
+      "runHash": "bba2ff9034e4f773ae9453601c0d2a0ebbbd628f4656ea36fdcaa603247587b5",
+      "seed": 789,
+      "size": 64
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.7778,
+      "events": 10423,
+      "expanded": 1039,
+      "logicalOps": 7285,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 128,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 123,
+      "peakFrontier": 9,
+      "runHash": "d4f9a3e508e1fd7da1d4d21a5ae33d06607fe7cafd6ad57a95aa2a76abbe66f2",
+      "seed": 123,
+      "size": 128
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.8714,
+      "events": 10423,
+      "expanded": 1039,
+      "logicalOps": 7285,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 128,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 123,
+      "peakFrontier": 9,
+      "runHash": "62278ce6a48689dcc34f624edbe8e6eee7a53da2667eefe215c4e0a6319bebe3",
+      "seed": 123,
+      "size": 128
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.4237,
+      "events": 1285,
+      "expanded": 124,
+      "logicalOps": 886,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 128,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 123,
+      "peakFrontier": 9,
+      "runHash": "f439557cf7ae2d24871219f8f25db44e3a77992fe242c47a1903a5816bfe2c44",
+      "seed": 123,
+      "size": 128
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.9132,
+      "events": 10727,
+      "expanded": 1073,
+      "logicalOps": 7505,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 128,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 123,
+      "peakFrontier": 2,
+      "runHash": "f0180c79428528b2f4160d3781b8eb6ac3bc7bf69addf7bdf878912ee454a7cf",
+      "seed": 123,
+      "size": 128
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.4474,
+      "events": 1285,
+      "expanded": 124,
+      "logicalOps": 886,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 128,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 123,
+      "peakFrontier": 9,
+      "runHash": "4270aeeac59bd00d9d1e78d875cd2305efbc5c296598f09acad0d888ed58496b",
+      "seed": 123,
+      "size": 128
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.8954,
+      "events": 10443,
+      "expanded": 1041,
+      "logicalOps": 7299,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 128,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 123,
+      "peakFrontier": 9,
+      "runHash": "493216bc8a85c1dca145f87b0fd15368a4bf035dfa64b389c2b7a8154acf4031",
+      "seed": 456,
+      "size": 128
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.747,
+      "events": 10443,
+      "expanded": 1041,
+      "logicalOps": 7299,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 128,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 123,
+      "peakFrontier": 9,
+      "runHash": "8238820864ef02cf66d359feca7b9695991780124ae120ff6d2e0790fc47c0b5",
+      "seed": 456,
+      "size": 128
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.4564,
+      "events": 1285,
+      "expanded": 124,
+      "logicalOps": 886,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 128,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 123,
+      "peakFrontier": 9,
+      "runHash": "315b91ae972323c0451a08110e381c938c46f95e49676117b53828e5a19e3c0f",
+      "seed": 456,
+      "size": 128
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.9665,
+      "events": 10787,
+      "expanded": 1079,
+      "logicalOps": 7547,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 128,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 123,
+      "peakFrontier": 2,
+      "runHash": "878ede73ce837f842945d47d60276b07ff009d6f4a3043304f2cdbb9b47e65a3",
+      "seed": 456,
+      "size": 128
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.4408,
+      "events": 1285,
+      "expanded": 124,
+      "logicalOps": 886,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 128,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 123,
+      "peakFrontier": 9,
+      "runHash": "f4e991054c8721f92a1c3663f92bc6d0ed9bf29e6d25a2a5bd9d41926c88185e",
+      "seed": 456,
+      "size": 128
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.8108,
+      "events": 10413,
+      "expanded": 1038,
+      "logicalOps": 7278,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 128,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 123,
+      "peakFrontier": 9,
+      "runHash": "678a7e2f2c3d7b5ade1a8aa1207be79e029f8c2586716f99e01c721b7047e811",
+      "seed": 789,
+      "size": 128
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.7524,
+      "events": 10413,
+      "expanded": 1038,
+      "logicalOps": 7278,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 128,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 123,
+      "peakFrontier": 9,
+      "runHash": "797342838c94a8fe34c7dca9b05a17ac1e4b79532ae99e6aea6f0be5674f558d",
+      "seed": 789,
+      "size": 128
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.4682,
+      "events": 1285,
+      "expanded": 124,
+      "logicalOps": 886,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 128,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 123,
+      "peakFrontier": 9,
+      "runHash": "25c798515168c6b8b17582102dc9e797877c87d261a443c56d25be2162be68d6",
+      "seed": 789,
+      "size": 128
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.8111,
+      "events": 10697,
+      "expanded": 1070,
+      "logicalOps": 7484,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 128,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 123,
+      "peakFrontier": 2,
+      "runHash": "2ef02ab450af9827df6845b74d0ea5cb124a0a3a19928bbd29c474f92dd8ee1e",
+      "seed": 789,
+      "size": 128
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.4715,
+      "events": 1285,
+      "expanded": 124,
+      "logicalOps": 886,
+      "mapConfig": {
+        "generator": "dfs_deep_trap",
+        "height": 128,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "dfs_deep_trap",
+      "pathCost": 123,
+      "peakFrontier": 9,
+      "runHash": "0b2485b46c0db40fddfeb52a1e7e8466419232359a1ee1df1cd34bc9421deeea",
+      "seed": 789,
+      "size": 128
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.9332,
+      "events": 15205,
+      "expanded": 1083,
+      "logicalOps": 11764,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 128,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 187,
+      "peakFrontier": 64,
+      "runHash": "b3afef59f342f8536fec0685155f6cc07b183ce063c19e3b675dfe52f2f13d9c",
+      "seed": 123,
+      "size": 128
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 2.9673,
+      "events": 57655,
+      "expanded": 4124,
+      "logicalOps": 45013,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 128,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 81,
+      "peakFrontier": 90,
+      "runHash": "bd51565432bba1213b0e169c47156d209b49492e0a797a0f57eec90e8638729d",
+      "seed": 123,
+      "size": 128
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 1.4156,
+      "events": 17823,
+      "expanded": 1263,
+      "logicalOps": 13788,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 128,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 81,
+      "peakFrontier": 82,
+      "runHash": "be5645ef1ecd11aa7a522f281f122682e51cb5a07d5acbfe87a968590bd72f0a",
+      "seed": 123,
+      "size": 128
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 3.1355,
+      "events": 70075,
+      "expanded": 3953,
+      "logicalOps": 46531,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 128,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 3952,
+      "peakFrontier": 3895,
+      "runHash": "8e5dc529cde2505f3e59c699707953f823886fb3d368aaa259d7b815861e3a55",
+      "seed": 123,
+      "size": 128
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.474,
+      "events": 2975,
+      "expanded": 208,
+      "logicalOps": 2225,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 128,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 286,
+      "peakFrontier": 42,
+      "runHash": "7f07a4fe84d27fe1d545b3fe4a6f4a53d3b71702f8427044722735ae903df686",
+      "seed": 123,
+      "size": 128
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 1.1668,
+      "events": 17113,
+      "expanded": 1219,
+      "logicalOps": 13252,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 128,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 198,
+      "peakFrontier": 68,
+      "runHash": "a297d80f3a44f261d0dd0b2f5af2465036468131e153626ac866fe6de0d6e02a",
+      "seed": 456,
+      "size": 128
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 3.2767,
+      "events": 60569,
+      "expanded": 4333,
+      "logicalOps": 47297,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 128,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 83,
+      "peakFrontier": 91,
+      "runHash": "b9d49530bace9c309ac828cd50e0adf74ce05d82c3b15b06abf45e7f4869ee79",
+      "seed": 456,
+      "size": 128
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 1.1673,
+      "events": 18983,
+      "expanded": 1345,
+      "logicalOps": 14690,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 128,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 83,
+      "peakFrontier": 86,
+      "runHash": "63a1556300b292799fef17990075a24ba47600fa3d2c38356d9d24296dda0c13",
+      "seed": 456,
+      "size": 128
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 3.4471,
+      "events": 93193,
+      "expanded": 5666,
+      "logicalOps": 64885,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 128,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 3826,
+      "peakFrontier": 4644,
+      "runHash": "8b60d4460173601ef44d844cf23856e9b9c1558b0b2c259ee81a1e19a2a9c5d7",
+      "seed": 456,
+      "size": 128
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.619,
+      "events": 3401,
+      "expanded": 238,
+      "logicalOps": 2552,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 128,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 306,
+      "peakFrontier": 45,
+      "runHash": "fbff62b55308c23c8a15277c0c75a722687de2a07738cd3c544578c9e770b1a3",
+      "seed": 456,
+      "size": 128
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 3.927,
+      "events": 66013,
+      "expanded": 4713,
+      "logicalOps": 51508,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 128,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 385,
+      "peakFrontier": 122,
+      "runHash": "1cce5648f3b19378e3a16fe8c95ec67d4d5e590d8bb0a8150d587ff47b000d22",
+      "seed": 789,
+      "size": 128
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 4.9557,
+      "events": 111901,
+      "expanded": 8020,
+      "logicalOps": 87520,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 128,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 117,
+      "peakFrontier": 107,
+      "runHash": "44966f9192473c698764b0480dab7abc55c5b8fcc1e366b2515d0fad4d0b7927",
+      "seed": 789,
+      "size": 128
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 1.8229,
+      "events": 42987,
+      "expanded": 3045,
+      "logicalOps": 33390,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 128,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 117,
+      "peakFrontier": 154,
+      "runHash": "37df12bbf8b7af48f92b1010b3058400c69cc54e5bb85ced4bafc0fddfc7cdd8",
+      "seed": 789,
+      "size": 128
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 2.0632,
+      "events": 58431,
+      "expanded": 3297,
+      "logicalOps": 38769,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 128,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 3296,
+      "peakFrontier": 3257,
+      "runHash": "db4d62a0419c2deebfa7debdaad5036fb28116e260f56a7d34375aaf1a0391ae",
+      "seed": 789,
+      "size": 128
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.9456,
+      "events": 14927,
+      "expanded": 1054,
+      "logicalOps": 11477,
+      "mapConfig": {
+        "generator": "greedy_trap",
+        "height": 128,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "greedy_trap",
+      "pathCost": 646,
+      "peakFrontier": 96,
+      "runHash": "e4f3c9db22037c8e916302dea7c655e1094b66e04fc16e7717b5d2d9d82b48e3",
+      "seed": 789,
+      "size": 128
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 5.0241,
+      "events": 80873,
+      "expanded": 8062,
+      "logicalOps": 56684,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 128,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "low_information",
+      "pathCost": 2699,
+      "peakFrontier": 9,
+      "runHash": "ff9f08188be2b49cb46de98517e6f7d77f8cb79ba4d9314943679812d51eb3d2",
+      "seed": 123,
+      "size": 128
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 3.9209,
+      "events": 80873,
+      "expanded": 8062,
+      "logicalOps": 56684,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 128,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "low_information",
+      "pathCost": 2699,
+      "peakFrontier": 9,
+      "runHash": "7b4060c6eef2a8474204026f67d12172b14a95c64c3ef5282b33d1c85cc3101e",
+      "seed": 123,
+      "size": 128
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 4.1595,
+      "events": 80103,
+      "expanded": 7960,
+      "logicalOps": 56090,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 128,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "low_information",
+      "pathCost": 2699,
+      "peakFrontier": 9,
+      "runHash": "dc6391fe9cb4221b757387d976d0840781b61547173ac368c77390ab5341fd11",
+      "seed": 123,
+      "size": 128
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 2.114,
+      "events": 43901,
+      "expanded": 4336,
+      "logicalOps": 30632,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 128,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "low_information",
+      "pathCost": 4335,
+      "peakFrontier": 87,
+      "runHash": "e9e2513fe85d52406500e22e863df3aa0153e2205f737aa22ab5f44e9a0f4fbc",
+      "seed": 123,
+      "size": 128
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 3.9582,
+      "events": 67871,
+      "expanded": 6738,
+      "logicalOps": 47465,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 128,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "low_information",
+      "pathCost": 4493,
+      "peakFrontier": 64,
+      "runHash": "843facdc8183c0b73d8e042c90fe11abbae9fe4a29953ed019b4d08eb920b5bc",
+      "seed": 123,
+      "size": 128
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 3.6161,
+      "events": 80869,
+      "expanded": 8062,
+      "logicalOps": 56680,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 128,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "low_information",
+      "pathCost": 2411,
+      "peakFrontier": 9,
+      "runHash": "bc93792c713bba720f41a88a0a8872d4b575cc10dee23bac2da408a8bfffb6fe",
+      "seed": 456,
+      "size": 128
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 3.5006,
+      "events": 80869,
+      "expanded": 8062,
+      "logicalOps": 56680,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 128,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "low_information",
+      "pathCost": 2411,
+      "peakFrontier": 9,
+      "runHash": "039e4520036e197c126962f80cea5acf81e775200646ba3636326f6a18dd9f8e",
+      "seed": 456,
+      "size": 128
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 3.532,
+      "events": 79854,
+      "expanded": 7935,
+      "logicalOps": 55914,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 128,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "low_information",
+      "pathCost": 2411,
+      "peakFrontier": 11,
+      "runHash": "f8d5f94e909107b9cdc9691aad140d0775e9605b9f2c18001071a2435bf8f266",
+      "seed": 456,
+      "size": 128
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 2.3105,
+      "events": 44039,
+      "expanded": 4350,
+      "logicalOps": 30725,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 128,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "low_information",
+      "pathCost": 4349,
+      "peakFrontier": 88,
+      "runHash": "51cd9ee9e03146c8f33a10afcc96cd0c19fac90de89b146c301e2e44e9c2f45c",
+      "seed": 456,
+      "size": 128
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 4.0309,
+      "events": 66855,
+      "expanded": 6637,
+      "logicalOps": 46749,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 128,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "low_information",
+      "pathCost": 4299,
+      "peakFrontier": 65,
+      "runHash": "ab7fc986df6f36436a0a9ee2e348bb1e30857e1f4cb3e35bd719e15cb2da2184",
+      "seed": 456,
+      "size": 128
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 3.4203,
+      "events": 80003,
+      "expanded": 7975,
+      "logicalOps": 56069,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 128,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "low_information",
+      "pathCost": 1855,
+      "peakFrontier": 9,
+      "runHash": "049f16b0dfe46e03870355844f9441e83377d2b92c91c31292de4ca680a71bd4",
+      "seed": 789,
+      "size": 128
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 3.6586,
+      "events": 80003,
+      "expanded": 7975,
+      "logicalOps": 56069,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 128,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "low_information",
+      "pathCost": 1855,
+      "peakFrontier": 9,
+      "runHash": "cee36f323489c0da6218352109285c73cddf11610ea2abe8bde30b07130add06",
+      "seed": 789,
+      "size": 128
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 3.7005,
+      "events": 77413,
+      "expanded": 7691,
+      "logicalOps": 54201,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 128,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "low_information",
+      "pathCost": 1855,
+      "peakFrontier": 12,
+      "runHash": "bb7efbdbd7d3b9103f9b33c511e134ee0590ce0274426ed0771fa81d6215c255",
+      "seed": 789,
+      "size": 128
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 1.9436,
+      "events": 42811,
+      "expanded": 4230,
+      "logicalOps": 29872,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 128,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "low_information",
+      "pathCost": 4229,
+      "peakFrontier": 83,
+      "runHash": "ebdfa813a5186bb0aaa6f539ffd6c971101eef40fae2940d063fcf8de9464d84",
+      "seed": 789,
+      "size": 128
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 3.4189,
+      "events": 57299,
+      "expanded": 5682,
+      "logicalOps": 40049,
+      "mapConfig": {
+        "generator": "low_information",
+        "height": 128,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "low_information",
+      "pathCost": 3565,
+      "peakFrontier": 68,
+      "runHash": "1291bfee229a5569267cbad8583a1690039aa861be36cfe394a99a43e4edf712",
+      "seed": 789,
+      "size": 128
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.5986,
+      "events": 2503,
+      "expanded": 250,
+      "logicalOps": 1747,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 128,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 941,
+      "peakFrontier": 2,
+      "runHash": "0882efa46969f6fadef4015d3e0474399f64bbc5323596826908c1647ed80d15",
+      "seed": 123,
+      "size": 128
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.6091,
+      "events": 1463,
+      "expanded": 146,
+      "logicalOps": 1019,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 128,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 129,
+      "peakFrontier": 2,
+      "runHash": "6c3192cf6cd45e3f2fe3e4bbffed36cb109761a54f1726c3e8c27d4908a3960e",
+      "seed": 123,
+      "size": 128
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.7525,
+      "events": 1313,
+      "expanded": 131,
+      "logicalOps": 914,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 128,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 129,
+      "peakFrontier": 2,
+      "runHash": "4c3d5fac48bc76496025ff2076e727f52be044c37d2af27ad4f1cfb967ed763b",
+      "seed": 123,
+      "size": 128
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.5049,
+      "events": 1303,
+      "expanded": 130,
+      "logicalOps": 907,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 128,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 129,
+      "peakFrontier": 2,
+      "runHash": "9efd78812636c1e56daa73ab0aa44078b41c627fd99e3c9519c906cc5657afcc",
+      "seed": 123,
+      "size": 128
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.7013,
+      "events": 1263,
+      "expanded": 126,
+      "logicalOps": 879,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 128,
+        "seed": 123,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 941,
+      "peakFrontier": 2,
+      "runHash": "c33d1d817d0769c891aedfa23d8fd0906cbcfba181cca8c4415b02abb97e2d97",
+      "seed": 123,
+      "size": 128
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.4235,
+      "events": 2503,
+      "expanded": 250,
+      "logicalOps": 1747,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 128,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 931,
+      "peakFrontier": 2,
+      "runHash": "4e82c47e4e7080d6f2549e6114f2fb3fd7f60a7ed41892de188970f0e660602e",
+      "seed": 456,
+      "size": 128
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.6022,
+      "events": 1463,
+      "expanded": 146,
+      "logicalOps": 1019,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 128,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 129,
+      "peakFrontier": 2,
+      "runHash": "fafe9ab3760871f9dcbd53ae0a649f0e1da71d55f07c143f8c3edaabe9915814",
+      "seed": 456,
+      "size": 128
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.6643,
+      "events": 1303,
+      "expanded": 130,
+      "logicalOps": 907,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 128,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 129,
+      "peakFrontier": 2,
+      "runHash": "9246b0a8d95725e212141f48f3dd64a40b8f169397a9924a278208c25b78678d",
+      "seed": 456,
+      "size": 128
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.4052,
+      "events": 1303,
+      "expanded": 130,
+      "logicalOps": 907,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 128,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 129,
+      "peakFrontier": 2,
+      "runHash": "ab2ceacf84ed9d4583bf2a6e0872e737212f6271ce732c13dcb8f875b4d5c94d",
+      "seed": 456,
+      "size": 128
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.4139,
+      "events": 1263,
+      "expanded": 126,
+      "logicalOps": 879,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 128,
+        "seed": 456,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 931,
+      "peakFrontier": 2,
+      "runHash": "0f750ff588f961761f3a418c41a2812d6712ed370be2c52c499a58b619d78d4a",
+      "seed": 456,
+      "size": 128
+    },
+    {
+      "algorithm": "bfs",
+      "computeMs": 0.6683,
+      "events": 2503,
+      "expanded": 250,
+      "logicalOps": 1747,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 128,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 851,
+      "peakFrontier": 2,
+      "runHash": "6463e60f4040511b459a094ea1a58981474e9ceb3e4dfdac221a9cdc6b3d55f0",
+      "seed": 789,
+      "size": 128
+    },
+    {
+      "algorithm": "dijkstra",
+      "computeMs": 0.5345,
+      "events": 1483,
+      "expanded": 148,
+      "logicalOps": 1033,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 128,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 129,
+      "peakFrontier": 2,
+      "runHash": "1643aabcafe49ee5ff195964352cd04d025c4bd5c4520b124c7cf7f847134a51",
+      "seed": 789,
+      "size": 128
+    },
+    {
+      "algorithm": "astar",
+      "computeMs": 0.4529,
+      "events": 1313,
+      "expanded": 131,
+      "logicalOps": 914,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 128,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 129,
+      "peakFrontier": 2,
+      "runHash": "9fa8dce4c1d906dedb982b6a876ba6f03e7a261383dcdd61f19082d3b4190845",
+      "seed": 789,
+      "size": 128
+    },
+    {
+      "algorithm": "dfs",
+      "computeMs": 0.4548,
+      "events": 1303,
+      "expanded": 130,
+      "logicalOps": 907,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 128,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 129,
+      "peakFrontier": 2,
+      "runHash": "c5184dbf6d3901c533ae8ffdb446f2bca3649331b577f1254a3a408c54fe51b5",
+      "seed": 789,
+      "size": 128
+    },
+    {
+      "algorithm": "greedy",
+      "computeMs": 0.6147,
+      "events": 1263,
+      "expanded": 126,
+      "logicalOps": 879,
+      "mapConfig": {
+        "generator": "bfs_weighted_lesson",
+        "height": 128,
+        "seed": 789,
+        "stress": {
+          "branch_count": 8,
+          "branch_depth": 120,
+          "corridor_width": 1,
+          "goal_placement": 124,
+          "orientation": 0,
+          "version": "stress/1"
+        },
+        "wall_percent": 0,
+        "width": 128
+      },
+      "mapFamily": "bfs_weighted_lesson",
+      "pathCost": 851,
+      "peakFrontier": 2,
+      "runHash": "1be6468136576b67d98460811827420b2b033048da971fa3464cb40c29f89d06",
+      "seed": 789,
+      "size": 128
+    }
+  ],
+  "timingScope": "search + event collection; excludes map generation, hash and playback"
+}

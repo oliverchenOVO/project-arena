@@ -4,11 +4,11 @@
 
 **同一張地圖、同一組規則，為什麼不同演算法會做出不同決策？**
 
-ARENA 將路徑搜尋轉化為可以操作、回溯與分析的實驗。使用者能建立地圖、比較演算法、逐步檢視節點，並保存完整執行紀錄；每一張視覺化畫面都來自 Rust 引擎的真實事件，而非預先編排的動畫。
+ARENA 將路徑搜尋、排序與圖論轉化為可以操作、回溯與分析的實驗。使用者能建立地圖、比較演算法、逐步檢視節點，並保存完整執行紀錄；每一張視覺化畫面都來自 Rust 引擎的真實事件，而非預先編排的動畫。
 
-**Rust · React · TypeScript · Canvas · Tauri 2** ｜ 繁體中文 / English ｜ Windows 桌面版 ｜ 目前版本 **0.1.2 · Phase 1.2**
+**Rust · React · TypeScript · Canvas · Tauri 2** ｜ 繁體中文 / English ｜ Windows 桌面版 ｜ 目前版本 **0.2.0 · Phase 2**
 
-[English](README.en.md) · [操作與開發指南](README.zh-TW.md) · [驗收報告](docs/phase12.md) · [GitHub Actions](https://github.com/oliverchenOVO/project-arena/actions)
+[English](README.en.md) · [操作與開發指南](README.zh-TW.md) · [驗收報告](docs/phase2.md) · [GitHub Actions](https://github.com/oliverchenOVO/project-arena/actions)
 
 閱讀路線：[實際操作](#操作流程與實際畫面) → [系統架構](#系統架構搜尋紀錄與呈現分離) → [技術亮點與程式入口](#技術亮點與程式入口) → [驗證證據](#工程驗證與可查核成果)。現場展示可參考 [三分鐘展示腳本](docs/portfolio.md#三分鐘展示腳本)。
 
@@ -22,7 +22,62 @@ ARENA 將路徑搜尋轉化為可以操作、回溯與分析的實驗。使用�
 >
 > **方法：** Rust 真實執行 → 可驗證事件紀錄 → 重播、節點檢視與分析。
 >
-> **成果：** 5 種搜尋演算法、雙語 Windows 介面；Phase 1.2 完成 5,600 次 regression 執行，hash 與重播差異均為零。
+> **成果：** 三個領域、19 個領域內演算法實作、雙語 Windows 介面；Phase 2 的 1,580 筆排序／圖論紀錄與 2,540 次歷史 hash 比對均無差異。
+
+## Phase 2：同一平台，三種演算法問題
+
+| 領域 | 演算法 | 可以觀察的問題 |
+| --- | --- | --- |
+| 路徑搜尋 | BFS、DFS、Dijkstra、A*、Greedy、Bidirectional BFS、Weighted A* | 搜尋工作量、最短步數與最低成本，以及啟發權重的取捨 |
+| 排序 | Bubble、Insertion、Selection、Merge、Quick、Heap | 比較／讀寫／交換次數、穩定性、輔助空間與遞迴深度 |
+| 圖論 | BFS、DFS、Dijkstra、A*、Prim、Kruskal | 全圖走訪、最短路徑、生成樹邊選擇、DSU 與優先佇列工作量 |
+
+共 **19 個領域內演算法實作**。排序支援 7 種分布，圖論支援 8 種生成器；相同 Seed 固定輸入、節點位置與執行 hash。跨領域切換保留各自的實驗。
+
+### 排序：從操作次數理解時間與空間的取捨
+
+![Windows v0.2.0 排序分析：真實讀寫、比較與輔助空間](docs/screenshots/phase2-zh-sorting-analysis.png)
+
+以 Quick／Merge 比較原地分割和額外緩衝區，以 Insertion／Quick 比較近乎排序資料。Quick 的壞樞紐情境使用固定末端 Lomuto pivot 與嚴格逆序輸入；分析呈現實際次數，不把所有逆序資料都籠統標成同一種複雜度結果。長條、Heap 樹與索引檢視器都還原當前事件前綴。
+
+### 圖論：相同生成樹權重，可以有不同決策過程
+
+![Windows v0.2.0 圖論：Prim 與 Kruskal 真實生成樹競賽](docs/screenshots/phase2-zh-graph-mst.png)
+
+Prim 從目前樹的前沿成長；Kruskal 依固定權重順序評估邊並用 DSU 排除環。兩者可得到相同總權重，但評估順序與等權邊選擇不必相同。圖論界面能檢查節點父節點、距離與每條邊的評估／選取／拒絕歷史。
+
+### 一個執行核心，三個呈現領域
+
+```mermaid
+flowchart LR
+  P[問題與固定 Seed] --> D{Domain adapter}
+  D --> PF[路徑搜尋 Rust]
+  D --> S[排序 Rust]
+  D --> G[圖論 Rust]
+  PF --> L[事件紀錄與 canonical SHA-256]
+  S --> L
+  G --> L
+  L --> R[純事件 reducer 與 checkpoint]
+  R --> C[Canvas 競賽與 Inspector]
+  L --> O[Observer v2 實測／推導／解讀]
+  L --> B[CLI benchmark 與 correctness gates]
+```
+
+新版 `arena-run v2` 包含 domain、problem、algorithms 與 logs；舊版 pathfinding v1 仍可匯入，原始事件與 hash 保持不變。Weighted A* 精確使用 `f=g+w*h`，支援 w=1、1.25、1.5、2、3；w>1 不保證最優。雙向 BFS 僅接受對稱、單位成本地形。設計細節見 [Phase 2 架構與契約](docs/phase2-design.md)。
+
+### Phase 2 可查核驗證
+
+| 項目 | 結果 | 原始證據 |
+| --- | ---: | --- |
+| Rust／前端單元／E2E | 46／61／43 項通過 | [Phase 2 驗收](docs/phase2.md) |
+| Sorting benchmark | 900 筆，0 hash mismatch | [排序紀錄](phase2-sorting-benchmark.json) |
+| Graph benchmark | 680 筆，0 hash mismatch | [圖論紀錄](phase2-graph-benchmark.json) |
+| 新領域 checkpoint 前綴驗證 | 6,320 次，0 divergence | [驗收摘要](phase2-summary.json) |
+| 歷史 hash 與指標相容 | 2,540 次 hash 比對，均相同 | [相容性報告](phase2-legacy-compatibility.json) |
+| 舊 correctness gates | 5,600 次執行、206,088 次 seek | [驗收摘要](phase2-summary.json) |
+| Windows 三領域雙語操作 | 真實封裝程式驗證 | [Windows 報告](windows-phase2-verification.json) |
+
+效能報告包含 256 元素排序、256 節點密集圖與 128×128 路徑搜尋的本機播放量測。圖論繪製採靜態底圖快取、批次 stroke，checkpoint 的邊紀錄採不可變共享；沒有刪掉邊或略過事件來提高速度。數值受開發機負載影響，詳見 [量測](phase2-profile.json) 與 [路徑搜尋量測](phase2-pathfinding-profile.json)。
 
 ## 專案動機：從「看動畫」到「理解決策」
 
@@ -38,6 +93,8 @@ ARENA 將路徑搜尋轉化為可以操作、回溯與分析的實驗。使用�
 這個專案適合用於演算法教學、現場展示與實驗比較。它也呈現了從系統設計、資料契約、互動介面到自動化驗證的完整開發過程。
 
 ## 操作流程與實際畫面
+
+以下路徑搜尋畫面保存 Phase 1.2 的演進證據；上方為 Phase 2 新增領域的實際封裝畫面。
 
 **後續操作改善：** 檢視器可輸入 x / y 座標選取節點；播放控制支援精確位置跳轉與鍵盤快捷鍵；啟發函數比較再次執行會保留五組設定。見 [操作改善說明](docs/usability.md)。
 
@@ -189,7 +246,7 @@ npm run test:e2e
 # 無介面執行、重播與基準測試
 cargo run --release -p arena-cli -- run --seed 123 --algorithm astar --generator weighted --output example.arena.json
 cargo run --release -p arena-cli -- replay --input example.arena.json --cursor 256
-cargo run --release -p arena-cli -- benchmark --output benchmark.json
+cargo run --release -p arena-cli -- benchmark --domain all --output all-domains.json
 ```
 
 Windows 封裝產生 x64 執行檔、portable ZIP 與 NSIS 安裝程式，包含授權與依賴聲明。缺少 WebView2 時，安裝程式可下載 runtime；安裝 runtime 後核心可離線執行。完整檢查指令與 gate 用法見 [操作與開發指南](README.zh-TW.md)。目前 GitHub 尚未發布 Releases，請依上述步驟自行建置。
@@ -201,12 +258,15 @@ Windows 封裝產生 x64 執行檔、portable ZIP 與 NSIS 安裝程式，包含
 | **Phase 0 / 1** | 確定性搜尋核心、事件契約、重播、編輯器、競賽、匯入匯出與 correctness gates |
 | **Phase 1.1** | 壓力生成器、啟發函數比較、疊加差異、節點歷史、觀察規則與 benchmark |
 | **Phase 1.2** | 完整雙語、展示首頁、首次導覽、簡報模式、分析圖表與 Windows 展示素材 |
+| **Phase 2** | 三領域契約、六種排序、六種圖論、雙向 BFS／Weighted A*、Observer v2 與 benchmark |
 
 此公開倉庫保留原始開發歷史與 Actions 紀錄，可透過 [commits](https://github.com/oliverchenOVO/project-arena/commits/main/) 查看系統如何逐步演進。
 
-目前未設定 live AI 解讀服務；Windows 檔案未簽章，也未宣稱已通過乾淨機器安裝測試。Canvas 節點檢視仍以指標操作為主，並未宣稱完整螢幕閱讀器支援。3D、排序、帳號與多人功能不屬於目前已交付範圍。
+目前未設定 live AI 解讀服務；Windows 檔案未簽章，也未宣稱已通過乾淨機器安裝測試。Canvas 節點檢視仍以指標操作為主，並未宣稱完整螢幕閱讀器支援。3D、帳號與多人功能不屬於目前已交付範圍。
 
 ## 更多資料與展示素材
+
+- [Phase 2 驗收與限制](docs/phase2.md) · [三領域設計](docs/phase2-design.md)。
 
 - [推甄與個人網頁素材](docs/portfolio.md)：可引用的作品摘要、三分鐘展示腳本與附圖建議。
 - [操作與開發指南](README.zh-TW.md)：雙語介面、執行方式與完整驗證指令。

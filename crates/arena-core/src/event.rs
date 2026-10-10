@@ -4,17 +4,63 @@ use serde::{Deserialize, Serialize};
 #[serde(tag = "type", rename_all = "snake_case")]
 pub enum EventKind {
     RunStarted,
-    NodeDiscovered { node: usize },
-    NodeExpanded { node: usize },
-    FrontierAdded { node: usize },
-    FrontierRemoved { node: usize },
-    EdgeEvaluated { from: usize, to: usize, cost: u64 },
-    RelaxationCompared { node: usize, candidate: u64 },
-    CostUpdated { node: usize, g: u64, h: u64, f: u64 },
-    ParentUpdated { node: usize, parent: usize },
-    GoalReached { node: usize },
-    PathReconstructed { path: Vec<usize>, cost: u64 },
-    RunCompleted { found: bool },
+    NodeDiscovered {
+        node: usize,
+    },
+    NodeExpanded {
+        node: usize,
+    },
+    FrontierAdded {
+        node: usize,
+    },
+    FrontierRemoved {
+        node: usize,
+    },
+    EdgeEvaluated {
+        from: usize,
+        to: usize,
+        cost: u64,
+    },
+    RelaxationCompared {
+        node: usize,
+        candidate: u64,
+    },
+    CostUpdated {
+        node: usize,
+        g: u64,
+        h: u64,
+        f: u64,
+    },
+    ParentUpdated {
+        node: usize,
+        parent: usize,
+    },
+    GoalReached {
+        node: usize,
+    },
+    PathReconstructed {
+        path: Vec<usize>,
+        cost: u64,
+    },
+    RunCompleted {
+        found: bool,
+    },
+    SearchSide {
+        node: usize,
+        side: String,
+    },
+    MeetingPoint {
+        node: usize,
+    },
+    DirectionExpanded {
+        node: usize,
+        side: String,
+    },
+    WeightedPriority {
+        node: usize,
+        scaled_f: u64,
+        scale: u64,
+    },
 }
 
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]

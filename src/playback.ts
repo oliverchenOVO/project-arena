@@ -16,6 +16,9 @@ export function applyEvent(s:ReplayState,e:ArenaEvent):void {
     case 'cost_updated':{const n=s.nodes[e.node];if(n.g===null)s.finiteCosts++;n.g=e.g;n.h=e.h;n.f=e.f;m.cost_updates++;break;}
     case 'parent_updated':if(s.nodes[e.node].parent===null)s.parents++;s.nodes[e.node].parent=e.parent;break;
     case 'path_reconstructed':s.path=[...e.path];m.path_length=e.path.length-1;m.path_cost=e.cost;break;
+    case 'search_side':s.nodes[e.node].side??=e.side;break;
+    case 'meeting_point':s.nodes[e.node].meeting=true;break;
+    case 'weighted_priority':s.nodes[e.node].f=e.scaled_f/e.scale;break;
     case 'run_completed':s.completed=true;s.found=e.found;break;
   }
   m.peak_state_entries=Math.max(m.peak_state_entries,m.generated+s.finiteCosts+s.parents+s.frontier);

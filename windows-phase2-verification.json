@@ -1,0 +1,184 @@
+{
+  "version": "0.2.0",
+  "native": true,
+  "tauri": true,
+  "url": "http://tauri.localhost/",
+  "title": "Project ARENA — Algorithm Arena",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "cases": [
+    {
+      "locale": "zh-TW",
+      "domain": "pathfinding",
+      "replayMatches": true,
+      "importMatches": true,
+      "inspect": true,
+      "analyze": true,
+      "exportPayloadValidated": true,
+      "hashes": [
+        "794739db1454bdcd028411be941a531152bb75e77c6b0013a193b8ebaab965ea",
+        "ffb073e2a32e9f091459692142d683bfadc80cb624206bec97503bf102bc01ed"
+      ]
+    },
+    {
+      "locale": "zh-TW",
+      "domain": "sorting",
+      "replayMatches": true,
+      "importMatches": true,
+      "inspect": true,
+      "analyze": true,
+      "exportPayloadValidated": true,
+      "hashes": [
+        "72db7568b026e7813ca8efb7dfdb4e346f05fa9f75934f745693f74e67ae920f",
+        "b371901c6511c1ba321034a0325681f8fe0d40565965ab74e4cae3dd8401aa38"
+      ]
+    },
+    {
+      "locale": "zh-TW",
+      "domain": "graph",
+      "replayMatches": true,
+      "importMatches": true,
+      "inspect": true,
+      "analyze": true,
+      "exportPayloadValidated": true,
+      "hashes": [
+        "b48faba50ad5c78dc937dd8e9b55eb10322efa65198357683c1fa4f19a4cb1a9",
+        "8f21577bf032014268f77124c8b1391231642bf49de9fb23d42f17874217c64a"
+      ]
+    },
+    {
+      "locale": "zh-TW",
+      "domain": "graph",
+      "preset": "prim / kruskal",
+      "mstWeight": "626"
+    },
+    {
+      "locale": "zh-TW",
+      "domain": "sorting",
+      "preset": "insertion / quick",
+      "completed": true
+    },
+    {
+      "locale": "zh-TW",
+      "domain": "pathfinding",
+      "algorithm": "bidirectional_bfs",
+      "analyze": true,
+      "pathCost": 62,
+      "baselineCost": 62,
+      "hash": "3a41cada4ec6331cc8482afea8de74d51dfc773750da40f71d4a2c13727b08bf"
+    },
+    {
+      "locale": "zh-TW",
+      "domain": "pathfinding",
+      "algorithm": "weighted_astar",
+      "analyze": true,
+      "pathCost": 62,
+      "baselineCost": 62,
+      "hash": "2980765f3a32224044810dc109746c905b4ae4cf0248225a37f30a29444c2982"
+    },
+    {
+      "locale": "en",
+      "domain": "pathfinding",
+      "replayMatches": true,
+      "importMatches": true,
+      "inspect": true,
+      "analyze": true,
+      "exportPayloadValidated": true,
+      "hashes": [
+        "2980765f3a32224044810dc109746c905b4ae4cf0248225a37f30a29444c2982",
+        "01b1af50a07dd1ef99015affe21816fc5962b304d2d211dae32da4fe559f98b6"
+      ]
+    },
+    {
+      "locale": "en",
+      "domain": "sorting",
+      "replayMatches": true,
+      "importMatches": true,
+      "inspect": true,
+      "analyze": true,
+      "exportPayloadValidated": true,
+      "hashes": [
+        "b3dd055b5d1422e17660a049fc2dcab4e819bcb3d5affce285015c75cc9fd028",
+        "b30fd16b81d8db0d3741b161ecfa4858e31bd2de10e3f98e00c2050cb78df770"
+      ]
+    },
+    {
+      "locale": "en",
+      "domain": "graph",
+      "replayMatches": true,
+      "importMatches": true,
+      "inspect": true,
+      "analyze": true,
+      "exportPayloadValidated": true,
+      "hashes": [
+        "702aca792b5db87579165e1fa6e27e64dbf0ebc198e085c3af62b63b5358deec",
+        "398a32b07619a235d548e9515dff24da52ccbf61709e7d1d3df9b6e49c8bc4c6"
+      ]
+    },
+    {
+      "locale": "en",
+      "domain": "graph",
+      "preset": "prim / kruskal",
+      "mstWeight": "626"
+    },
+    {
+      "locale": "en",
+      "domain": "sorting",
+      "preset": "insertion / quick",
+      "completed": true
+    },
+    {
+      "locale": "en",
+      "domain": "pathfinding",
+      "algorithm": "bidirectional_bfs",
+      "analyze": true,
+      "pathCost": 62,
+      "baselineCost": 62,
+      "hash": "3a41cada4ec6331cc8482afea8de74d51dfc773750da40f71d4a2c13727b08bf"
+    },
+    {
+      "locale": "en",
+      "domain": "pathfinding",
+      "algorithm": "weighted_astar",
+      "analyze": true,
+      "pathCost": 62,
+      "baselineCost": 62,
+      "hash": "2980765f3a32224044810dc109746c905b4ae4cf0248225a37f30a29444c2982"
+    }
+  ],
+  "consoleErrors": [],
+  "remoteRequests": [],
+  "screenshots": [
+    "docs/screenshots/phase2-zh-pathfinding-inspector.png",
+    "docs/screenshots/phase2-zh-pathfinding-analysis.png",
+    "docs/screenshots/phase2-zh-sorting-inspector.png",
+    "docs/screenshots/phase2-zh-sorting-analysis.png",
+    "docs/screenshots/phase2-zh-sorting-benchmark.png",
+    "docs/screenshots/phase2-zh-graph-inspector.png",
+    "docs/screenshots/phase2-zh-graph-analysis.png",
+    "docs/screenshots/phase2-zh-graph-benchmark.png",
+    "docs/screenshots/phase2-zh-graph-mst.png",
+    "docs/screenshots/phase2-zh-bidirectional_bfs-analysis.png",
+    "docs/screenshots/phase2-zh-weighted_astar-analysis.png"
+  ],
+  "exportValidation": "UI-generated Blob payload; operating-system save dialog not automated",
+  "artifacts": [
+    {
+      "path": "F:\\CodeX開發小東東\\AI Algorithm Arena\\output\\windows\\portable\\Project-ARENA.exe",
+      "sha256": "DA3C0C40E84328941AC105B345E94CF6833D8368B1C2A6B1CE8A2D53340FB08C",
+      "bytes": 11553792
+    },
+    {
+      "path": "F:\\CodeX開發小東東\\AI Algorithm Arena\\output\\windows\\Project-ARENA-0.2.0-portable.zip",
+      "sha256": "D65C6EADC7D33B917F5153CF73D9B9C696787407C54445A89B9306298D4DC232",
+      "bytes": 5012198
+    },
+    {
+      "path": "F:\\CodeX開發小東東\\AI Algorithm Arena\\output\\windows\\Project ARENA_0.2.0_x64-setup.exe",
+      "sha256": "474A7CC72285F66A9EA2A15B0521871A0FB953D03DD30687F2B808F7ED7FE634",
+      "bytes": 3730995
+    }
+  ]
+}

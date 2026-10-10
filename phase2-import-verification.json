@@ -1,0 +1,146 @@
+{
+  "cases": [
+    {
+      "domain": "sorting",
+      "algorithm": "quick",
+      "kind": "valid",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "domain": "sorting",
+      "algorithm": "quick",
+      "kind": "timing-only",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "domain": "sorting",
+      "algorithm": "quick",
+      "kind": "invalid-hash",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "domain": "sorting",
+      "algorithm": "quick",
+      "kind": "rehashed-metrics",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "domain": "sorting",
+      "algorithm": "quick",
+      "kind": "rehashed-run-id",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "domain": "sorting",
+      "algorithm": "insertion",
+      "kind": "valid",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "domain": "sorting",
+      "algorithm": "insertion",
+      "kind": "timing-only",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "domain": "sorting",
+      "algorithm": "insertion",
+      "kind": "invalid-hash",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "domain": "sorting",
+      "algorithm": "insertion",
+      "kind": "rehashed-metrics",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "domain": "sorting",
+      "algorithm": "insertion",
+      "kind": "rehashed-run-id",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "domain": "graph",
+      "algorithm": "bfs",
+      "kind": "valid",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "domain": "graph",
+      "algorithm": "bfs",
+      "kind": "timing-only",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "domain": "graph",
+      "algorithm": "bfs",
+      "kind": "invalid-hash",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "domain": "graph",
+      "algorithm": "bfs",
+      "kind": "rehashed-metrics",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "domain": "graph",
+      "algorithm": "bfs",
+      "kind": "rehashed-run-id",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "domain": "graph",
+      "algorithm": "prim",
+      "kind": "valid",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "domain": "graph",
+      "algorithm": "prim",
+      "kind": "timing-only",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "domain": "graph",
+      "algorithm": "prim",
+      "kind": "invalid-hash",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "domain": "graph",
+      "algorithm": "prim",
+      "kind": "rehashed-metrics",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "domain": "graph",
+      "algorithm": "prim",
+      "kind": "rehashed-run-id",
+      "accepted": false,
+      "expected": false
+    }
+  ],
+  "checks": 20,
+  "failures": 0
+}

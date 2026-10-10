@@ -1,12 +1,20 @@
 # ARENA — AI Algorithm Arena
 
-An execution-driven 2D pathfinding experiment platform built with Rust, React, TypeScript, Vite and Tauri 2. Compare algorithms on the same problem, inspect recorded state and replay the exact event log offline.
+An execution-driven multi-domain algorithm experiment platform built with Rust, React, TypeScript, Vite and Tauri 2. Compare algorithms on the same problem, inspect recorded state and replay the exact event log offline.
 
-[中文作品介紹](README.md) · [繁體中文操作指南](README.zh-TW.md) · Version **0.1.2**
+[中文作品介紹](README.md) · [繁體中文操作指南](README.zh-TW.md) · Version **0.2.0**
 
 ![Actual packaged A* vs Dijkstra replay](docs/screenshots/phase12-zh-astar-dijkstra-race.png)
 
-## Phase 1.2 localization and presentation
+## Phase 2 multi-domain arena
+
+Pathfinding (7 implementations), Sorting (6), and Graph (6) share Rust execution, canonical event logs, pure replay reducers, inspectors and Observer v2. Sorting includes six real instrumented algorithms and seven seeded distributions; Graph includes eight deterministic-layout generators, traversal, shortest paths and MST comparisons. Weighted A* supports weights 1/1.25/1.5/2/3; bidirectional BFS requires symmetric unit-cost movement.
+
+900 sorting records and 680 graph records each undergo repeated hash comparison and four checkpoint checks: zero mismatches and zero divergences. The 2,540 historical hash comparisons remain unchanged. Current validation: 46 Rust, 61 frontend and 43 E2E tests. See [acceptance](docs/phase2.md), [design](docs/phase2-design.md), [summary](phase2-summary.json), and [actual Windows verification](windows-phase2-verification.json).
+
+![Actual packaged Prim versus Kruskal](docs/screenshots/phase2-zh-graph-mst.png)
+
+## Historical Phase 1.2 localization and presentation
 
 Traditional Chinese and English share a complete central dictionary. The saved preference wins over browser language, with zh-TW as the fallback. Switching language keeps the same map, seed, logs, metrics, playback position and canonical export. No search runs during a language switch.
 

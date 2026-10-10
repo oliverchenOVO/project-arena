@@ -1,8 +1,8 @@
 import {useLocale} from '../i18n';
 import {accents,generators,names} from '../model';
 import type {Algorithm,Heuristic,MapConfig} from '../model';
-interface Props {map:MapConfig;setMap:(map:MapConfig)=>void;algorithms:Algorithm[];setAlgorithms:(a:Algorithm[])=>void;heuristic:Heuristic;setHeuristic:(h:Heuristic)=>void;busy:boolean;generate:()=>void;randomize:()=>void}
-export default function ConfigRail({map,setMap,algorithms,setAlgorithms,heuristic,setHeuristic,busy,generate,randomize}:Props) {
+interface Props {map:MapConfig;setMap:(map:MapConfig)=>void;algorithms:Algorithm[];setAlgorithms:(a:Algorithm[])=>void;heuristic:Heuristic;setHeuristic:(h:Heuristic)=>void;busy:boolean;generate:()=>void;randomize:()=>void;weight?:number;setWeight?:(w:number)=>void}
+export default function ConfigRail({map,setMap,algorithms,setAlgorithms,heuristic,setHeuristic,busy,generate,randomize,weight=100,setWeight}:Props) {
   const {t}=useLocale();
   return <aside className="config-rail"><section><h2>{t("Problem")}</h2><fieldset disabled={busy}>
     <label>{t("Map family")}<select aria-label={t("Map family")} value={map.generator} onChange={e=>setMap({...map,generator:e.target.value as MapConfig['generator'],stress:undefined})}>{Object.entries(generators).map(([id,name])=><option key={id} value={id}>{t(name)}</option>)}</select></label>
@@ -14,6 +14,6 @@ export default function ConfigRail({map,setMap,algorithms,setAlgorithms,heuristi
     <label>{t("Race format")}<select aria-label={t("Race format")} value={algorithms.length} onChange={e=>setAlgorithms(e.target.value==='4'?['bfs','dijkstra','astar','greedy']:['dijkstra','astar'])}><option value="2">{t("1 vs 1")}</option><option value="4">{t("4-way race")}</option><option value="5" disabled>{t("Heuristic lab + reference")}</option></select></label>
     {algorithms.map((a,index)=><label key={index} style={{borderLeft:`2px solid ${accents[a]}`,paddingLeft:8}}>{t('Algorithm {letter}',{letter:String.fromCharCode(65+index)})}<select aria-label={t("Algorithm {letter}",{letter:String.fromCharCode(65+index)})} disabled={algorithms.length===5} value={a} onChange={e=>setAlgorithms(algorithms.map((old,i)=>i===index?e.target.value as Algorithm:old))}>{Object.entries(names).map(([id,name])=><option key={id} value={id}>{t(name)}</option>)}</select></label>)}
     <label>{t("Heuristic (A* / Greedy)")}<select aria-label={t("Heuristic")} disabled={algorithms.length===5} value={heuristic} onChange={e=>setHeuristic(e.target.value as Heuristic)}><option value="manhattan">{t("Manhattan")}</option><option value="euclidean">{t("Euclidean (integer floor)")}</option><option value="chebyshev">{t("Chebyshev")}</option><option value="zero">{t("Zero heuristic")}</option></select></label>
-    <p className="hint">{t("4-neighbor: N → E → S → W")}<br/>{t("Admissible A* heuristics.")}</p>
+    <label>{t("Weighted A* weight")}<select aria-label={t("Weighted A* weight")} value={weight} onChange={e=>setWeight?.(Number(e.target.value))}>{[100,125,150,200,300].map(w=><option key={w} value={w}>{w/100}</option>)}</select></label><p className="hint">{t("w > 1 has no optimality guarantee. Bidirectional BFS requires unit-cost terrain.")}</p><p className="hint">{t("4-neighbor: N → E → S → W")}<br/>{t("Admissible A* heuristics.")}</p>
   </fieldset></section></aside>;
 }

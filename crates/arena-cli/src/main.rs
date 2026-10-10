@@ -1,3 +1,4 @@
+mod domains;
 mod lab;
 use arena_core::grid::SeededRng;
 use arena_core::replay::Replay;
@@ -16,6 +17,8 @@ fn algorithm(value: &str) -> Result<Algorithm, String> {
         "astar" => Ok(Algorithm::Astar),
         "dfs" => Ok(Algorithm::Dfs),
         "greedy" => Ok(Algorithm::Greedy),
+        "bidirectional_bfs" => Ok(Algorithm::BidirectionalBfs),
+        "weighted_astar" => Ok(Algorithm::WeightedAstar),
         _ => Err(format!("unknown algorithm: {value}")),
     }
 }
@@ -48,7 +51,10 @@ fn heuristic(value: &str) -> Result<Heuristic, String> {
 fn config(a: Algorithm) -> RunConfig {
     RunConfig::new(
         a,
-        if matches!(a, Algorithm::Astar | Algorithm::Greedy) {
+        if matches!(
+            a,
+            Algorithm::Astar | Algorithm::Greedy | Algorithm::WeightedAstar
+        ) {
             Heuristic::Manhattan
         } else {
             Heuristic::Zero
@@ -155,7 +161,7 @@ fn percentile(values: &mut [u64], numerator: usize) -> f64 {
         .min(values.len() - 1);
     values[index] as f64 / 1e6
 }
-fn benchmark(options: &BTreeMap<String, String>) -> Result<(), String> {
+fn benchmark_report() -> Result<Value, String> {
     let families = [
         ("open", Generator::Open, 0),
         ("sparse", Generator::Obstacles, 15),
@@ -229,11 +235,7 @@ fn benchmark(options: &BTreeMap<String, String>) -> Result<(), String> {
         }
     }
     let report = json!({"engineVersion":arena_core::ENGINE_VERSION,"build":if cfg!(debug_assertions){"debug"}else{"release"},"os":std::env::consts::OS,"arch":std::env::consts::ARCH,"timingScope":"search + event collection; excludes hashing/map generation/playback","records":records});
-    output(options.get("output"), &report)?;
-    if options.get("output").is_none() {
-        println!("{}", serde_json::to_string_pretty(&report).unwrap());
-    }
-    Ok(())
+    Ok(report)
 }
 
 fn main_run() -> Result<(), String> {
@@ -260,10 +262,13 @@ fn main_run() -> Result<(), String> {
             "walls",
             "algorithm",
             "heuristic",
+            "weight",
             "output",
         ],
-        "gate" | "gate-phase1" | "benchmark" | "gate-phase11" | "profile-seek"
-        | "benchmark-stress" => &["output"],
+        "benchmark" => &["output", "domain"],
+        "gate" | "gate-phase1" | "gate-phase11" | "profile-seek" | "benchmark-stress" => {
+            &["output"]
+        }
         "replay" => &["input", "cursor"],
         "help" | "bridge" => &[],
         _ => return Err(format!("unknown command {command}")),
@@ -285,7 +290,39 @@ fn main_run() -> Result<(), String> {
         }
         "gate" => gate(&options, false),
         "gate-phase1" => gate(&options, true),
-        "benchmark" => benchmark(&options),
+        "benchmark" => {
+            let domain = options
+                .get("domain")
+                .map(String::as_str)
+                .unwrap_or("pathfinding");
+            let mut report = if domain == "pathfinding" {
+                benchmark_report()?
+            } else {
+                domains::benchmark(domain)?
+            };
+            if domain == "all" {
+                let legacy = benchmark_report()?;
+                for mut record in legacy["records"]
+                    .as_array()
+                    .ok_or("legacy records")?
+                    .iter()
+                    .cloned()
+                {
+                    record["domain"] = json!("pathfinding");
+                    report["records"]
+                        .as_array_mut()
+                        .ok_or("records")?
+                        .push(record);
+                }
+            }
+            if !options.contains_key("output") {
+                println!(
+                    "{}",
+                    serde_json::to_string_pretty(&report).map_err(|e| e.to_string())?
+                );
+            }
+            output(options.get("output"), &report)
+        }
         "benchmark-stress" => {
             let report = lab::benchmark_stress()?;
             output(options.get("output"), &report)
@@ -322,6 +359,9 @@ fn main_run() -> Result<(), String> {
                     .unwrap_or("astar"),
             )?;
             let mut cfg = config(a);
+            if let Some(v) = options.get("weight") {
+                cfg.weight_percent = Some(v.parse().map_err(|_| "invalid weight percent")?);
+            }
             if let Some(v) = options.get("heuristic") {
                 cfg.heuristic = heuristic(v)?;
             }
@@ -354,7 +394,7 @@ fn main_run() -> Result<(), String> {
             Ok(())
         }
         _ => {
-            println!("ARENA headless\n  arena run --seed 123 --algorithm astar --generator weighted --output run.arena.json\n  arena replay --input run.arena.json --cursor 256\n  arena gate --output phase0-gate.json\n  arena benchmark --output benchmark.json\n  arena gate-phase11 --output phase11-stress-gate.json\n  arena benchmark-stress --output stress-benchmark.json\n  arena profile-seek --output phase11-seek-profile.json");
+            println!("ARENA headless\n  arena run --seed 123 --algorithm astar --generator weighted --output run.arena.json\n  arena replay --input run.arena.json --cursor 256\n  arena gate --output phase0-gate.json\n  arena benchmark --output benchmark.json\n  arena benchmark --domain sorting|graph|pathfinding|all --output domains.json\n  arena run --algorithm weighted_astar --weight 150 --output weighted.arena.json\n  arena gate-phase11 --output phase11-stress-gate.json\n  arena benchmark-stress --output stress-benchmark.json\n  arena profile-seek --output phase11-seek-profile.json");
             Ok(())
         }
     }

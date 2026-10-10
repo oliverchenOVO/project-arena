@@ -1,0 +1,66 @@
+{
+  "runtime": "Chromium + Node on shared Windows development host",
+  "viewport": {
+    "width": 1536,
+    "height": 1024
+  },
+  "timingScope": "checkpoint/seek via identical frontend reducer; live RAF intervals include render and host load",
+  "cases": [
+    {
+      "domain": "sorting",
+      "size": 256,
+      "algorithms": [
+        "quick",
+        "merge"
+      ],
+      "events": [
+        7687,
+        12338
+      ],
+      "checkpointBuildMs": 16.36660000000029,
+      "checkpointCounts": [
+        31,
+        32
+      ],
+      "checkpointIntervals": [
+        256,
+        386
+      ],
+      "seekSamples": 50,
+      "seekP50Ms": 0.0452000000004773,
+      "seekP95Ms": 0.11280000000078871,
+      "frameSamples": 120,
+      "frameP50Ms": 16.699999999999818,
+      "frameP95Ms": 16.700000000000273,
+      "frameMaxMs": 16.800000000000182
+    },
+    {
+      "domain": "graph",
+      "size": 256,
+      "algorithms": [
+        "prim",
+        "kruskal"
+      ],
+      "events": [
+        34059,
+        33547
+      ],
+      "checkpointBuildMs": 48.28399999999965,
+      "checkpointCounts": [
+        32,
+        32
+      ],
+      "checkpointIntervals": [
+        1065,
+        1049
+      ],
+      "seekSamples": 50,
+      "seekP50Ms": 0.12099999999918509,
+      "seekP95Ms": 0.2422999999998865,
+      "frameSamples": 120,
+      "frameP50Ms": 16.700000000000728,
+      "frameP95Ms": 33.400000000000546,
+      "frameMaxMs": 33.400000000001455
+    }
+  ]
+}

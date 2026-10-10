@@ -6,7 +6,12 @@ import type {RacePlayback,Speed} from '../playback';
 import type {SyncMode} from '../playback';
 import {eventMarkers} from '../laboratory';
 import {names} from '../model';
-export default function Timeline({store}:{store:RacePlayback}) {
+import type {DomainPlayback} from '../domainPlayback';
+import DomainTimeline from './DomainTimeline';
+export default function Timeline({store}:{store:RacePlayback|DomainPlayback}) {
+  return store.logs[0]&&'domain' in store.logs[0]?<DomainTimeline store={store as DomainPlayback}/>:<PathTimeline store={store as RacePlayback}/>;
+}
+function PathTimeline({store}:{store:RacePlayback}) {
   const {t}=useLocale();
   const [position,setPosition]=useState('');
   useSyncExternalStore(store.subscribe,store.snapshot);

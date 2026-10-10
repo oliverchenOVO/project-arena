@@ -33,13 +33,15 @@ export default function GridCanvas({grid,accent='#4dd6c6',store,index=0,onCell,e
         if(field&&n?.[field]!==null&&n?.[field]!==undefined)fill=`rgba(86,158,231,${.12+.85*n[field]/maximum})`;
         if(layer==='frontier'&&state&&terrain!=='wall'){const x0=i%grid.width,y0=Math.floor(i/grid.width);let count=0,total=0;for(let yy=Math.max(0,y0-1);yy<=Math.min(grid.height-1,y0+1);yy++)for(let xx=Math.max(0,x0-1);xx<=Math.min(grid.width-1,x0+1);xx++){total++;if(state.nodes[yy*grid.width+xx].frontier_entries)count++;}fill=`rgba(232,189,101,${.08+.85*count/total})`;}
         if(other&&n){const b=other.nodes[i];if(n.expanded&&b.expanded)fill='#8898a9';else if(n.expanded)fill='#4dd6c6';else if(b.expanded)fill='#569ee7';else if(n.discovered&&b.discovered)fill='#586274';else if(n.discovered)fill='#4dd6c640';else if(b.discovered)fill='#569ee740';}
+        if(n?.side==='backward'&&n.discovered)fill=n.expanded?'#ae87dc':'#ae87dc50';
+        if(n?.meeting)fill='#f3eaa0';
         if(path.has(i))fill='#d1deed';
         if(otherPath.has(i))fill=path.has(i)?'#ffffff':'#d18bb0';else if(ghost&&path.has(i))fill='#e8bd65';
-        if(state?.current===i)fill='#e8bd65';
+        if(state?.current===i)fill='#e8bd65';if(n?.meeting)fill='#f3eaa0';
         if(i===grid.start)fill='#74dcc0';if(i===grid.goal)fill='#ed8d82';
         const gap=cw>5?1:0.3;
         context.fillStyle=fill;context.fillRect(x+gap,y+gap,Math.max(1,cw-gap*2),Math.max(1,ch-gap*2));
-        if(n?.frontier_entries&&!n.expanded&&!path.has(i)&&i!==grid.start&&i!==grid.goal) {context.strokeStyle=accent;context.lineWidth=1;context.strokeRect(x+1.5,y+1.5,cw-3,ch-3);}
+        if(n?.frontier_entries&&!n.expanded&&!path.has(i)&&i!==grid.start&&i!==grid.goal) {context.strokeStyle=n.side==='backward'?'#ae87dc':accent;context.lineWidth=1;context.strokeRect(x+1.5,y+1.5,cw-3,ch-3);}
         if((i===grid.start||i===grid.goal)&&cw>=10) {context.fillStyle='#0b0e13';context.font=`bold ${Math.max(9,Math.min(14,cw*.65))}px Consolas`;context.textAlign='center';context.textBaseline='middle';context.fillText(i===grid.start?(grid.start===grid.goal?'S/G':'S'):'G',x+cw/2,y+ch/2);}
         if(i===selected) {context.strokeStyle='#ffffff';context.lineWidth=2;context.strokeRect(x+1,y+1,cw-2,ch-2);}
       }

@@ -1,18 +1,28 @@
 # ARENA：推甄與個人網頁展示素材
 
-[返回作品介紹](../README.md) · [實際驗收證據](phase12.md)
+[返回作品介紹](../README.md) · [實際驗收證據](phase2.md)
 
-本頁依已完成的 **Phase 1.2 / 0.1.2** 整理，可用於個人網頁、備審作品說明與口頭展示。摘要描述專案成果；作者角色、實作分工與 AI 工具使用情況，請依實際經歷另行補充。
+本頁依已完成的 **Phase 2 / 0.2.0** 整理，可用於個人網頁、備審作品說明與口頭展示。摘要描述專案成果；作者角色、實作分工與 AI 工具使用情況，請依實際經歷另行補充。
 
 ## 個人網頁短版摘要
 
 **ARENA — 可重現的演算法實驗平台**
 
-以 Rust 執行真實路徑搜尋，React 與 Canvas 呈現競賽、事件重播與節點檢視，並以 Tauri 提供雙語 Windows 桌面介面。支援 BFS、DFS、Dijkstra、A* 與 Greedy Best-First；使用者可在相同地圖與規則下比較搜尋工作量與路徑成本，保存紀錄並驗證結果。
+以 Rust 執行真實路徑搜尋、排序與圖論，React 與 Canvas 呈現競賽、事件重播與節點檢視，並以 Tauri 提供雙語 Windows 桌面介面。包含 7 個路徑搜尋、6 個排序與 6 個圖論實作；使用者可在相同地圖與規則下比較搜尋工作量與路徑成本，保存紀錄並驗證結果。
 
 **技術：** Rust / React / TypeScript / Canvas / Tauri 2<br>
 **亮點：** 確定性事件契約、可回溯的搜尋決策、headless regression gates<br>
 **作品連結：** [公開 repository](https://github.com/oliverchenOVO/project-arena)
+
+## Phase 2 展示與工程證據
+
+新增 900 筆排序與 680 筆圖論實驗，每筆重複執行比對 hash 並檢查四個重播位置，共 6,320 次前綴驗證，差異為零。舊紀錄 2,540 次歷史 hash 比對保持一致。完整測試包含 Rust 46 項、前端 61 項、E2E 43 項；數字對應保存的驗收版本，不代表新的演算法研究成果。
+
+三領域展示順序：第一分鐘比較 A*／Dijkstra 的工作量；第二分鐘比較 Insertion／Quick 在近乎排序輸入的操作次數；第三分鐘比較 Prim／Kruskal 的生成樹權重與邊選擇。每段展示都可開啟檢視器，指出一個真實事件，而非只播放動畫。
+
+![實際 Windows 排序分析](screenshots/phase2-zh-sorting-analysis.png)
+
+![實際 Windows Prim／Kruskal](screenshots/phase2-zh-graph-mst.png)
 
 ## 備審作品說明
 

@@ -140,12 +140,16 @@ pub fn observations(
             Algorithm::Astar => ("astar", r, "expansion_ratio"),
             Algorithm::Bfs => ("bfs", cost_ratio, "cost_ratio"),
             Algorithm::Dijkstra => ("dijkstra", None, "ratio"),
+            Algorithm::BidirectionalBfs => ("bidirectional_bfs", None, "ratio"),
+            Algorithm::WeightedAstar => ("weighted_astar", r, "expansion_ratio"),
         };
         let badge = badge(&t, key, threshold_key, effect);
         let optimal = m.path_cost.zip(optimal_cost).map(|(a, b)| a == b);
         measured.push(json!({"algorithm":log.config.algorithm,"heuristic":log.config.heuristic,"metrics":m,"initial_h":log.config.heuristic.estimate(&log.grid,log.grid.start),"expanded_h_sum":sum}));
         derived.push(json!({"algorithm":log.config.algorithm,"heuristic":log.config.heuristic,"average_h_at_expansion":if m.expanded>0{Some(sum as f64/m.expanded as f64)}else{None},"effective_branching_proxy":branch,"expansion_ratio_to_dijkstra":r,"heuristic_guidance_ratio":r.map(|v|1.0-v),"path_cost_optimal":optimal,"step_optimal":m.path_length.zip(step_optimal).map(|(a,b)|a==b),"cost_ratio_to_optimal":cost_ratio,"expanded_vs_best":ratio(m.expanded,best),"stress_effect":effect,"badge":badge}));
         let text = match log.config.algorithm {
+            Algorithm::WeightedAstar => "Weighted A* with w > 1 has no optimality guarantee; compare expansion reduction with measured path cost overhead.",
+            Algorithm::BidirectionalBfs => "Bidirectional BFS is restricted to symmetric unweighted movement; both search frontiers contribute to total work.",
             Algorithm::Bfs => {
                 "BFS optimizes unweighted step count; weighted path cost is a different objective."
             }

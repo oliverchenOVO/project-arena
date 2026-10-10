@@ -16,6 +16,8 @@ pub enum Algorithm {
     Astar,
     Dfs,
     Greedy,
+    BidirectionalBfs,
+    WeightedAstar,
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
@@ -59,6 +61,8 @@ pub struct RunConfig {
     pub heuristic: Heuristic,
     pub neighbor_order: String,
     pub tie_break: String,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub weight_percent: Option<u32>,
 }
 impl RunConfig {
     pub fn new(algorithm: Algorithm, heuristic: Heuristic) -> Self {
@@ -68,6 +72,7 @@ impl RunConfig {
             heuristic,
             neighbor_order: "N,E,S,W".into(),
             tie_break: "priority,h,insertion".into(),
+            weight_percent: None,
         }
     }
     pub fn validate(&self) -> Result<(), String> {
@@ -77,10 +82,19 @@ impl RunConfig {
         {
             return Err("unsupported algorithm version or ordering policy".into());
         }
-        if !matches!(self.algorithm, Algorithm::Astar | Algorithm::Greedy)
-            && self.heuristic != Heuristic::Zero
+        if !matches!(
+            self.algorithm,
+            Algorithm::Astar | Algorithm::Greedy | Algorithm::WeightedAstar
+        ) && self.heuristic != Heuristic::Zero
         {
             return Err("BFS, DFS and Dijkstra require zero heuristic".into());
+        }
+        if self.algorithm == Algorithm::WeightedAstar {
+            if ![100, 125, 150, 200, 300].contains(&self.weight_percent.unwrap_or(100)) {
+                return Err("unsupported Weighted A* weight".into());
+            }
+        } else if self.weight_percent.is_some() {
+            return Err("weight only applies to Weighted A*".into());
         }
         Ok(())
     }
@@ -182,6 +196,10 @@ impl RunLog {
                 | EventKind::RelaxationCompared { node, .. }
                 | EventKind::CostUpdated { node, .. }
                 | EventKind::ParentUpdated { node, .. }
+                | EventKind::SearchSide { node, .. }
+                | EventKind::MeetingPoint { node }
+                | EventKind::DirectionExpanded { node, .. }
+                | EventKind::WeightedPriority { node, .. }
                 | EventKind::GoalReached { node } => Some(*node),
                 _ => None,
             };
@@ -256,6 +274,9 @@ pub fn execute(
     }
     grid.validate()?;
     config.validate()?;
+    if config.algorithm == Algorithm::BidirectionalBfs {
+        return crate::advanced::bidirectional(grid, map_config, config);
+    }
     if map_config.width != grid.width
         || map_config.height != grid.height
         || map_config.wall_percent > 100
@@ -292,22 +313,53 @@ pub fn execute(
     discovered[grid.start] = true;
     costs[grid.start] = Some(0);
     let initial_h = config.heuristic.estimate(grid, grid.start);
+    let weight = config.weight_percent.unwrap_or(100) as u64;
+    let weighted_h = |h: u64| {
+        if config.algorithm == Algorithm::WeightedAstar {
+            h * weight / 100
+        } else {
+            h
+        }
+    };
+    let priority_value = |g: u64, h: u64| {
+        if config.algorithm == Algorithm::WeightedAstar {
+            g * 100 + h * weight
+        } else {
+            g + h
+        }
+    };
     emit(EventKind::NodeDiscovered { node: grid.start }, tick);
     emit(
         EventKind::CostUpdated {
             node: grid.start,
             g: 0,
             h: initial_h,
-            f: initial_h,
+            f: weighted_h(initial_h),
         },
         tick,
     );
+    if config.algorithm == Algorithm::WeightedAstar {
+        emit(
+            EventKind::WeightedPriority {
+                node: grid.start,
+                scaled_f: initial_h * weight,
+                scale: 100,
+            },
+            tick,
+        );
+    }
     frontier_entries[grid.start] += 1;
     emit(EventKind::FrontierAdded { node: grid.start }, tick);
     if matches!(config.algorithm, Algorithm::Bfs | Algorithm::Dfs) {
         fifo.push_back(grid.start);
     } else {
-        heap.push(Reverse((initial_h, initial_h, insertion, grid.start, 0)));
+        heap.push(Reverse((
+            priority_value(0, initial_h),
+            initial_h,
+            insertion,
+            grid.start,
+            0,
+        )));
     }
     let mut path = Vec::new();
     loop {
@@ -393,7 +445,7 @@ pub fn execute(
                     node: next,
                     g: candidate,
                     h,
-                    f: candidate + h,
+                    f: candidate + weighted_h(h),
                 },
                 tick,
             );
@@ -404,6 +456,16 @@ pub fn execute(
                 },
                 tick,
             );
+            if config.algorithm == Algorithm::WeightedAstar {
+                emit(
+                    EventKind::WeightedPriority {
+                        node: next,
+                        scaled_f: priority_value(candidate, h),
+                        scale: 100,
+                    },
+                    tick,
+                );
+            }
             insertion += 1;
             frontier_entries[next] += 1;
             emit(EventKind::FrontierAdded { node: next }, tick);
@@ -413,7 +475,7 @@ pub fn execute(
                 let priority = if config.algorithm == Algorithm::Greedy {
                     h
                 } else {
-                    candidate + h
+                    priority_value(candidate, h)
                 };
                 heap.push(Reverse((priority, h, insertion, next, candidate)));
             }

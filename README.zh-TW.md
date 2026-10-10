@@ -1,10 +1,26 @@
 # ARENA — AI Algorithm Arena
 
-[作品介紹](README.md) · [English](README.en.md) · 版本 **0.1.2**
+[作品介紹](README.md) · [English](README.en.md) · 版本 **0.2.0**
 
 在相同問題、規則與 Seed 下，讓演算法公平競賽。ARENA 使用 Rust 執行真實搜尋，保存可重現的事件紀錄，再以 React、TypeScript、Canvas 與 Tauri 2 呈現搜尋、重播與分析。
 
 ![封裝程式的 A* 與 Dijkstra 真實競賽](docs/screenshots/phase12-zh-astar-dijkstra-race.png)
+
+## Phase 2 新增操作
+
+頂部領域列切換路徑搜尋、排序、圖論；各領域保留自己的輸入、紀錄與播放位置。排序可設定 16–256 元素與分布，圖論可設定 32–256 節點、方向及權重。勾選最多四個演算法後執行，使用競賽／檢視／分析／基準頁比較結果。
+
+排序的語意步進停在比較／交換，圖論停在節點訪問／邊評估。空白鍵播放、左右鍵步進、Shift+右鍵語意步進、Home／End 跳至起終點，`?` 顯示說明；輸入欄位內不觸發播放快捷鍵。
+
+匯出採 `arena-run v2`，舊 pathfinding v1 仍可匯入。Prim／Kruskal 要求連通無向加權圖。雙向 BFS 限單位成本地形；Weighted A* 的 w>1 不保證最優。基準頁讀取 CLI 產生的 JSON，不使用播放速度作效能排名。
+
+```powershell
+cargo run --release -p arena-cli -- benchmark --domain sorting --output phase2-sorting-benchmark.json
+cargo run --release -p arena-cli -- benchmark --domain graph --output phase2-graph-benchmark.json
+cargo run --release -p arena-cli -- benchmark --domain all --output all-domains.json
+```
+
+新版 Windows 產物為 `Project-ARENA-0.2.0-portable.zip` 與 `Project ARENA_0.2.0_x64-setup.exe`。驗證見 [Phase 2](docs/phase2.md)。
 
 ## 開始使用
 

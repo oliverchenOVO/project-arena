@@ -6,6 +6,18 @@ use serde_json::{json, Value};
 #[derive(Deserialize)]
 #[serde(tag = "action", rename_all = "snake_case", deny_unknown_fields)]
 pub enum Request {
+    DomainGenerate {
+        domain: crate::domain::ArenaDomain,
+        config: Value,
+    },
+    DomainRace {
+        domain: crate::domain::ArenaDomain,
+        problem: Value,
+        algorithms: Vec<String>,
+    },
+    DomainValidate {
+        logs: Vec<crate::domain::DomainLog>,
+    },
     Generate {
         map_config: MapConfig,
     },
@@ -20,6 +32,48 @@ pub enum Request {
 }
 pub fn handle(request: Request) -> Result<Value, String> {
     match request {
+        Request::DomainGenerate { domain, config } => match domain {
+            crate::domain::ArenaDomain::Sorting => {
+                let c: crate::sorting::SortConfig =
+                    serde_json::from_value(config).map_err(|e| e.to_string())?;
+                Ok(json!({"problem":{"values":crate::sorting::generate(&c)?,"config":c}}))
+            }
+            crate::domain::ArenaDomain::Graph => {
+                let c = serde_json::from_value(config).map_err(|e| e.to_string())?;
+                Ok(json!({"problem":crate::graph::generate(&c)?}))
+            }
+            _ => Err("domain generator unavailable".into()),
+        },
+        Request::DomainRace {
+            domain,
+            problem,
+            algorithms,
+        } => {
+            if algorithms.is_empty() || algorithms.len() > 4 {
+                return Err("race needs 1..4 contenders".into());
+            }
+            let mut logs = vec![];
+            for a in algorithms {
+                logs.push(domain_execute(domain, &problem, &a)?);
+            }
+            Ok(domain_result(&logs))
+        }
+        Request::DomainValidate { logs } => {
+            if logs.is_empty() || logs.len() > 4 {
+                return Err("import needs 1..4 logs".into());
+            }
+            for log in &logs {
+                log.validate_envelope()?;
+                if log.domain != logs[0].domain || log.problem != logs[0].problem {
+                    return Err("race logs must share the same problem".into());
+                }
+                let expected = domain_execute(log.domain, &log.problem, &log.algorithm_id)?;
+                if log.canonical_hash != expected.canonical_hash {
+                    return Err("v2 execution mismatch".into());
+                }
+            }
+            Ok(domain_result(&logs))
+        }
         Request::Generate { map_config } => Ok(json!({"grid":generate(&map_config)?})),
         Request::Race {
             grid,
@@ -93,6 +147,40 @@ pub fn handle(request: Request) -> Result<Value, String> {
     }
 }
 
+fn domain_execute(
+    domain: crate::domain::ArenaDomain,
+    problem: &Value,
+    a: &str,
+) -> Result<crate::domain::DomainLog, String> {
+    match domain {
+        crate::domain::ArenaDomain::Sorting => {
+            let values: Vec<i64> =
+                serde_json::from_value(problem["values"].clone()).map_err(|e| e.to_string())?;
+            let config =
+                serde_json::from_value(problem["config"].clone()).map_err(|e| e.to_string())?;
+            crate::sorting::execute(&values, a, &config)
+        }
+        crate::domain::ArenaDomain::Graph => {
+            let graph = serde_json::from_value(problem.clone()).map_err(|e| e.to_string())?;
+            crate::graph::execute(&graph, a)
+        }
+        _ => Err("domain execution unavailable".into()),
+    }
+}
+
+fn domain_result(logs: &[crate::domain::DomainLog]) -> Value {
+    let problem = &logs[0].problem;
+    let features = if logs[0].domain == crate::domain::ArenaDomain::Sorting {
+        crate::sorting::features(
+            &serde_json::from_value::<Vec<i64>>(problem["values"].clone()).unwrap_or_default(),
+        )
+    } else {
+        json!({"nodeCount":problem["nodes"].as_array().map(Vec::len),"edgeCount":problem["edges"].as_array().map(Vec::len),"layout":"seeded integer grid jitter / v1"})
+    };
+    let observations = crate::observe::observe(crate::observe::RunSet::Domain(logs));
+    json!({"logs":logs,"features":observations["derived"],"observations":observations,"problemFeatures":features})
+}
+
 fn result(logs: &[RunLog], features: &[crate::analysis::MapFeatures]) -> Value {
     let baseline = logs
         .iter()
@@ -106,5 +194,5 @@ fn result(logs: &[RunLog], features: &[crate::analysis::MapFeatures]) -> Value {
         .iter()
         .map(crate::observation::markers)
         .collect::<Vec<_>>();
-    json!({"logs":logs,"features":features,"observations":observations,"markers":markers})
+    json!({"logs":logs,"features":features,"observations":observations,"observationV2":crate::observe::observe(crate::observe::RunSet::Pathfinding(logs)),"markers":markers})
 }

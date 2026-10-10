@@ -1,0 +1,350 @@
+{
+  "status": "PHASE 2 LOCAL ACCEPTANCE PASS",
+  "version": "0.2.0",
+  "domains": [
+    "pathfinding",
+    "sorting",
+    "graph"
+  ],
+  "algorithms": {
+    "pathfinding": [
+      "bfs",
+      "dfs",
+      "dijkstra",
+      "astar",
+      "greedy",
+      "bidirectional_bfs",
+      "weighted_astar"
+    ],
+    "sorting": [
+      "bubble",
+      "insertion",
+      "selection",
+      "merge",
+      "quick",
+      "heap"
+    ],
+    "graph": [
+      "bfs",
+      "dfs",
+      "dijkstra",
+      "astar",
+      "prim",
+      "kruskal"
+    ]
+  },
+  "tests": {
+    "rust": 46,
+    "frontend": 61,
+    "e2e": {
+      "startTime": "2026-10-10T22:33:07.897Z",
+      "duration": 80583.96200000001,
+      "expected": 43,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "sorting": {
+    "records": 900,
+    "determinismComparisons": 900,
+    "determinismMismatches": 0,
+    "replayChecks": 3600,
+    "replayDivergences": 0
+  },
+  "graph": {
+    "records": 680,
+    "determinismComparisons": 680,
+    "determinismMismatches": 0,
+    "replayChecks": 2720,
+    "replayDivergences": 0
+  },
+  "determinism": {
+    "legacyGateExecutions": 5600,
+    "legacyGateSeeks": 206088,
+    "legacyGateRepeatComparisons": 2800,
+    "newDomainExecutions": 3160,
+    "newDomainRepeatComparisons": 1580,
+    "newDomainReplayChecks": 6320,
+    "mismatches": 0,
+    "replayDivergences": 0
+  },
+  "legacyCompatibility": {
+    "historicalHashComparisons": 2540,
+    "historicalHashMismatches": 0,
+    "metricMismatches": 0
+  },
+  "importValidation": {
+    "cases": [
+      {
+        "domain": "sorting",
+        "algorithm": "quick",
+        "kind": "valid",
+        "accepted": true,
+        "expected": true
+      },
+      {
+        "domain": "sorting",
+        "algorithm": "quick",
+        "kind": "timing-only",
+        "accepted": true,
+        "expected": true
+      },
+      {
+        "domain": "sorting",
+        "algorithm": "quick",
+        "kind": "invalid-hash",
+        "accepted": false,
+        "expected": false
+      },
+      {
+        "domain": "sorting",
+        "algorithm": "quick",
+        "kind": "rehashed-metrics",
+        "accepted": false,
+        "expected": false
+      },
+      {
+        "domain": "sorting",
+        "algorithm": "quick",
+        "kind": "rehashed-run-id",
+        "accepted": false,
+        "expected": false
+      },
+      {
+        "domain": "sorting",
+        "algorithm": "insertion",
+        "kind": "valid",
+        "accepted": true,
+        "expected": true
+      },
+      {
+        "domain": "sorting",
+        "algorithm": "insertion",
+        "kind": "timing-only",
+        "accepted": true,
+        "expected": true
+      },
+      {
+        "domain": "sorting",
+        "algorithm": "insertion",
+        "kind": "invalid-hash",
+        "accepted": false,
+        "expected": false
+      },
+      {
+        "domain": "sorting",
+        "algorithm": "insertion",
+        "kind": "rehashed-metrics",
+        "accepted": false,
+        "expected": false
+      },
+      {
+        "domain": "sorting",
+        "algorithm": "insertion",
+        "kind": "rehashed-run-id",
+        "accepted": false,
+        "expected": false
+      },
+      {
+        "domain": "graph",
+        "algorithm": "bfs",
+        "kind": "valid",
+        "accepted": true,
+        "expected": true
+      },
+      {
+        "domain": "graph",
+        "algorithm": "bfs",
+        "kind": "timing-only",
+        "accepted": true,
+        "expected": true
+      },
+      {
+        "domain": "graph",
+        "algorithm": "bfs",
+        "kind": "invalid-hash",
+        "accepted": false,
+        "expected": false
+      },
+      {
+        "domain": "graph",
+        "algorithm": "bfs",
+        "kind": "rehashed-metrics",
+        "accepted": false,
+        "expected": false
+      },
+      {
+        "domain": "graph",
+        "algorithm": "bfs",
+        "kind": "rehashed-run-id",
+        "accepted": false,
+        "expected": false
+      },
+      {
+        "domain": "graph",
+        "algorithm": "prim",
+        "kind": "valid",
+        "accepted": true,
+        "expected": true
+      },
+      {
+        "domain": "graph",
+        "algorithm": "prim",
+        "kind": "timing-only",
+        "accepted": true,
+        "expected": true
+      },
+      {
+        "domain": "graph",
+        "algorithm": "prim",
+        "kind": "invalid-hash",
+        "accepted": false,
+        "expected": false
+      },
+      {
+        "domain": "graph",
+        "algorithm": "prim",
+        "kind": "rehashed-metrics",
+        "accepted": false,
+        "expected": false
+      },
+      {
+        "domain": "graph",
+        "algorithm": "prim",
+        "kind": "rehashed-run-id",
+        "accepted": false,
+        "expected": false
+      }
+    ],
+    "checks": 20,
+    "failures": 0
+  },
+  "localization": {
+    "keys": 574,
+    "missing": []
+  },
+  "performance": {
+    "domains": {
+      "runtime": "Chromium + Node on shared Windows development host",
+      "viewport": {
+        "width": 1536,
+        "height": 1024
+      },
+      "timingScope": "checkpoint/seek via identical frontend reducer; live RAF intervals include render and host load",
+      "cases": [
+        {
+          "domain": "sorting",
+          "size": 256,
+          "algorithms": [
+            "quick",
+            "merge"
+          ],
+          "events": [
+            7687,
+            12338
+          ],
+          "checkpointBuildMs": 16.36660000000029,
+          "checkpointCounts": [
+            31,
+            32
+          ],
+          "checkpointIntervals": [
+            256,
+            386
+          ],
+          "seekSamples": 50,
+          "seekP50Ms": 0.0452000000004773,
+          "seekP95Ms": 0.11280000000078871,
+          "frameSamples": 120,
+          "frameP50Ms": 16.699999999999818,
+          "frameP95Ms": 16.700000000000273,
+          "frameMaxMs": 16.800000000000182
+        },
+        {
+          "domain": "graph",
+          "size": 256,
+          "algorithms": [
+            "prim",
+            "kruskal"
+          ],
+          "events": [
+            34059,
+            33547
+          ],
+          "checkpointBuildMs": 48.28399999999965,
+          "checkpointCounts": [
+            32,
+            32
+          ],
+          "checkpointIntervals": [
+            1065,
+            1049
+          ],
+          "seekSamples": 50,
+          "seekP50Ms": 0.12099999999918509,
+          "seekP95Ms": 0.2422999999998865,
+          "frameSamples": 120,
+          "frameP50Ms": 16.700000000000728,
+          "frameP95Ms": 33.400000000000546,
+          "frameMaxMs": 33.400000000001455
+        }
+      ]
+    },
+    "pathfinding": {
+      "runtime": "Chromium on shared Windows development host",
+      "size": 128,
+      "algorithms": [
+        "dijkstra",
+        "astar"
+      ],
+      "events": [
+        228351,
+        4061
+      ],
+      "frameSamples": 120,
+      "frameP50Ms": 33.30000000000018,
+      "frameP95Ms": 50,
+      "frameMaxMs": 50,
+      "scope": "Live RAF intervals during recorded playback; host load affects timings"
+    }
+  },
+  "windows": {
+    "cases": 14,
+    "tauri": true,
+    "consoleErrors": [],
+    "remoteRequests": [],
+    "exportValidation": "UI-generated Blob payload; operating-system save dialog not automated",
+    "artifacts": [
+      {
+        "path": "F:\\CodeX開發小東東\\AI Algorithm Arena\\output\\windows\\portable\\Project-ARENA.exe",
+        "sha256": "DA3C0C40E84328941AC105B345E94CF6833D8368B1C2A6B1CE8A2D53340FB08C",
+        "bytes": 11553792
+      },
+      {
+        "path": "F:\\CodeX開發小東東\\AI Algorithm Arena\\output\\windows\\Project-ARENA-0.2.0-portable.zip",
+        "sha256": "D65C6EADC7D33B917F5153CF73D9B9C696787407C54445A89B9306298D4DC232",
+        "bytes": 5012198
+      },
+      {
+        "path": "F:\\CodeX開發小東東\\AI Algorithm Arena\\output\\windows\\Project ARENA_0.2.0_x64-setup.exe",
+        "sha256": "474A7CC72285F66A9EA2A15B0521871A0FB953D03DD30687F2B808F7ED7FE634",
+        "bytes": 3730995
+      }
+    ]
+  },
+  "github": {
+    "repository": "https://github.com/oliverchenOVO/project-arena",
+    "branch": "main",
+    "visibility": "PUBLIC",
+    "ci": "https://github.com/oliverchenOVO/project-arena/actions",
+    "note": "CI status is verified for the pushed commit separately; local evidence does not substitute for CI."
+  },
+  "knownIssues": [
+    "Windows binaries are unsigned; no clean-machine installation claim.",
+    "The native export check inspects the actual UI Blob; operating-system save dialogs are not automated.",
+    "Optional AI reflection provider is not configured.",
+    "Bundled real showcase logs produce a 1.25 MB JavaScript chunk (about 170 KB gzip); Vite emits a size warning.",
+    "Performance timings depend on development-host load; 128x128 pathfinding does not imply a universal 60 FPS guarantee."
+  ]
+}
