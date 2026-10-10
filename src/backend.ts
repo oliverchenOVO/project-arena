@@ -15,7 +15,9 @@ export const backend={
 export function exportRace(logs:RunLog[]):void {
   const data={schema_version:1,kind:'arena_race',logs};
   const url=URL.createObjectURL(new Blob([JSON.stringify(data)],{type:'application/json'}));
-  const a=document.createElement('a');a.href=url;a.download=`arena-${logs[0].map_config.seed}.arena.json`;a.click();URL.revokeObjectURL(url);
+  const a=document.createElement('a');a.href=url;a.download=`arena-${logs[0].map_config.seed}.arena.json`;document.body.append(a);a.click();a.remove();
+  // Let the browser start consuming the blob before releasing its object URL.
+  window.setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
 export async function importRace(file:File):Promise<RaceResult> {
   if(file.size>128*1024*1024)throw new Error('Run file exceeds 128 MiB');

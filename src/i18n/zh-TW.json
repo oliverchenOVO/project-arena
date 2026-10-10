@@ -372,5 +372,15 @@
   "Run file exceeds 128 MiB": "紀錄檔案超過 128 MiB",
   "Unsupported ARENA race schema": "不支援的 ARENA 競賽格式",
   "Rust engine request failed": "Rust 引擎請求失敗",
-  "normal": "一般地形"
+  "normal": "一般地形",
+  "Column (x)": "欄座標（x）",
+  "Row (y)": "列座標（y）",
+  "Inspect coordinates": "檢視座標",
+  "Coordinates start at zero. Selecting a node does not run a search.": "座標從 0 開始。選取節點不會重新搜尋。",
+  "Precise navigation and keyboard shortcuts": "精確跳轉與鍵盤快捷鍵",
+  "Clock position": "重播時鐘位置",
+  "Jump to position": "跳至位置",
+  "Jump uses the selected synchronization mode; the clock position is not an event ID for every algorithm.": "跳轉依目前同步模式進行；時鐘位置不代表各演算法相同的事件 ID。",
+  "Space: play/pause · Left/Right: one clock unit · Shift+Right: next expansion · Home/End: beginning/end.": "空白鍵：播放／暫停 · 左／右鍵：一個時鐘單位 · Shift＋右鍵：下一次展開 · Home／End：起點／結尾。",
+  "Shortcuts are inactive while typing, using controls, editing a map, or following the guided demo.": "輸入文字、操作控制項、編輯地圖或使用導覽時，不啟用快捷鍵。"
 }

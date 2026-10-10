@@ -372,5 +372,15 @@
   "Run file exceeds 128 MiB": "Run file exceeds 128 MiB",
   "Unsupported ARENA race schema": "Unsupported ARENA race schema",
   "Rust engine request failed": "Rust engine request failed",
-  "normal": "Normal terrain"
+  "normal": "Normal terrain",
+  "Column (x)": "Column (x)",
+  "Row (y)": "Row (y)",
+  "Inspect coordinates": "Inspect coordinates",
+  "Coordinates start at zero. Selecting a node does not run a search.": "Coordinates start at zero. Selecting a node does not run a search.",
+  "Precise navigation and keyboard shortcuts": "Precise navigation and keyboard shortcuts",
+  "Clock position": "Clock position",
+  "Jump to position": "Jump to position",
+  "Jump uses the selected synchronization mode; the clock position is not an event ID for every algorithm.": "Jump uses the selected synchronization mode; the clock position is not an event ID for every algorithm.",
+  "Space: play/pause · Left/Right: one clock unit · Shift+Right: next expansion · Home/End: beginning/end.": "Space: play/pause · Left/Right: one clock unit · Shift+Right: next expansion · Home/End: beginning/end.",
+  "Shortcuts are inactive while typing, using controls, editing a map, or following the guided demo.": "Shortcuts are inactive while typing, using controls, editing a map, or following the guided demo."
 }

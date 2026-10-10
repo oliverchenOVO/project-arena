@@ -2,10 +2,11 @@ import {LanguageSwitch,useLocale} from './i18n';
 import {useCallback,useEffect,useRef,useState} from 'react';
 import {backend,exportRace,importRace} from './backend';
 import {defaultMap,runConfig} from './model';
-import type {Algorithm,Grid,Heuristic,MapConfig,RaceResult} from './model';
+import type {Algorithm,Grid,Heuristic,MapConfig,RaceResult,RunConfig} from './model';
 import {clearGrid,editCell,validateMap} from './editor';
 import type {Tool} from './editor';
 import {RacePlayback} from './playback';
+import {handleReplayShortcut} from './replayShortcuts';
 import ConfigRail from './components/ConfigRail';
 import RacePanels from './components/RacePanels';
 import GridCanvas from './components/GridCanvas';
@@ -27,6 +28,7 @@ export default function App() {
   const [grid,setGrid]=useState<Grid|null>(null);
   const [algorithms,setAlgorithms]=useState<Algorithm[]>(['dijkstra','astar']);
   const [heuristic,setHeuristic]=useState<Heuristic>('manhattan');
+  const [comparisonConfigs,setComparisonConfigs]=useState<RunConfig[]|null>(null);
   const [tool,setTool]=useState<Tool>('wall');
   const [selected,setSelected]=useState<number|null>(null);
   const [race,setRace]=useState<RaceResult|null>(null);
@@ -51,6 +53,12 @@ export default function App() {
     const update=(now:number)=>{store.update(Math.min(100,now-previous));previous=now;frame=requestAnimationFrame(update);};
     frame=requestAnimationFrame(update);const unsubscribe=store.subscribe(()=>{if(demo&&store.cursor===store.length){setMode('ANALYZE');setDemo(false);}});return ()=>{cancelAnimationFrame(frame);unsubscribe();};
   },[store,demo]);
+  useEffect(()=>{
+    if(!store||landing||busy||demo||mode==='BUILD'||mode==='BENCHMARK')return;
+    const keydown=(event:KeyboardEvent)=>{handleReplayShortcut(event,store);};
+    window.addEventListener('keydown',keydown);
+    return()=>window.removeEventListener('keydown',keydown);
+  },[store,landing,busy,demo,mode]);
   const resetRace=()=>{store?.pause();setStore(null);setRace(null);setSelected(null);};
   const generate=async(config=map)=>{
     if(busy)return;
@@ -63,18 +71,18 @@ export default function App() {
     if(busy||!grid)return;
     setError('');setBusy(true);store?.pause();setDemo(false);
     try {
-      const result=await backend.race(grid,appliedMap,algorithms.length===5&&race?.logs.length===5?race.logs.map(l=>l.config):algorithms.map(a=>runConfig(a,heuristic)));
+      const result=await backend.race(grid,appliedMap,algorithms.length===5&&comparisonConfigs?comparisonConfigs:algorithms.map(a=>runConfig(a,heuristic)));
       const next=new RacePlayback(result.logs);setRace(result);setStore(next);setMode('RACE');setCollapsed(true);next.toggle();
     }catch(error){setError(error instanceof Error?error.message:String(error));}finally{setBusy(false);}
   };
   const scenario=async(config:MapConfig,pair:Algorithm[],isDemo=false)=>{
     if(busy)return;setBusy(true);setError('');store?.pause();setDemo(false);
-    try{validateMap(config);const generated=await backend.generate(config);const result=await backend.race(generated.grid,config,pair.map(a=>runConfig(a,'manhattan')));const next=new RacePlayback(result.logs);next.setSync('percentage');setMap(config);setAppliedMap(config);setGrid(generated.grid);setAlgorithms(pair);setHeuristic('manhattan');setRace(result);setStore(next);setSelected(null);setMode('RACE');setLanding(false);setCollapsed(true);setDemo(isDemo);next.toggle();}
+    try{validateMap(config);const generated=await backend.generate(config);const result=await backend.race(generated.grid,config,pair.map(a=>runConfig(a,'manhattan')));const next=new RacePlayback(result.logs);next.setSync('percentage');setMap(config);setAppliedMap(config);setGrid(generated.grid);setAlgorithms(pair);setComparisonConfigs(null);setHeuristic('manhattan');setRace(result);setStore(next);setSelected(null);setMode('RACE');setLanding(false);setCollapsed(true);setDemo(isDemo);next.toggle();}
     catch(error){setError(String(error));}finally{setBusy(false);}
   };
   const heuristicLab=async(a:'astar'|'greedy')=>{
     if(busy||!grid)return;setBusy(true);setError('');store?.pause();setDemo(false);
-    try{const configs=(['zero','manhattan','euclidean','chebyshev'] as Heuristic[]).map(h=>runConfig(a,h));configs.push(runConfig('dijkstra','zero'));const result=await backend.race(grid,appliedMap,configs);const next=new RacePlayback(result.logs);next.setSync('percentage');setRace(result);setStore(next);setSelected(null);setMode('RACE');setCollapsed(true);next.toggle();}
+    try{const configs=(['zero','manhattan','euclidean','chebyshev'] as Heuristic[]).map(h=>runConfig(a,h));configs.push(runConfig('dijkstra','zero'));const result=await backend.race(grid,appliedMap,configs);const next=new RacePlayback(result.logs);next.setSync('percentage');setAlgorithms(configs.map(c=>c.algorithm));setComparisonConfigs(configs);setRace(result);setStore(next);setSelected(null);setMode('RACE');setCollapsed(true);next.toggle();}
     catch(error){setError(String(error));}finally{setBusy(false);}
   };
   const onCell=useCallback((node:number)=>{
@@ -83,7 +91,7 @@ export default function App() {
   },[mode,busy,tool]);
   const load=async(file:File)=>{
     setBusy(true);setError('');store?.pause();setDemo(false);
-    try {const result=await importRace(file);const first=result.logs[0];setRace(result);setGrid(first.grid);setMap(first.map_config);setAppliedMap(first.map_config);setAlgorithms(result.logs.map(log=>log.config.algorithm));setHeuristic(result.logs.find(log=>log.config.algorithm==='astar')?.config.heuristic??'manhattan');setStore(new RacePlayback(result.logs));setSelected(null);setMode('RACE');setLanding(false);setCollapsed(true);}
+    try {const result=await importRace(file);const first=result.logs[0];setRace(result);setGrid(first.grid);setMap(first.map_config);setAppliedMap(first.map_config);setAlgorithms(result.logs.map(log=>log.config.algorithm));setComparisonConfigs(result.logs.length===5?result.logs.map(log=>log.config):null);setHeuristic(result.logs.find(log=>log.config.algorithm==='astar')?.config.heuristic??'manhattan');setStore(new RacePlayback(result.logs));setSelected(null);setMode('RACE');setLanding(false);setCollapsed(true);}
     catch(error){setError(error instanceof Error?error.message:String(error));}finally{setBusy(false);}
   };
   const changeMode=(next:Mode)=>{setLanding(false);setMode(next);if(next==='BUILD')store?.pause();};
@@ -95,7 +103,7 @@ export default function App() {
     {!demo&&!store?<QuickStart/>:null}
     {demo&&store?<GuidedDemo store={store} restart={()=>void scenario(presets[0].map,presets[0].pair,true)}/>:null}
     <div className={'workspace'+(collapsed||presentation?' config-collapsed':'')}><div className="configuration-stack" hidden={collapsed||presentation}><LabControls busy={busy} map={map} expose={(config,pair)=>void scenario(config,pair)} showcase={(index,isDemo)=>void scenario(presets[index].map,presets[index].pair,isDemo)} lab={a=>void heuristicLab(a)}/><ConfigRail map={map} setMap={setMap} algorithms={algorithms} setAlgorithms={setAlgorithms} heuristic={heuristic} setHeuristic={setHeuristic} busy={busy} generate={()=>void generate()} randomize={()=>void generate({...map,seed:map.seed<Number.MAX_SAFE_INTEGER?map.seed+1:0})}/></div>
-      <div className="main-surface">{mode==='BENCHMARK'?<Benchmark/>:!grid?<div className="empty-surface">{t(busy?'Loading Rust-generated problem…':'Rust engine unavailable. Review the error above.')}</div>:mode==='BUILD'?<section className="build-surface"><header><h2>{t("Problem editor")}</h2><span>{t("Seed")}{appliedMap.seed} · {grid.width} × {grid.height}</span></header><div className="editor-toolbar" role="toolbar" aria-label={t("Terrain tools")}>{tools.map(item=><button key={item} disabled={busy} className={tool===item?'selected':''} aria-pressed={tool===item} onClick={()=>setTool(item)}>{t(item==='mud'?'Mud · 3':item==='water'?'Water · 5':item==='heavy'?'Heavy · 10':item)}</button>)}<button disabled={busy} onClick={()=>{setGrid(clearGrid(grid));resetRace();}}>{t("Clear")}</button></div><div className="build-canvas-wrap"><GridCanvas grid={grid} store={null} selected={selected} editable onCell={onCell}/></div><p className="hint">{t("Drag to paint. Start and goal stay traversable. Editing invalidates the previous run; the saved grid is authoritative.")}</p></section>:mode==='ANALYZE'?(store&&race?<Analysis store={store} features={race.features} observations={race.observations}/>:<div className="empty-surface">{t("Run an experiment to measure and compare algorithms.")}</div>):<><RacePanels grid={grid} algorithms={algorithms} store={store} onCell={onCell} selected={selected} observations={race?.observations}/>{mode==='INSPECT'?(store?<Inspector grid={grid} store={store} node={selected}/>:<section className="inspector">{t("Run an experiment, then select a cell to inspect its state.")}</section>):null}</>}
+      <div className="main-surface">{mode==='BENCHMARK'?<Benchmark/>:!grid?<div className="empty-surface">{t(busy?'Loading Rust-generated problem…':'Rust engine unavailable. Review the error above.')}</div>:mode==='BUILD'?<section className="build-surface"><header><h2>{t("Problem editor")}</h2><span>{t("Seed")}{appliedMap.seed} · {grid.width} × {grid.height}</span></header><div className="editor-toolbar" role="toolbar" aria-label={t("Terrain tools")}>{tools.map(item=><button key={item} disabled={busy} className={tool===item?'selected':''} aria-pressed={tool===item} onClick={()=>setTool(item)}>{t(item==='mud'?'Mud · 3':item==='water'?'Water · 5':item==='heavy'?'Heavy · 10':item)}</button>)}<button disabled={busy} onClick={()=>{setGrid(clearGrid(grid));resetRace();}}>{t("Clear")}</button></div><div className="build-canvas-wrap"><GridCanvas grid={grid} store={null} selected={selected} editable onCell={onCell}/></div><p className="hint">{t("Drag to paint. Start and goal stay traversable. Editing invalidates the previous run; the saved grid is authoritative.")}</p></section>:mode==='ANALYZE'?(store&&race?<Analysis store={store} features={race.features} observations={race.observations}/>:<div className="empty-surface">{t("Run an experiment to measure and compare algorithms.")}</div>):<><RacePanels grid={grid} algorithms={algorithms} store={store} onCell={onCell} selected={selected} observations={race?.observations}/>{mode==='INSPECT'?(store?<Inspector grid={grid} store={store} node={selected} onSelect={setSelected}/>:<section className="inspector">{t("Run an experiment, then select a cell to inspect its state.")}</section>):null}</>}
       </div></div>
       {store?<Timeline store={store}/>:<section className="playback empty-playback"><h2>{t("Playback")}</h2><p>{t("Run an experiment to create a real event log.")}</p><span>{t("0 / — events")}</span></section>}
       <footer className="legend"><h2>{t("Legend")}</h2>{[['Expanded','expanded'],['Frontier','frontier'],['Current','current'],['Path','path'],['Mud 3','mud'],['Water 5','water'],['Heavy 10','heavy'],['Wall','wall']].map(([label,id])=><span key={id}><i className={id}/>{t(label)}</span>)}<small>{t("Normal terrain = 1 · walls impassable")}</small></footer>
