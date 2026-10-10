@@ -10,9 +10,19 @@ ARENA 將路徑搜尋轉化為可以操作、回溯與分析的實驗。使用�
 
 [English](README.en.md) · [操作與開發指南](README.zh-TW.md) · [驗收報告](docs/phase12.md) · [GitHub Actions](https://github.com/oliverchenOVO/project-arena/actions)
 
+閱讀路線：[實際操作](#操作流程與實際畫面) → [系統架構](#系統架構搜尋紀錄與呈現分離) → [技術亮點與程式入口](#技術亮點與程式入口) → [驗證證據](#工程驗證與可查核成果)。現場展示可參考 [三分鐘展示腳本](docs/portfolio.md#三分鐘展示腳本)。
+
 ![實際 Windows 程式：A* 與 Dijkstra 在相同地圖上比較搜尋結果](docs/screenshots/phase12-zh-astar-dijkstra-race.png)
 
 同樣找到成本 62 的路徑，A* 展開 63 個節點，Dijkstra 展開 1,024 個節點。這是固定展示情境的實測結果，不代表 A* 在所有地圖上都較有效率。
+
+> **一分鐘認識本作品**
+>
+> **問題：** 在相同輸入下，理解演算法的搜尋決策與成本差異。
+>
+> **方法：** Rust 真實執行 → 可驗證事件紀錄 → 重播、節點檢視與分析。
+>
+> **成果：** 5 種搜尋演算法、雙語 Windows 介面；Phase 1.2 完成 5,600 次 regression 執行，hash 與重播差異均為零。
 
 ## 專案動機：從「看動畫」到「理解決策」
 
@@ -59,7 +69,12 @@ ARENA 將路徑搜尋轉化為可以操作、回溯與分析的實驗。使用�
 
 分析頁以四張獨立圖表比較已展開節點、邏輯操作數、峰值前沿大小與路徑成本，各自標示單位。詳細表格區分「實測數據」「推導指標」與「依規則解讀」，避免把推論當成量測事實。
 
+<details>
+<summary>展開完整分析畫面：四項指標、推導公式與解讀</summary>
+
 ![實測分析：相同路徑成本下的搜尋工作量差異](docs/screenshots/phase12-zh-analysis.png)
+
+</details>
 
 本例中 A* 少展開約 93.8% 的節點，百分比由紀錄中的 63 / 1,024 計算。這描述的是搜尋工作量，不能直接解讀為程式執行時間快了 93.8%。
 
@@ -77,6 +92,20 @@ ARENA 將路徑搜尋轉化為可以操作、回溯與分析的實驗。使用�
 | **可選 AI 解讀介面** | 只接收分析資料，不能修改搜尋或紀錄；目前沒有設定 live LLM provider |
 
 搜尋會先產生完整紀錄，再開始視覺播放。切換語言、調整速度或開啟簡報模式只影響呈現；不會更改地圖、Seed、hash 或實測指標。核心功能不需要 API key。
+
+## 技術亮點與程式入口
+
+作品的實作重點可從以下檔案直接查核。每項設計都對應一個問題、實作方式與驗證方法。
+
+| 技術問題 | 實作與取捨 | 程式入口 | 如何驗證 |
+| --- | --- | --- | --- |
+| 相同輸入能否重現搜尋？ | 固定 RNG、鄰居與同分規則；版本化事件契約 | [Rust 搜尋核心](crates/arena-core/src/engine.rs)、[事件定義](crates/arena-core/src/event.rs) | 重複執行與歷史 hash 比對 |
+| 前後拖曳時間軸，如何保持狀態正確？ | 事件 reducer 與檢查點恢復；以最多 33 個完整快照限制快照數量 | [前端重播](src/playback.ts)、[Rust 重播](crates/arena-core/src/replay.rs) | 將任意 seek 狀態與順序重播結果比較 |
+| 匯入檔案可以直接信任嗎？ | 驗證 hash、版本、路徑、事件與計數，拒絕不合契約的紀錄 | [紀錄驗證](crates/arena-core/src/validation.rs) | [Rust correctness 測試](crates/arena-core/tests/phase1.rs) |
+| 怎麼揭露演算法的弱點？ | 以固定 Seed 構造可調整壓力情境，再與參考演算法實測比較 | [壓力生成器](crates/arena-core/src/stress.rs)、[觀察規則](crates/arena-core/src/observation.rs) | [壓力測試](crates/arena-core/tests/phase11.rs) 與版本化門檻 |
+| 切換語言會不會影響實驗？ | locale 與搜尋、RunLog、重播狀態分離；兩種語言共用鍵集合 | [i18n](src/i18n/index.tsx)、[雙語 E2E](tests/e2e/localization.spec.ts) | 保留 cursor、指標及逐位元組一致的匯出內容 |
+
+檢查點設計限制的是**快照數量**，並非固定 RAM 上限；網格大小與事件紀錄仍影響記憶體。匯入驗證則針對目前的資料契約，不代表任意檔案都能相容。
 
 ## 關鍵設計：如何讓實驗可以重現？
 
@@ -177,6 +206,7 @@ Windows 封裝產生 x64 執行檔、portable ZIP 與 NSIS 安裝程式，包含
 
 ## 更多資料與展示素材
 
+- [推甄與個人網頁素材](docs/portfolio.md)：可引用的作品摘要、三分鐘展示腳本與附圖建議。
 - [操作與開發指南](README.zh-TW.md)：雙語介面、執行方式與完整驗證指令。
 - [Phase 1.2 驗收報告](docs/phase12.md)：雙語、四種尺寸、桌面與 regression 證據。
 - [Phase 1.1 設計與實驗](docs/phase11.md)：壓力地圖、重播與效能取捨。
